@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Bg from "../img/hero_2.jpg";
+import { Link } from "react-router-dom";
 
 export default class Cars extends Component {
   render() {
@@ -43,17 +44,17 @@ export default class Cars extends Component {
                 <div class="row">
                   <div class="col-lg-4 col-md-6 mb-4">
                     <div class="item-1">
-                      <a href="#">
+                      <Link to="/#">
                         <img
                           src="images/img_1.jpg"
                           alt="Image"
                           class="img-fluid"
                         />
-                      </a>
+                      </Link>
                       <div class="item-1-contents">
                         <div class="text-center">
                           <h3>
-                            <a href="#">Range Rover S64 Coupe</a>
+                            <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
                           <div class="rating">
                             <span class="icon-star text-warning"></span>
@@ -85,9 +86,9 @@ export default class Cars extends Component {
                           </li>
                         </ul>
                         <div class="d-flex action">
-                          <a href="contact.html" class="btn btn-primary">
+                          <Link to="/contact" class="btn btn-primary">
                             Rent Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -95,17 +96,17 @@ export default class Cars extends Component {
 
                   <div class="col-lg-4 col-md-6 mb-4">
                     <div class="item-1">
-                      <a href="#">
+                      <Link to="#">
                         <img
                           src="images/img_2.jpg"
                           alt="Image"
                           class="img-fluid"
                         />
-                      </a>
+                      </Link>
                       <div class="item-1-contents">
                         <div class="text-center">
                           <h3>
-                            <a href="#">Range Rover S64 Coupe</a>
+                            <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
                           <div class="rating">
                             <span class="icon-star text-warning"></span>
@@ -137,9 +138,9 @@ export default class Cars extends Component {
                           </li>
                         </ul>
                         <div class="d-flex action">
-                          <a href="contact.html" class="btn btn-primary">
+                          <Link to="/contact" class="btn btn-primary">
                             Rent Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -147,17 +148,17 @@ export default class Cars extends Component {
 
                   <div class="col-lg-4 col-md-6 mb-4">
                     <div class="item-1">
-                      <a href="#">
+                      <Link to="/#">
                         <img
                           src="images/img_3.jpg"
                           alt="Image"
                           class="img-fluid"
                         />
-                      </a>
+                      </Link>
                       <div class="item-1-contents">
                         <div class="text-center">
                           <h3>
-                            <a href="#">Range Rover S64 Coupe</a>
+                            <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
                           <div class="rating">
                             <span class="icon-star text-warning"></span>
@@ -189,9 +190,9 @@ export default class Cars extends Component {
                           </li>
                         </ul>
                         <div class="d-flex action">
-                          <a href="contact.html" class="btn btn-primary">
+                          <Link to="/contact" class="btn btn-primary">
                             Rent Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -199,17 +200,17 @@ export default class Cars extends Component {
 
                   <div class="col-lg-4 col-md-6 mb-4">
                     <div class="item-1">
-                      <a href="#">
+                      <Link to="/#">
                         <img
                           src="images/img_1.jpg"
                           alt="Image"
                           class="img-fluid"
                         />
-                      </a>
+                      </Link>
                       <div class="item-1-contents">
                         <div class="text-center">
                           <h3>
-                            <a href="#">Range Rover S64 Coupe</a>
+                            <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
                           <div class="rating">
                             <span class="icon-star text-warning"></span>
@@ -241,9 +242,9 @@ export default class Cars extends Component {
                           </li>
                         </ul>
                         <div class="d-flex action">
-                          <a href="contact.html" class="btn btn-primary">
+                          <Link to="/contact" class="btn btn-primary">
                             Rent Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -251,17 +252,17 @@ export default class Cars extends Component {
 
                   <div class="col-lg-4 col-md-6 mb-4">
                     <div class="item-1">
-                      <a href="#">
+                      <Link to="/#">
                         <img
                           src="images/img_2.jpg"
                           alt="Image"
                           class="img-fluid"
                         />
-                      </a>
+                      </Link>
                       <div class="item-1-contents">
                         <div class="text-center">
                           <h3>
-                            <a href="#">Range Rover S64 Coupe</a>
+                            <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
                           <div class="rating">
                             <span class="icon-star text-warning"></span>
@@ -293,9 +294,9 @@ export default class Cars extends Component {
                           </li>
                         </ul>
                         <div class="d-flex action">
-                          <a href="contact.html" class="btn btn-primary">
+                          <Link to="/contact" class="btn btn-primary">
                             Rent Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -303,17 +304,17 @@ export default class Cars extends Component {
 
                   <div class="col-lg-4 col-md-6 mb-4">
                     <div class="item-1">
-                      <a href="#">
+                      <Link to="#">
                         <img
                           src="images/img_3.jpg"
                           alt="Image"
                           class="img-fluid"
                         />
-                      </a>
+                      </Link>
                       <div class="item-1-contents">
                         <div class="text-center">
                           <h3>
-                            <a href="#">Range Rover S64 Coupe</a>
+                            <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
                           <div class="rating">
                             <span class="icon-star text-warning"></span>
@@ -345,9 +346,9 @@ export default class Cars extends Component {
                           </li>
                         </ul>
                         <div class="d-flex action">
-                          <a href="contact.html" class="btn btn-primary">
+                          <Link to="/contact" class="btn btn-primary">
                             Rent Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -355,15 +356,15 @@ export default class Cars extends Component {
 
                   <div class="col-12">
                     <span class="p-3">1</span>
-                    <a href="#" class="p-3">
+                    <Link to="/#" class="p-3">
                       2
-                    </a>
-                    <a href="#" class="p-3">
+                    </Link>
+                    <Link to="/#" class="p-3">
                       3
-                    </a>
-                    <a href="#" class="p-3">
+                    </Link>
+                    <Link to="/#" class="p-3">
                       4
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

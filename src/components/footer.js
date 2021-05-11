@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 export default class footer extends Component {
   render() {
@@ -20,39 +21,19 @@ export default class footer extends Component {
                     <h2 class="footer-heading mb-4">Quick Links</h2>
                     <ul class="list-unstyled">
                       <li>
-                        <a href="#">About Us</a>
+                        <Link to="/#">About Us</Link>
                       </li>
                       <li>
-                        <a href="#">Testimonials</a>
+                        <Link to="/#">Testimonials</Link>
                       </li>
                       <li>
-                        <a href="#">Terms of Service</a>
+                        <Link yo="/#">Terms of Service</Link>
                       </li>
                       <li>
-                        <a href="#">Privacy</a>
+                        <Link to="/#">Privacy</Link>
                       </li>
                       <li>
-                        <a href="#">Contact Us</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-3">
-                    <h2 class="footer-heading mb-4">Quick Links</h2>
-                    <ul class="list-unstyled">
-                      <li>
-                        <a href="#">About Us</a>
-                      </li>
-                      <li>
-                        <a href="#">Testimonials</a>
-                      </li>
-                      <li>
-                        <a href="#">Terms of Service</a>
-                      </li>
-                      <li>
-                        <a href="#">Privacy</a>
-                      </li>
-                      <li>
-                        <a href="#">Contact Us</a>
+                        <Link to="/#">Contact Us</Link>
                       </li>
                     </ul>
                   </div>
@@ -60,19 +41,19 @@ export default class footer extends Component {
                     <h2 class="footer-heading mb-4">Quick Links</h2>
                     <ul class="list-unstyled">
                       <li>
-                        <a href="#">About Us</a>
+                        <Link to="/#">About Us</Link>
                       </li>
                       <li>
-                        <a href="#">Testimonials</a>
+                        <Link to="/#">Testimonials</Link>
                       </li>
                       <li>
-                        <a href="#">Terms of Service</a>
+                        <Link to="/#">Terms of Service</Link>
                       </li>
                       <li>
-                        <a href="#">Privacy</a>
+                        <Link to="/#">Privacy</Link>
                       </li>
                       <li>
-                        <a href="#">Contact Us</a>
+                        <Link to="/#">Contact Us</Link>
                       </li>
                     </ul>
                   </div>
@@ -80,19 +61,39 @@ export default class footer extends Component {
                     <h2 class="footer-heading mb-4">Quick Links</h2>
                     <ul class="list-unstyled">
                       <li>
-                        <a href="#">About Us</a>
+                        <Link to="/#">About Us</Link>
                       </li>
                       <li>
-                        <a href="#">Testimonials</a>
+                        <Link to="/#">Testimonials</Link>
                       </li>
                       <li>
-                        <a href="#">Terms of Service</a>
+                        <Link to="/#">Terms of Service</Link>
                       </li>
                       <li>
-                        <a href="#">Privacy</a>
+                        <Link to="/#">Privacy</Link>
                       </li>
                       <li>
-                        <a href="#">Contact Us</a>
+                        <Link to="/#">Contact Us</Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-lg-3">
+                    <h2 class="footer-heading mb-4">Quick Links</h2>
+                    <ul class="list-unstyled">
+                      <li>
+                        <Link to="/#">About Us</Link>
+                      </li>
+                      <li>
+                        <Link to="/#">Testimonials</Link>
+                      </li>
+                      <li>
+                        <Link to="/#">Terms of Service</Link>
+                      </li>
+                      <li>
+                        <Link to="/#">Privacy</Link>
+                      </li>
+                      <li>
+                        <Link to="/#">Contact Us</Link>
                       </li>
                     </ul>
                   </div>

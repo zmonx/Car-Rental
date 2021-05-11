@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Image from "../img/hero_1.jpg";
 import Bg from "../img/hero_2.jpg";
+import { Link } from 'react-router-dom';
 
 export default class Home extends Component {
   render() {
@@ -56,9 +57,9 @@ export default class Home extends Component {
                       </ul>
                       <div class="d-flex align-items-center bg-light p-3">
                         <span>$150/day</span>
-                        <a href="contact.html" class="ml-auto btn btn-primary">
+                        <Link to="/contact" class="ml-auto btn btn-primary">
                           Rent Now
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -144,29 +145,29 @@ export default class Home extends Component {
                     Iure nesciunt nemo vel earum maxime neque!
                   </p>
                   <p>
-                    <a href="#" class="btn btn-primary custom-prev">
+                    <Link to="/#" class="btn btn-primary custom-prev">
                       Previous
-                    </a>
+                    </Link>
                     <span class="mx-2">/</span>
-                    <a href="#" class="btn btn-primary custom-next">
+                    <Link to="/#" class="btn btn-primary custom-next">
                       Next
-                    </a>
+                    </Link>
                   </p>
                 </div>
                 <div class="col-lg-9">
                   <div class="nonloop-block-13 owl-carousel">
                     <div class="item-1">
-                      <a href="#">
+                      <Link to="/#">
                         <img
                           src="images/img_1.jpg"
                           alt="Image"
                           class="img-fluid"
                         />
-                      </a>
+                      </Link>
                       <div class="item-1-contents">
                         <div class="text-center">
                           <h3>
-                            <a href="#">Range Rover S64 Coupe</a>
+                            <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
                           <div class="rating">
                             <span class="icon-star text-warning"></span>
@@ -198,25 +199,25 @@ export default class Home extends Component {
                           </li>
                         </ul>
                         <div class="d-flex action">
-                          <a href="contact.html" class="btn btn-primary">
+                          <Link to="/contact" class="btn btn-primary">
                             Rent Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
 
                     <div class="item-1">
-                      <a href="#">
+                      <Link to="/#">
                         <img
                           src="images/img_2.jpg"
                           alt="Image"
                           class="img-fluid"
                         />
-                      </a>
+                      </Link>
                       <div class="item-1-contents">
                         <div class="text-center">
                           <h3>
-                            <a href="#">Range Rover S64 Coupe</a>
+                            <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
                           <div class="rating">
                             <span class="icon-star text-warning"></span>
@@ -248,9 +249,9 @@ export default class Home extends Component {
                           </li>
                         </ul>
                         <div class="d-flex action">
-                          <a href="contact.html" class="btn btn-primary">
+                          <Link to="/contact" class="btn btn-primary">
                             Rent Now
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -452,22 +453,22 @@ export default class Home extends Component {
               <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                   <div class="post-entry-1 h-100">
-                    <a href="single.html">
+                    <Link to="/single">
                       <img
                         src="images/post_1.jpg"
                         alt="Image"
                         class="img-fluid"
                       />
-                    </a>
+                    </Link>
                     <div class="post-entry-1-contents">
                       <h2>
-                        <a href="single.html">
+                        <Link to="/single">
                           The best car rent in the entire planet
-                        </a>
+                        </Link>
                       </h2>
                       <span class="meta d-inline-block mb-3">
                         July 17, 2019 <span class="mx-2">by</span>{" "}
-                        <a href="#">Admin</a>
+                        <Link to="/#">Admin</Link>
                       </span>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -479,22 +480,22 @@ export default class Home extends Component {
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
                   <div class="post-entry-1 h-100">
-                    <a href="single.html">
+                    <Link to="/single">
                       <img
                         src="images/img_2.jpg"
                         alt="Image"
                         class="img-fluid"
                       />
-                    </a>
+                    </Link>
                     <div class="post-entry-1-contents">
                       <h2>
-                        <a href="single.html">
+                        <Link to="/single">
                           The best car rent in the entire planet
-                        </a>
+                        </Link>
                       </h2>
                       <span class="meta d-inline-block mb-3">
                         July 17, 2019 <span class="mx-2">by</span>{" "}
-                        <a href="#">Admin</a>
+                        <Link to="/#">Admin</Link>
                       </span>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -507,22 +508,22 @@ export default class Home extends Component {
 
                 <div class="col-lg-4 col-md-6 mb-4">
                   <div class="post-entry-1 h-100">
-                    <a href="single.html">
+                    <Link to="/single">
                       <img
                         src="images/img_3.jpg"
                         alt="Image"
                         class="img-fluid"
                       />
-                    </a>
+                    </Link>
                     <div class="post-entry-1-contents">
                       <h2>
-                        <a href="single.html">
+                        <Link to="/single">
                           The best car rent in the entire planet
-                        </a>
+                        </Link>
                       </h2>
                       <span class="meta d-inline-block mb-3">
                         July 17, 2019 <span class="mx-2">by</span>{" "}
-                        <a href="#">Admin</a>
+                        <Link to="/#">Admin</Link>
                       </span>
                       <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing
