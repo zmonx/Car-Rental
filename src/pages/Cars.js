@@ -1,34 +1,33 @@
 import React, { Component } from "react";
-import Bg from "../img/hero_2.jpg";
 import { Link } from "react-router-dom";
 
 export default class Cars extends Component {
   render() {
     return (
       <div>
-        <body
+        {/* <body
           data-spy="scroll"
           data-target=".site-navbar-target"
           data-offset="300"
-        >
-          <div class="site-wrap" id="home-section">
-            <div class="site-mobile-menu site-navbar-target">
-              <div class="site-mobile-menu-header">
-                <div class="site-mobile-menu-close mt-3">
-                  <span class="icon-close2 js-menu-toggle"></span>
+        > */}
+          <div className="site-wrap" id="home-section">
+            <div className="site-mobile-menu site-navbar-target">
+              <div className="site-mobile-menu-header">
+                <div className="site-mobile-menu-close mt-3">
+                  <span className="icon-close2 js-menu-toggle"></span>
                 </div>
               </div>
-              <div class="site-mobile-menu-body"></div>
+              <div className="site-mobile-menu-body"></div>
             </div>
 
-            <div class="ftco-blocks-cover-1">
+            <div className="ftco-blocks-cover-1">
               <div
-                class="ftco-cover-1 overlay innerpage"
-                style={{ backgroundImage: `url(${Bg})` }}
+                className="ftco-cover-1 overlay innerpage"
+                style={{ backgroundImage:"url(images/hero_2.jpg)"}}
               >
-                <div class="container">
-                  <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-6 text-center">
+                <div className="container">
+                  <div className="row align-items-center justify-content-center">
+                    <div className="col-lg-6 text-center">
                       <h1>Our For Rent Cars</h1>
                       <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -39,54 +38,54 @@ export default class Cars extends Component {
               </div>
             </div>
 
-            <div class="site-section bg-light">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="item-1">
+            <div className="site-section bg-light">
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-4 col-md-6 mb-4">
+                    <div className="item-1">
                       <Link to="/#">
                         <img
                           src="images/img_1.jpg"
                           alt="Image"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </Link>
-                      <div class="item-1-contents">
-                        <div class="text-center">
+                      <div className="item-1-contents">
+                        <div className="text-center">
                           <h3>
                             <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
-                          <div class="rating">
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
+                          <div className="rating">
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
                           </div>
-                          <div class="rent-price">
+                          <div className="rent-price">
                             <span>$250/</span>day
                           </div>
                         </div>
-                        <ul class="specs">
+                        <ul className="specs">
                           <li>
                             <span>Doors</span>
-                            <span class="spec">4</span>
+                            <span className="spec">4</span>
                           </li>
                           <li>
                             <span>Seats</span>
-                            <span class="spec">5</span>
+                            <span className="spec">5</span>
                           </li>
                           <li>
                             <span>Transmission</span>
-                            <span class="spec">Automatic</span>
+                            <span className="spec">Automatic</span>
                           </li>
                           <li>
                             <span>Minium age</span>
-                            <span class="spec">18 years</span>
+                            <span className="spec">18 years</span>
                           </li>
                         </ul>
-                        <div class="d-flex action">
-                          <Link to="/contact" class="btn btn-primary">
+                        <div className="d-flex action">
+                          <Link to="/contact" className="btn btn-primary">
                             Rent Now
                           </Link>
                         </div>
@@ -94,51 +93,51 @@ export default class Cars extends Component {
                     </div>
                   </div>
 
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="item-1">
+                  <div className="col-lg-4 col-md-6 mb-4">
+                    <div className="item-1">
                       <Link to="#">
                         <img
                           src="images/img_2.jpg"
                           alt="Image"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </Link>
-                      <div class="item-1-contents">
-                        <div class="text-center">
+                      <div className="item-1-contents">
+                        <div className="text-center">
                           <h3>
                             <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
-                          <div class="rating">
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
+                          <div className="rating">
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
                           </div>
-                          <div class="rent-price">
+                          <div className="rent-price">
                             <span>$250/</span>day
                           </div>
                         </div>
-                        <ul class="specs">
+                        <ul className="specs">
                           <li>
                             <span>Doors</span>
-                            <span class="spec">4</span>
+                            <span className="spec">4</span>
                           </li>
                           <li>
                             <span>Seats</span>
-                            <span class="spec">5</span>
+                            <span className="spec">5</span>
                           </li>
                           <li>
                             <span>Transmission</span>
-                            <span class="spec">Automatic</span>
+                            <span className="spec">Automatic</span>
                           </li>
                           <li>
                             <span>Minium age</span>
-                            <span class="spec">18 years</span>
+                            <span className="spec">18 years</span>
                           </li>
                         </ul>
-                        <div class="d-flex action">
-                          <Link to="/contact" class="btn btn-primary">
+                        <div className="d-flex action">
+                          <Link to="/contact" className="btn btn-primary">
                             Rent Now
                           </Link>
                         </div>
@@ -146,51 +145,51 @@ export default class Cars extends Component {
                     </div>
                   </div>
 
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="item-1">
+                  <div className="col-lg-4 col-md-6 mb-4">
+                    <div className="item-1">
                       <Link to="/#">
                         <img
                           src="images/img_3.jpg"
                           alt="Image"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </Link>
-                      <div class="item-1-contents">
-                        <div class="text-center">
+                      <div className="item-1-contents">
+                        <div className="text-center">
                           <h3>
                             <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
-                          <div class="rating">
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
+                          <div className="rating">
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
                           </div>
-                          <div class="rent-price">
+                          <div className="rent-price">
                             <span>$250/</span>day
                           </div>
                         </div>
-                        <ul class="specs">
+                        <ul className="specs">
                           <li>
                             <span>Doors</span>
-                            <span class="spec">4</span>
+                            <span className="spec">4</span>
                           </li>
                           <li>
                             <span>Seats</span>
-                            <span class="spec">5</span>
+                            <span className="spec">5</span>
                           </li>
                           <li>
                             <span>Transmission</span>
-                            <span class="spec">Automatic</span>
+                            <span className="spec">Automatic</span>
                           </li>
                           <li>
                             <span>Minium age</span>
-                            <span class="spec">18 years</span>
+                            <span className="spec">18 years</span>
                           </li>
                         </ul>
-                        <div class="d-flex action">
-                          <Link to="/contact" class="btn btn-primary">
+                        <div className="d-flex action">
+                          <Link to="/contact" className="btn btn-primary">
                             Rent Now
                           </Link>
                         </div>
@@ -198,51 +197,51 @@ export default class Cars extends Component {
                     </div>
                   </div>
 
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="item-1">
+                  <div className="col-lg-4 col-md-6 mb-4">
+                    <div className="item-1">
                       <Link to="/#">
                         <img
                           src="images/img_1.jpg"
                           alt="Image"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </Link>
-                      <div class="item-1-contents">
-                        <div class="text-center">
+                      <div className="item-1-contents">
+                        <div className="text-center">
                           <h3>
                             <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
-                          <div class="rating">
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
+                          <div className="rating">
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
                           </div>
-                          <div class="rent-price">
+                          <div className="rent-price">
                             <span>$250/</span>day
                           </div>
                         </div>
-                        <ul class="specs">
+                        <ul className="specs">
                           <li>
                             <span>Doors</span>
-                            <span class="spec">4</span>
+                            <span className="spec">4</span>
                           </li>
                           <li>
                             <span>Seats</span>
-                            <span class="spec">5</span>
+                            <span className="spec">5</span>
                           </li>
                           <li>
                             <span>Transmission</span>
-                            <span class="spec">Automatic</span>
+                            <span className="spec">Automatic</span>
                           </li>
                           <li>
                             <span>Minium age</span>
-                            <span class="spec">18 years</span>
+                            <span className="spec">18 years</span>
                           </li>
                         </ul>
-                        <div class="d-flex action">
-                          <Link to="/contact" class="btn btn-primary">
+                        <div className="d-flex action">
+                          <Link to="/contact" className="btn btn-primary">
                             Rent Now
                           </Link>
                         </div>
@@ -250,51 +249,51 @@ export default class Cars extends Component {
                     </div>
                   </div>
 
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="item-1">
+                  <div className="col-lg-4 col-md-6 mb-4">
+                    <div className="item-1">
                       <Link to="/#">
                         <img
                           src="images/img_2.jpg"
                           alt="Image"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </Link>
-                      <div class="item-1-contents">
-                        <div class="text-center">
+                      <div className="item-1-contents">
+                        <div className="text-center">
                           <h3>
                             <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
-                          <div class="rating">
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
+                          <div className="rating">
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
                           </div>
-                          <div class="rent-price">
+                          <div className="rent-price">
                             <span>$250/</span>day
                           </div>
                         </div>
-                        <ul class="specs">
+                        <ul className="specs">
                           <li>
                             <span>Doors</span>
-                            <span class="spec">4</span>
+                            <span className="spec">4</span>
                           </li>
                           <li>
                             <span>Seats</span>
-                            <span class="spec">5</span>
+                            <span className="spec">5</span>
                           </li>
                           <li>
                             <span>Transmission</span>
-                            <span class="spec">Automatic</span>
+                            <span className="spec">Automatic</span>
                           </li>
                           <li>
                             <span>Minium age</span>
-                            <span class="spec">18 years</span>
+                            <span className="spec">18 years</span>
                           </li>
                         </ul>
-                        <div class="d-flex action">
-                          <Link to="/contact" class="btn btn-primary">
+                        <div className="d-flex action">
+                          <Link to="/contact" className="btn btn-primary">
                             Rent Now
                           </Link>
                         </div>
@@ -302,51 +301,51 @@ export default class Cars extends Component {
                     </div>
                   </div>
 
-                  <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="item-1">
+                  <div className="col-lg-4 col-md-6 mb-4">
+                    <div className="item-1">
                       <Link to="#">
                         <img
                           src="images/img_3.jpg"
                           alt="Image"
-                          class="img-fluid"
+                          className="img-fluid"
                         />
                       </Link>
-                      <div class="item-1-contents">
-                        <div class="text-center">
+                      <div className="item-1-contents">
+                        <div className="text-center">
                           <h3>
                             <Link to="/#">Range Rover S64 Coupe</Link>
                           </h3>
-                          <div class="rating">
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
-                            <span class="icon-star text-warning"></span>
+                          <div className="rating">
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
+                            <span className="icon-star text-warning"></span>
                           </div>
-                          <div class="rent-price">
+                          <div className="rent-price">
                             <span>$250/</span>day
                           </div>
                         </div>
-                        <ul class="specs">
+                        <ul className="specs">
                           <li>
                             <span>Doors</span>
-                            <span class="spec">4</span>
+                            <span className="spec">4</span>
                           </li>
                           <li>
                             <span>Seats</span>
-                            <span class="spec">5</span>
+                            <span className="spec">5</span>
                           </li>
                           <li>
                             <span>Transmission</span>
-                            <span class="spec">Automatic</span>
+                            <span className="spec">Automatic</span>
                           </li>
                           <li>
                             <span>Minium age</span>
-                            <span class="spec">18 years</span>
+                            <span className="spec">18 years</span>
                           </li>
                         </ul>
-                        <div class="d-flex action">
-                          <Link to="/contact" class="btn btn-primary">
+                        <div className="d-flex action">
+                          <Link to="/contact" className="btn btn-primary">
                             Rent Now
                           </Link>
                         </div>
@@ -354,15 +353,15 @@ export default class Cars extends Component {
                     </div>
                   </div>
 
-                  <div class="col-12">
-                    <span class="p-3">1</span>
-                    <Link to="/#" class="p-3">
+                  <div className="col-12">
+                    <span className="p-3">1</span>
+                    <Link to="/#" className="p-3">
                       2
                     </Link>
-                    <Link to="/#" class="p-3">
+                    <Link to="/#" className="p-3">
                       3
                     </Link>
-                    <Link to="/#" class="p-3">
+                    <Link to="/#" className="p-3">
                       4
                     </Link>
                   </div>
@@ -370,9 +369,9 @@ export default class Cars extends Component {
               </div>
             </div>
 
-            <div class="container site-section mb-5">
-              <div class="row justify-content-center text-center">
-                <div class="col-7 text-center mb-5">
+            <div className="container site-section mb-5">
+              <div className="row justify-content-center text-center">
+                <div className="col-7 text-center mb-5">
                   <h2>How it works</h2>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -381,41 +380,41 @@ export default class Cars extends Component {
                   </p>
                 </div>
               </div>
-              <div class="how-it-works d-flex">
-                <div class="step">
-                  <span class="number">
+              <div className="how-it-works d-flex">
+                <div className="step">
+                  <span className="number">
                     <span>01</span>
                   </span>
-                  <span class="caption">Time &amp; Place</span>
+                  <span className="caption">Time &amp; Place</span>
                 </div>
-                <div class="step">
-                  <span class="number">
+                <div className="step">
+                  <span className="number">
                     <span>02</span>
                   </span>
-                  <span class="caption">Car</span>
+                  <span className="caption">Car</span>
                 </div>
-                <div class="step">
-                  <span class="number">
+                <div className="step">
+                  <span className="number">
                     <span>03</span>
                   </span>
-                  <span class="caption">Details</span>
+                  <span className="caption">Details</span>
                 </div>
-                <div class="step">
-                  <span class="number">
+                <div className="step">
+                  <span className="number">
                     <span>04</span>
                   </span>
-                  <span class="caption">Checkout</span>
+                  <span className="caption">Checkout</span>
                 </div>
-                <div class="step">
-                  <span class="number">
+                <div className="step">
+                  <span className="number">
                     <span>05</span>
                   </span>
-                  <span class="caption">Done</span>
+                  <span className="caption">Done</span>
                 </div>
               </div>
             </div>
           </div>
-        </body>
+        {/* </body> */}
       </div>
     );
   }

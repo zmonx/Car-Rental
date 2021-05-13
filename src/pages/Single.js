@@ -1,41 +1,40 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Bg from "../img/hero_2.jpg";
 
 
 export default class Single extends Component {
   render() {
     return (
       <div>
-        <body
+        {/* <body
           data-spy="scroll"
           data-target=".site-navbar-target"
           data-offset="300"
-        >
-          <div class="site-wrap" id="home-section">
-            <div class="site-mobile-menu site-navbar-target">
-              <div class="site-mobile-menu-header">
-                <div class="site-mobile-menu-close mt-3">
-                  <span class="icon-close2 js-menu-toggle"></span>
+        > */}
+          <div className="site-wrap" id="home-section">
+            <div className="site-mobile-menu site-navbar-target">
+              <div className="site-mobile-menu-header">
+                <div className="site-mobile-menu-close mt-3">
+                  <span className="icon-close2 js-menu-toggle"></span>
                 </div>
               </div>
-              <div class="site-mobile-menu-body"></div>
+              <div className="site-mobile-menu-body"></div>
             </div>
           </div>
-          <div class="ftco-blocks-cover-1">
+          <div className="ftco-blocks-cover-1">
             <div
-              class="ftco-cover-1 innerpage overlay"
-              style={{ backgroundImage: `url(${Bg})` }}
+              className="ftco-cover-1 innerpage overlay"
+              style={{ backgroundImage: "url(/images/hero_2.jpg"}}
             >
-              <div class="container">
-                <div class="row align-items-center justify-content-center">
-                  <div class="col-lg-6 text-center">
-                    <span class="d-block mb-3 text-white" data-aos="fade-up">
+              <div className="container">
+                <div className="row align-items-center justify-content-center">
+                  <div className="col-lg-6 text-center">
+                    <span className="d-block mb-3 text-white" data-aos="fade-up">
                       July 17, 2019{" "}
-                      <span class="mx-2 text-primary">&bullet;</span> by James
+                      <span className="mx-2 text-primary">&bullet;</span> by James
                       Miller
                     </span>
-                    <h1 class="mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <h1 className="mb-4" data-aos="fade-up" data-aos-delay="100">
                       Single Blog Posts Title
                     </h1>
                   </div>
@@ -44,11 +43,11 @@ export default class Single extends Component {
             </div>
           </div>
 
-          <div class="site-section">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-8 blog-content">
-                  <p class="lead">
+          <div className="site-section">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-8 blog-content">
+                  <p className="lead">
                     Far far away, behind the word mountains, far from the
                     countries Vokalia and Consonantia, there live the blind
                     texts. Separated they live in Bookmarksgrove right at the
@@ -118,7 +117,7 @@ export default class Single extends Component {
                     question ran over her cheek, then she continued her way.
                   </p>
 
-                  <div class="pt-5">
+                  <div className="pt-5">
                     <p>
                       Categories: <Link to="/#">Design</Link>,{" "}
                       <Link to="/">Events</Link> Tags:{" "}
@@ -126,19 +125,19 @@ export default class Single extends Component {
                     </p>
                   </div>
 
-                  <div class="pt-5">
-                    <h3 class="mb-5">6 Comments</h3>
-                    <ul class="comment-list">
-                      <li class="comment">
-                        <div class="vcard bio">
+                  <div className="pt-5">
+                    <h3 className="mb-5">6 Comments</h3>
+                    <ul className="comment-list">
+                      <li className="comment">
+                        <div className="vcard bio">
                           <img
                             src="images/person_2.jpg"
                             alt="Free Website Template by Free-Template.co"
                           />
                         </div>
-                        <div class="comment-body">
+                        <div className="comment-body">
                           <h3>Jacob Smith</h3>
-                          <div class="meta">January 9, 2018 at 2:21pm</div>
+                          <div className="meta">January 9, 2018 at 2:21pm</div>
                           <p>
                             When she reached the first hills of the Italic
                             Mountains, she had a last view back on the skyline
@@ -148,23 +147,23 @@ export default class Single extends Component {
                             her cheek, then she continued her way.
                           </p>
                           <p>
-                            <Link to="/#" class="reply">
+                            <Link to="/#" className="reply">
                               Reply
                             </Link>
                           </p>
                         </div>
                       </li>
 
-                      <li class="comment">
-                        <div class="vcard bio">
+                      <li className="comment">
+                        <div className="vcard bio">
                           <img
                             src="images/person_3.jpg"
                             alt="Free Website Template by Free-Template.co"
                           />
                         </div>
-                        <div class="comment-body">
+                        <div className="comment-body">
                           <h3>Chris Meyer</h3>
-                          <div class="meta">January 9, 2018 at 2:21pm</div>
+                          <div className="meta">January 9, 2018 at 2:21pm</div>
                           <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing
                             elit. Pariatur quidem laborum necessitatibus, ipsam
@@ -173,23 +172,23 @@ export default class Single extends Component {
                             necessitatibus, nihil?
                           </p>
                           <p>
-                            <Link to="/#" class="reply">
+                            <Link to="/#" className="reply">
                               Reply
                             </Link>
                           </p>
                         </div>
 
-                        <ul class="children">
-                          <li class="comment">
-                            <div class="vcard bio">
+                        <ul className="children">
+                          <li className="comment">
+                            <div className="vcard bio">
                               <img
                                 src="images/person_5.jpg"
                                 alt="Free Website Template by Free-Template.co"
                               />
                             </div>
-                            <div class="comment-body">
+                            <div className="comment-body">
                               <h3>Chintan Patel</h3>
-                              <div class="meta">January 9, 2018 at 2:21pm</div>
+                              <div className="meta">January 9, 2018 at 2:21pm</div>
                               <p>
                                 Far far away, behind the word mountains, far
                                 from the countries Vokalia and Consonantia,
@@ -198,23 +197,23 @@ export default class Single extends Component {
                                 Semantics, a large language ocean.
                               </p>
                               <p>
-                                <Link to="/" class="reply">
+                                <Link to="/" className="reply">
                                   Reply
                                 </Link>
                               </p>
                             </div>
 
-                            <ul class="children">
-                              <li class="comment">
-                                <div class="vcard bio">
+                            <ul className="children">
+                              <li className="comment">
+                                <div className="vcard bio">
                                   <img
                                     src="images/person_1.jpg"
                                     alt="Free Website Template by Free-Template.co"
                                   />
                                 </div>
-                                <div class="comment-body">
+                                <div className="comment-body">
                                   <h3>Jean Doe</h3>
-                                  <div class="meta">
+                                  <div className="meta">
                                     January 9, 2018 at 2:21pm
                                   </div>
                                   <p>
@@ -231,17 +230,17 @@ export default class Single extends Component {
                                   </p>
                                 </div>
 
-                                <ul class="children">
-                                  <li class="comment">
-                                    <div class="vcard bio">
+                                <ul className="children">
+                                  <li className="comment">
+                                    <div className="vcard bio">
                                       <img
                                         src="images/person_4.jpg"
                                         alt="Free Website Template by Free-Template.co"
                                       />
                                     </div>
-                                    <div class="comment-body">
+                                    <div className="comment-body">
                                       <h3>Ben Afflick</h3>
-                                      <div class="meta">
+                                      <div className="meta">
                                         January 9, 2018 at 2:21pm
                                       </div>
                                       <p>
@@ -253,7 +252,7 @@ export default class Single extends Component {
                                         for the far World of Grammar.
                                       </p>
                                       <p>
-                                        <Link to="/#" class="reply">
+                                        <Link to="/#" className="reply">
                                           Reply
                                         </Link>
                                       </p>
@@ -266,16 +265,16 @@ export default class Single extends Component {
                         </ul>
                       </li>
 
-                      <li class="comment">
-                        <div class="vcard bio">
+                      <li className="comment">
+                        <div className="vcard bio">
                           <img
                             src="images/person_1.jpg"
                             alt="Free Website Template by Free-Template.co"
                           />
                         </div>
-                        <div class="comment-body">
+                        <div className="comment-body">
                           <h3>Jean Doe</h3>
-                          <div class="meta">January 9, 2018 at 2:21pm</div>
+                          <div className="meta">January 9, 2018 at 2:21pm</div>
                           <p>
                             Even the all-powerful Pointing has no control about
                             the blind texts it is an almost unorthographic life
@@ -284,7 +283,7 @@ export default class Single extends Component {
                             World of Grammar.
                           </p>
                           <p>
-                            <Link to="/#" class="reply">
+                            <Link to="/#" className="reply">
                               Reply
                             </Link>
                           </p>
@@ -292,58 +291,58 @@ export default class Single extends Component {
                       </li>
                     </ul>
 
-                    <div class="comment-form-wrap pt-5">
-                      <h3 class="mb-5">Leave a comment</h3>
-                      <form action="#" class="">
-                        <div class="form-group">
+                    <div className="comment-form-wrap pt-5">
+                      <h3 className="mb-5">Leave a comment</h3>
+                      <form action="#" className="">
+                        <div className="form-group">
                           <label for="name">Name *</label>
-                          <input type="text" class="form-control" id="name" />
+                          <input type="text" className="form-control" id="name" />
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                           <label for="email">Email *</label>
-                          <input type="email" class="form-control" id="email" />
+                          <input type="email" className="form-control" id="email" />
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                           <label for="website">Website</label>
-                          <input type="url" class="form-control" id="website" />
+                          <input type="url" className="form-control" id="website" />
                         </div>
 
-                        <div class="form-group">
+                        <div className="form-group">
                           <label for="message">Message</label>
                           <textarea
                             name=""
                             id="message"
                             cols="30"
                             rows="10"
-                            class="form-control"
+                            className="form-control"
                           ></textarea>
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                           <input
                             type="submit"
                             value="Post Comment"
-                            class="btn btn-primary btn-md text-white"
+                            className="btn btn-primary btn-md text-white"
                           />
                         </div>
                       </form>
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4 sidebar">
-                  <div class="sidebar-box">
-                    <form action="#" class="search-form">
-                      <div class="form-group">
-                        <span class="icon fa fa-search"></span>
+                <div className="col-md-4 sidebar">
+                  <div className="sidebar-box">
+                    <form action="#" className="search-form">
+                      <div className="form-group">
+                        <span className="icon fa fa-search"></span>
                         <input
                           type="text"
-                          class="form-control"
+                          className="form-control"
                           placeholder="Type a keyword and hit enter"
                         />
                       </div>
                     </form>
                   </div>
-                  <div class="sidebar-box">
-                    <div class="categories">
+                  <div className="sidebar-box">
+                    <div className="categories">
                       <h3>Categories</h3>
                       <li>
                         <Link to="/#">
@@ -372,13 +371,13 @@ export default class Single extends Component {
                       </li>
                     </div>
                   </div>
-                  <div class="sidebar-box">
+                  <div className="sidebar-box">
                     <img
                       src="images/person_1.jpg"
                       alt="Free Website Template by Free-Template.co"
-                      class="img-fluid mb-4 w-50 rounded-circle"
+                      className="img-fluid mb-4 w-50 rounded-circle"
                     />
-                    <h3 class="text-black">About The Author</h3>
+                    <h3 className="text-black">About The Author</h3>
                     <p>
                       Even the all-powerful Pointing has no control about the
                       blind texts it is an almost unorthographic life One day
@@ -386,14 +385,14 @@ export default class Single extends Component {
                       Ipsum decided to leave for the far World of Grammar.
                     </p>
                     <p>
-                      <Link to="/#" class="btn btn-primary btn-md text-white">
+                      <Link to="/#" className="btn btn-primary btn-md text-white">
                         Read More
                       </Link>
                     </p>
                   </div>
 
-                  <div class="sidebar-box">
-                    <h3 class="text-black">Paragraph</h3>
+                  <div className="sidebar-box">
+                    <h3 className="text-black">Paragraph</h3>
                     <p>
                       When she reached the first hills of the Italic Mountains,
                       she had a last view back on the skyline of her hometown
@@ -406,7 +405,7 @@ export default class Single extends Component {
               </div>
             </div>
           </div>
-        </body>
+        {/* </body> */}
       </div>
     );
   }

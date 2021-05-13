@@ -1,32 +1,31 @@
 import React, { Component } from "react";
-import Bg from "../img/hero_2.jpg";
 
 export default class Services extends Component {
   render() {
     return (
       <div>
-        <body
+        {/* <body
           data-spy="scroll"
           data-target=".site-navbar-target"
           data-offset="300"
-        >
-          <div class="site-wrap" id="home-section">
-            <div class="site-mobile-menu site-navbar-target">
-              <div class="site-mobile-menu-header">
-                <div class="site-mobile-menu-close mt-3">
-                  <span class="icon-close2 js-menu-toggle"></span>
+        > */}
+          <div className="site-wrap" id="home-section">
+            <div className="site-mobile-menu site-navbar-target">
+              <div className="site-mobile-menu-header">
+                <div className="site-mobile-menu-close mt-3">
+                  <span className="icon-close2 js-menu-toggle"></span>
                 </div>
               </div>
-              <div class="site-mobile-menu-body"></div>
+              <div className="site-mobile-menu-body"></div>
             </div>
-            <div class="ftco-blocks-cover-1">
+            <div className="ftco-blocks-cover-1">
               <div
-                class="ftco-cover-1 overlay innerpage"
-                style={{ backgroundImage: `url(${Bg})` }}
+                className="ftco-cover-1 overlay innerpage"
+                style={{ backgroundImage:"url(images/hero_2.jpg)"}}
               >
-                <div class="container">
-                  <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-6 text-center">
+                <div className="container">
+                  <div className="row align-items-center justify-content-center">
+                    <div className="col-lg-6 text-center">
                       <h1>Our Services</h1>
                       <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -37,15 +36,15 @@ export default class Services extends Component {
               </div>
             </div>
 
-            <div class="site-section">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-4 mb-4 mb-lg-5">
-                    <div class="service-1 dark">
-                      <span class="service-1-icon">
-                        <span class="flaticon-car"></span>
+            <div className="site-section">
+              <div className="container">
+                <div className="row">
+                  <div className="col-lg-4 mb-4 mb-lg-5">
+                    <div className="service-1 dark">
+                      <span className="service-1-icon">
+                        <span className="flaticon-car"></span>
                       </span>
-                      <div class="service-1-contents">
+                      <div className="service-1-contents">
                         <h3>Car Key</h3>
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -54,12 +53,12 @@ export default class Services extends Component {
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-4 mb-4 mb-lg-5">
-                    <div class="service-1 dark">
-                      <span class="service-1-icon">
-                        <span class="flaticon-valet-1"></span>
+                  <div className="col-lg-4 mb-4 mb-lg-5">
+                    <div className="service-1 dark">
+                      <span className="service-1-icon">
+                        <span className="flaticon-valet-1"></span>
                       </span>
-                      <div class="service-1-contents">
+                      <div className="service-1-contents">
                         <h3>Car Key</h3>
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -68,12 +67,12 @@ export default class Services extends Component {
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-4 mb-4 mb-lg-5">
-                    <div class="service-1 dark">
-                      <span class="service-1-icon">
-                        <span class="flaticon-key"></span>
+                  <div className="col-lg-4 mb-4 mb-lg-5">
+                    <div className="service-1 dark">
+                      <span className="service-1-icon">
+                        <span className="flaticon-key"></span>
                       </span>
-                      <div class="service-1-contents">
+                      <div className="service-1-contents">
                         <h3>Car Key</h3>
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -82,12 +81,12 @@ export default class Services extends Component {
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-4 mb-4 mb-lg-5">
-                    <div class="service-1 dark">
-                      <span class="service-1-icon">
-                        <span class="flaticon-car-1"></span>
+                  <div className="col-lg-4 mb-4 mb-lg-5">
+                    <div className="service-1 dark">
+                      <span className="service-1-icon">
+                        <span className="flaticon-car-1"></span>
                       </span>
-                      <div class="service-1-contents">
+                      <div className="service-1-contents">
                         <h3>Repair</h3>
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -96,12 +95,12 @@ export default class Services extends Component {
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-4 mb-4 mb-lg-5">
-                    <div class="service-1 dark">
-                      <span class="service-1-icon">
-                        <span class="flaticon-traffic"></span>
+                  <div className="col-lg-4 mb-4 mb-lg-5">
+                    <div className="service-1 dark">
+                      <span className="service-1-icon">
+                        <span className="flaticon-traffic"></span>
                       </span>
-                      <div class="service-1-contents">
+                      <div className="service-1-contents">
                         <h3>Car Accessories</h3>
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -110,12 +109,12 @@ export default class Services extends Component {
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-4 mb-4 mb-lg-5">
-                    <div class="service-1 dark">
-                      <span class="service-1-icon">
-                        <span class="flaticon-valet"></span>
+                  <div className="col-lg-4 mb-4 mb-lg-5">
+                    <div className="service-1 dark">
+                      <span className="service-1-icon">
+                        <span className="flaticon-valet"></span>
                       </span>
-                      <div class="service-1-contents">
+                      <div className="service-1-contents">
                         <h3>Own a Car</h3>
                         <p>
                           Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -128,9 +127,9 @@ export default class Services extends Component {
               </div>
             </div>
 
-            <div class="container site-section mb-5">
-              <div class="row justify-content-center text-center">
-                <div class="col-7 text-center mb-5">
+            <div className="container site-section mb-5">
+              <div className="row justify-content-center text-center">
+                <div className="col-7 text-center mb-5">
                   <h2>How it works</h2>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -139,41 +138,41 @@ export default class Services extends Component {
                   </p>
                 </div>
               </div>
-              <div class="how-it-works d-flex">
-                <div class="step">
-                  <span class="number">
+              <div className="how-it-works d-flex">
+                <div className="step">
+                  <span className="number">
                     <span>01</span>
                   </span>
-                  <span class="caption">Time &amp; Place</span>
+                  <span className="caption">Time &amp; Place</span>
                 </div>
-                <div class="step">
-                  <span class="number">
+                <div className="step">
+                  <span className="number">
                     <span>02</span>
                   </span>
-                  <span class="caption">Car</span>
+                  <span className="caption">Car</span>
                 </div>
-                <div class="step">
-                  <span class="number">
+                <div className="step">
+                  <span className="number">
                     <span>03</span>
                   </span>
-                  <span class="caption">Details</span>
+                  <span className="caption">Details</span>
                 </div>
-                <div class="step">
-                  <span class="number">
+                <div className="step">
+                  <span className="number">
                     <span>04</span>
                   </span>
-                  <span class="caption">Checkout</span>
+                  <span className="caption">Checkout</span>
                 </div>
-                <div class="step">
-                  <span class="number">
+                <div className="step">
+                  <span className="number">
                     <span>05</span>
                   </span>
-                  <span class="caption">Done</span>
+                  <span className="caption">Done</span>
                 </div>
               </div>
             </div>
           </div>
-        </body>
+        {/* </body> */}
       </div>
     );
   }
