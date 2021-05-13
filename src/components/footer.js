@@ -21,39 +21,19 @@ export default class footer extends Component {
             <h2 className="footer-heading mb-4">Quick Links</h2>
             <ul className="list-unstyled">
               <li>
-                <link to="/#" />About Us
+                <Link to="/#">About Us</Link>
               </li>
               <li>
-                <link to="/#" />Testimonials
+                <Link to="/#">Testimonials</Link>
               </li>
               <li>
-                <link yo="/#" />Terms of Service
+                <Link yo="/#">Terms of Service</Link>
               </li>
               <li>
-                <link to="/#" />Privacy
+                <Link to="/#">Privacy</Link>
               </li>
               <li>
-                <link to="/#" />Contact Us
-              </li>
-            </ul>
-          </div>
-          <div className="col-lg-3">
-            <h2 className="footer-heading mb-4">Quick Links</h2>
-            <ul className="list-unstyled">
-              <li>
-                <link to="/#" />About Us
-              </li>
-              <li>
-                <link to="/#" />Testimonials
-              </li>
-              <li>
-                <link to="/#" />Terms of Service
-              </li>
-              <li>
-                <link to="/#" />Privacy
-              </li>
-              <li>
-                <link to="/#" />Contact Us
+                <Link to="/#">Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -61,19 +41,19 @@ export default class footer extends Component {
             <h2 className="footer-heading mb-4">Quick Links</h2>
             <ul className="list-unstyled">
               <li>
-                <link to="/#" />About Us
+                <Link to="/#">About Us</Link>
               </li>
               <li>
-                <link to="/#" />Testimonials
+                <Link to="/#">Testimonials</Link>
               </li>
               <li>
-                <link to="/#" />Terms of Service
+                <Link to="/#" >Terms of Service</Link>
               </li>
               <li>
-                <link to="/#" />Privacy
+                <Link to="/#" >Privacy</Link>
               </li>
               <li>
-                <link to="/#" />Contact Us
+                <Link to="/#" >Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -81,19 +61,39 @@ export default class footer extends Component {
             <h2 className="footer-heading mb-4">Quick Links</h2>
             <ul className="list-unstyled">
               <li>
-                <link to="/#" />About Us
+                <Link to="/#">About Us</Link>
               </li>
               <li>
-                <link to="/#" />Testimonials
+                <Link to="/#" >Testimonials</Link>
               </li>
               <li>
-                <link to="/#" />Terms of Service
+                <Link to="/#" >Terms of Service</Link>
               </li>
               <li>
-                <link to="/#" />Privacy
+                <Link to="/#">Privacy</Link>
               </li>
               <li>
-                <link to="/#" />Contact Us
+                <Link to="/#">Contact Us</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="col-lg-3">
+            <h2 className="footer-heading mb-4">Quick Links</h2>
+            <ul className="list-unstyled">
+              <li>
+                <Link to="/#" >About Us</Link>
+              </li>
+              <li>
+                <Link to="/#" >Testimonials</Link>
+              </li>
+              <li>
+                <Link to="/#" >Terms of Service</Link>
+              </li>
+              <li>
+                <Link to="/#" >Privacy</Link>
+              </li>
+              <li>
+                <Link to="/#" >Contact Us</Link>
               </li>
             </ul>
           </div>
