@@ -6,18 +6,18 @@ const Product = require('.././src/models/products');
 const ObjectId = mongodb.ObjectId;
 
 
-exports.getByname = (req, res) => {
+exports.getById = (req, res) => {
     const { product_id } = req.params;
-    Product.fetchAllByID(product_id)
+    Product.fetchCarByID(product_id)
       .then(products => {
-        res.json({'products':products})
+        res.json({'Car':products})
     });
 }
 
 exports.getCarAll = (req, res) => {
     Product.fetCarAll()
         .then(products => {
-            res.json({'Car':products})
+            res.json(products)
 });
 }
 

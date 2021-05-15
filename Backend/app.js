@@ -7,7 +7,9 @@ const mongoConnect = require('./util/database').mongoConnect;
 const app = express();
 
 
+var cors = require('cors')
 
+app.use(cors())
 const productData = require('./src/routes/products');
 
 app.use(bodyParser.urlencoded({ extended: false }));
