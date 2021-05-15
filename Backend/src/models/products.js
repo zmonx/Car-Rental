@@ -2,16 +2,21 @@ const mongodb = require('mongodb');
 const getDb = require('../../util/database').getDb;
 
 class Products {
-    constructor(product_name, price, id) {
-        this.product_name = product_name;
-        this.price = price;
-        this._id = id; 
-        // this.name 
+
+    constructor(Brand,Modal,Price_day,Doors,Seats,Transmission,id) {
+        this.Brand = Brand,
+        this.Modal = Modal,
+        this.Price_day =Price_day,
+        this.Doors = Doors,
+        this.Seats = Seats,
+        this.Transmission = Transmission,
+        this._id =id
     }
-    static fetchAllByID(prodId) {
+
+    static fetchCarByID(prodId) {
         const db = getDb();
         return db
-            .collection('products')
+            .collection('Car')
             .find({ _id: new mongodb.ObjectId(prodId) })
             .toArray()
             .then(products => {

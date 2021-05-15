@@ -33,19 +33,18 @@ export default class Cars extends Component {
       this.state.cars.map(cars => (
         <div className="col-lg-4 col-md-6 mb-4">
             <div className="item-1">
-              <Link to="/#">
+              <Link to="detail">
                 <img
                   src={cars.img}
                   alt="Image"
                   className="img-fluid"
-                  
                   style={{width:"350px"}}
                 />
               </Link>
               <div className="item-1-contents">
                 <div className="text-center">
                   <h3>
-                    <Link to="/#">{cars.Brand} {cars.Modal}</Link>
+                    <Link to="detail">{cars.Brand} {cars.Modal}</Link>
                   </h3>
                   <div className="rating">
                     <span className="icon-star text-warning"></span>

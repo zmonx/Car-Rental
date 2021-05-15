@@ -5,12 +5,12 @@ var cors = require('cors')
 var app = express()
 const productsController = require('../../controllers/products');
 
+app.use(cors())
 
-// router.get('/details/:product_id',productsController.getByname);
+router.get('/details/:product_id',productsController.getById);
 router.get('/car', productsController.getCarAll);
 
 
-app.use(cors())
 
 app.get('/test', function (req, res, next) {
     res.json({msg: 'This is CORS-enabled for all origins!'})

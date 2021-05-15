@@ -11,6 +11,7 @@ import Head from './components/header';
 import Foot from './components/footer';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Detail from './pages/Detail';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
             <Route path='/blog' component={Blog}/>
             <Route path='/contact' component={Contact}/>
             <Route path='/single' component={Single}/>
+            <Route path='/detail' component={Detail}/>
+
           </Switch>
         <Foot />
       </Router>
