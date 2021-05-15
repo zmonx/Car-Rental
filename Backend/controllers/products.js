@@ -17,7 +17,7 @@ exports.getByname = (req, res) => {
 exports.getCarAll = (req, res) => {
     Product.fetCarAll()
         .then(products => {
-            res.json({'Car':products})
+            res.json(products)
 });
 }
 

@@ -1,8 +1,8 @@
 const express = require('express');
-
 // const { check } = require('express-validator')
 const router = express.Router();
-
+var cors = require('cors')
+var app = express()
 const productsController = require('../../controllers/products');
 
 
@@ -10,12 +10,12 @@ const productsController = require('../../controllers/products');
 router.get('/car', productsController.getCarAll);
 
 
+app.use(cors())
 
-
-router.get ('/testq',(req , res) => {
-    res.json("dsf sdfgysdgfhdsgfhdsgfhsdghfgdsyufgdhh fhudfgsdhjbhuiy");
-});
-
+app.get('/test', function (req, res, next) {
+    res.json({msg: 'This is CORS-enabled for all origins!'})
+  })
+   
 
 exports.routes = router;
 
