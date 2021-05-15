@@ -38,6 +38,8 @@ export default class Cars extends Component {
                   src={cars.img}
                   alt="Image"
                   className="img-fluid"
+                  
+                  style={{width:"350px"}}
                 />
               </Link>
               <div className="item-1-contents">
