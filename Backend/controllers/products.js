@@ -2,6 +2,8 @@
 const mongodb = require('mongodb');
 // const Product = require('../models/products');
 const Product = require('.././src/models/products');
+const Rent = require('.././src/models/rent');
+
 
 const ObjectId = mongodb.ObjectId;
 
@@ -22,6 +24,20 @@ exports.getCarAll = (req, res) => {
 }
 
 
+exports.postAddProduct = (req, res, next) => {
+    console.log(req.body);
+    const {Id_car,FirstName,LastName,Email,Id_License,Tel,Journey_date,Return_date,Total_price,Description,Status} = req.body;
+    const rent = new Rent(Id_car,FirstName,LastName,Email,Id_License,Tel,Journey_date,Return_date,Total_price,Description,Status);
+        rent
+        .save()
+        .then(result => {
+            console.log('Created Product');
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
+};
 
 
 

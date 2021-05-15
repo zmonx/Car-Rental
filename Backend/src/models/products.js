@@ -42,6 +42,27 @@ class Products {
                 console.log(err);
             });
     }
+
+    save() {
+        const db = getDb();
+        let dbOp;
+        if (this._id) {
+            // Update the product
+            dbOp = db
+                .collection('Rent')
+                .updateOne({ _id: new mongodb.ObjectId(this._id) }, { $set: this });
+        } else {
+            // Insert product
+            dbOp = db.collection('Rent').insertOne(this);
+        }
+        return dbOp
+            .then(result => {
+                console.log(result);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
 }
 
 module.exports = Products;

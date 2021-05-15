@@ -11,10 +11,10 @@ router.get('/details/:product_id',productsController.getById);
 router.get('/car', productsController.getCarAll);
 
 
+router.post('/insert', productsController.postAddProduct);
 
-app.get('/test', function (req, res, next) {
-    res.json({msg: 'This is CORS-enabled for all origins!'})
-  })
+
+
    
 
 exports.routes = router;
@@ -22,11 +22,6 @@ exports.routes = router;
 
 // /admin/add-product => GET
 // router.get('/search', productsController.getSearchProduct);
-
-// router.post('/insert', [
-//     check('product_name').trim().not().isEmpty().withMessage("product name is required"),
-//     check('price').isFloat({ gt: 0 }).withMessage("greater than zero")
-// ], productsController.postAddProduct);
 
 // router.post('/update', [
 //     check('product_id').not().isEmpty().withMessage("empty"),
