@@ -17,12 +17,26 @@ export default class Manage extends Component {
         console.log("DidMount");
         axios.get("http://localhost:8000/car")
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 this.setState({ car: response.data });
             },
                 function (error) {
                     console.log(error);
                 })
+    }
+
+
+    delete(id){
+        // console.log("DidMount");
+        // axios.post("http://localhost:8000/delete/"+id)
+        //     .then(response => {
+        //         console.log(response.data);
+        //         this.setState({ car: response.data });
+        //     },
+        //         function (error) {
+        //             console.log(error);
+        //         })
+        console.log("test",id);
     }
 
 
@@ -43,7 +57,7 @@ export default class Manage extends Component {
                             <td>{cars.Price_day}</td>
                             <td>
                                 <a href="" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                                <a href="" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-danger"> <i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
+                                <button class="btn btn-danger" onClick={this.delete(cars.Modal)}> Delete</button>
                             </td>
                         </tr>
                     </tbody>
