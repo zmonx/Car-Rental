@@ -12,6 +12,7 @@ import Foot from './components/footer';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Detail from './pages/Detail';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path='/contact' component={Contact}/>
             <Route path='/single' component={Single}/>
             <Route path='/detail' component={Detail}/>
+            <Route path='/login' component={Login}/>
 
           </Switch>
         <Foot />
