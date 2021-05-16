@@ -3,6 +3,7 @@ import "./contact.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { DateTimePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateMomentUtils from "@date-io/moment";
+
 function Rent() {
   const [selectedDate, handleDateChange] = useState(new Date());
 
