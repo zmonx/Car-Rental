@@ -19,15 +19,18 @@ class Login extends Component {
                 </div>
                 <div className="ftco-blocks-cover-1">
                     <div
+                    
                         className="ftco-cover-1 overlay innerpage"
                         style={{ backgroundImage: "url(images/hero_2.jpg" }}
                     >
                         <div className="container">
+                        <br></br><br></br><br></br><br></br><br></br><br></br>
                             <div className="row align-items-center justify-content-center">
                                 {/* <div className="col-lg-6 text-center">
                                     <h1>Contact Us</h1>
                                     <p>Look for a car, look for car rent.</p>
                                 </div> */}
+                                <br></br>
                                 <div className="card col-lg-6">
                                 <div className="col-lg-8 mx-auto">
                                 <form>
@@ -55,7 +58,9 @@ class Login extends Component {
                                 </div>
                                 
                                 </div>
+                     
                             </div>
+                            <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
                         </div>
                     </div>
                 </div>

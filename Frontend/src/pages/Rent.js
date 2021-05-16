@@ -3,7 +3,7 @@ import "./contact.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { DateTimePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateMomentUtils from "@date-io/moment";
-function Contacts() {
+function Rent() {
   const [selectedDate, handleDateChange] = useState(new Date());
 
   return (
@@ -31,8 +31,8 @@ function Contacts() {
           <div className="container">
             <div className="row align-items-center justify-content-center">
               <div className="col-lg-6 text-center">
-                <h1>Contact Us</h1>
-                <p>Look for a car, look for car rent.</p>
+                <h1>Rent for car  </h1>
+                <p>Look for a car, look for car rental.</p>
               </div>
             </div>
           </div>
@@ -42,14 +42,14 @@ function Contacts() {
       <div className="site-section bg-light" id="contact-section">
         <div className="container">
           <div className="row justify-content-center text-center">
-            <div className="col-7 text-center mb-5">
+            {/* <div className="col-7 text-center mb-5">
               <h2>Contact Us Or Use This Form To Rent A Car</h2>
               <p>
                 Easy car rental, just fill out the details. Waiting for an email
                 reply You will be able to pick up the car at the time of
                 booking.
               </p>
-            </div>
+            </div> */}
           </div>
           <div className="row">
             <div className="col-lg-8 mb-5">
@@ -221,4 +221,4 @@ function Contacts() {
   );
 }
 
-export default Contacts;
+export default Rent;

@@ -49,29 +49,29 @@ export default class header extends Component {
                         Home
                         </Link>
                       </li>
-                      <li>
+                      {/* <li>
                         <Link to="/services" className="nav-Link">
                         Services
                         </Link>
-                      </li>
+                      </li> */}
                       <li>
                         <Link to="/cars" className="nav-Link">
                         Cars
                         </Link>
                       </li>
                       <li>
-                        <Link to="/about" className="nav-Link">
-                        About
+                        <Link to="/login" className="nav-Link">
+                        Admin
                         </Link>
                       </li>
-                      <li>
+                      {/* <li>
                         <Link to="/blog" className="nav-Link" >
                         Blog
                         </Link>
-                      </li>
+                      </li> */}
                       <li>
-                        <Link to="/contact" className="nav-Link">
-                        Contact
+                        <Link to="/rent" className="nav-Link">
+                        Rent
                         </Link>
                       </li>
                     </ul>

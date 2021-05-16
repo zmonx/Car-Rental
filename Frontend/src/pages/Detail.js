@@ -22,58 +22,70 @@ class Detail extends Component {
                         <div className="site-mobile-menu-body"></div>
                     </div>
                 </div>
-                <div className="ftco-blocks-cover-1">
+                <div className="ftco-blocks-cover-1 ">
                     <div
-                        className="ftco-cover-1 overlay innerpage"
-                        style={{ backgroundImage: "url(images/hero_2.jpg" }}
+                        className="ftco-cover-1 overlay innerpage "
+                        style={{ backgroundImage: "url(images/hero_2.jpg"  }}
                     >
                         <div className="container">
                             <div className="row align-items-center justify-content-center">
+                            {/* <h1 style={{color: "white"}} >CAR DETAILS</h1> */}
+                            <div className="col-lg-6 text-center">
+                                    <h1>CAR DETAILS</h1>
+                                    <p>Look for a car, look for car rent.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <br></br><br></br>
-                <div class="product-big-title-area">
+                {/* <div class="product-big-title-area">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="product-bit-title text-center">
-                                    <h2>PRODUCTS</h2>
+                                <br></br><h2>CAR DETAILS</h2>  <br></br>
+                                    <hr></hr>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <br></br><br></br>
-                <div class="container bootdey">
-                    <div class="col-md-12">
-                        <section class="panel">
-                            <div class="panel-body">
-                                <div class="col-md-6">
-                                    <div class="pro-img-details"> <br></br>
-                                        <img src="<%- img_path%>" alt="" />
+                <div className="container bootdey">
+                    <div className="col-md-12">
+                        <section className="panel">
+                            <div className="panel-body">
+                            <div className="row">
+                                <div className="col-md-3">
+                                    <div className="pro-img-details"> <br></br>
+                                        <img src="images\img_4.jpg" style={{width:"200%"}} alt="" />
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div className="col-md-3"></div>
+                                <div className="col-md-6">
                                     <br></br>
-                                    <h2 class="">
+                                    <h2 className="">
                                     </h2>
-                                    <div class="product_meta">
-                                        <span class="posted_in"> <strong class="">Categories : </strong>   </span>
-                                        <span class="tagged_as"><strong class="">Tags : </strong> <a rel="tag" href="#">APPLE</a>, <a rel="tag" href="#">UNISEX</a>.</span>
+                                    <div className="product_meta">
+                                        <h4>Brand : </h4>
+                                        <h4>Modal : </h4>
+                                        <h4>Price / Day  : ฿</h4>
+                                        <h4>Doors : </h4>
+                                        <h4>Seats : </h4>
+                                        <h4>Transmission : </h4>
+                                        <h4>Description : Lorem ipsum dolor sit amet, os risus, et blandit ligula pellentesque non. Nam semper elementum auctor. Proin vestibulum nulla at ullamcorper porta. Suspendisse pellentesque lorem velit, in tempor urna feugiat eget. Maecenas fermentum iaculis orci, sit amet vehicula sapien vehicula eu. In hac habitasse platea dictumst. Nunc sed vehicula odio. </h4>
+
                                     </div>
-                                    <div class="m-bot15"> <strong class="">Price : </strong>   <span class="pro-price"> ฿  </span></div>
                                     <br></br>
-                                    <div class="quantity quantitys">
-                                        <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1" />
-                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </section>
                     </div>
                 </div>
+                <br></br><br></br>  <br></br><br></br>  <br></br><br></br>
             </div>
         );
     }
