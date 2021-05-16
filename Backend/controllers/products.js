@@ -11,27 +11,30 @@ const ObjectId = mongodb.ObjectId;
 exports.getById = (req, res) => {
     const { product_id } = req.params;
     Product.fetchCarByID(product_id)
-      .then(products => {
-        res.json({'Car':products})
-    });
+        .then(products => {
+            res.json({ 'Car': products })
+        });
 }
 
 exports.getCarAll = (req, res) => {
     Product.fetCarAll()
         .then(products => {
             res.json(products)
-});
+        });
 }
 
 
 exports.postAddProduct = (req, res, next) => {
-    console.log(req.body);
-    const {Id_car,FirstName,LastName,Email,Id_License,Tel,Journey_date,Return_date,Total_price,Description,Status} = req.body;
-    const rent = new Rent(Id_car,FirstName,LastName,Email,Id_License,Tel,Journey_date,Return_date,Total_price,Description,Status);
-        rent
+
+    const { Brand, Modal, Price_day, Doors, Seats, Transmission, img } = req.body;
+    console.log("🚀 ~ file: products.js ~ line 30 ~ Brand", Brand)
+
+    const product = new Product(Brand, Modal, Price_day, Doors, Seats, Transmission, img);
+    product
         .save()
         .then(result => {
             console.log('Created Product');
+            res.json({ "msg": 'ok' });
         })
         .catch(err => {
             console.log(err);

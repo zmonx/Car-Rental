@@ -3,14 +3,14 @@ const getDb = require('../../util/database').getDb;
 
 class Products {
 
-    constructor(Brand,Modal,Price_day,Doors,Seats,Transmission,id) {
-        this.Brand = Brand,
-        this.Modal = Modal,
-        this.Price_day =Price_day,
-        this.Doors = Doors,
-        this.Seats = Seats,
-        this.Transmission = Transmission,
-        this._id =id
+    constructor(Brand, Modal, Price_day, Doors, Seats, Transmission, id) {
+            this.Brand = Brand,
+            this.Modal = Modal,
+            this.Price_day = Price_day,
+            this.Doors = Doors,
+            this.Seats = Seats,
+            this.Transmission = Transmission,
+            this._id = id
     }
 
     static fetchCarByID(prodId) {
@@ -49,11 +49,11 @@ class Products {
         if (this._id) {
             // Update the product
             dbOp = db
-                .collection('Rent')
+                .collection('Car')
                 .updateOne({ _id: new mongodb.ObjectId(this._id) }, { $set: this });
         } else {
             // Insert product
-            dbOp = db.collection('Rent').insertOne(this);
+            dbOp = db.collection('Car').insertOne(this);
         }
         return dbOp
             .then(result => {
