@@ -7,30 +7,16 @@ const productsController = require('../../controllers/products');
 
 app.use(cors())
 
-router.get('/details/:product_id',productsController.getById);
+router.get('/details/:product_id', productsController.getById);
 router.get('/car', productsController.getCarAll);
 
 
-router.post('/insert', productsController.postAddProduct);
+router.get('/insert/:Brand/:Modal/:Price_day/:Doors/:Seats/:Transmission/:img', productsController.postAddProduct);
+
+router.get("/delete/:car_id", productsController.getDeleteProduct);
 
 
 
-   
 
 exports.routes = router;
 
-
-// /admin/add-product => GET
-// router.get('/search', productsController.getSearchProduct);
-
-// router.post('/update', [
-//     check('product_id').not().isEmpty().withMessage("empty"),
-//     check('product_name').trim().isLength({ min: 1 }).withMessage("product name is required"),
-//     check('price').isFloat({ gt: 0 }).withMessage("greater than zero")
-// ], productsController.postUpdateProduct);
-
-// router.get('/delete/:product_id', productsController.getDeleteProduct);
-
-// router.get('/update/:product_id', productsController.getUpdateProduct);
-
-// router.get('/test', productsController.test);

@@ -3,13 +3,14 @@ const getDb = require('../../util/database').getDb;
 
 class Products {
 
-    constructor(Brand, Modal, Price_day, Doors, Seats, Transmission, id) {
-            this.Brand = Brand,
+    constructor(Brand, Modal, Price_day, Doors, Seats, Transmission, img, id) {
+        this.Brand = Brand,
             this.Modal = Modal,
             this.Price_day = Price_day,
             this.Doors = Doors,
             this.Seats = Seats,
             this.Transmission = Transmission,
+            this.img = img,
             this._id = id
     }
 
@@ -39,6 +40,19 @@ class Products {
                 return products;
             })
             .catch(err => {
+                console.log(err);
+            });
+    }
+
+    static deleteById(prodId) {
+        const db = getDb();
+        return db
+            .collection("Car")
+            .deleteOne({ _id: new mongodb.ObjectId(prodId) })
+            .then((result) => {
+                console.log("Deleted");
+            })
+            .catch((err) => {
                 console.log(err);
             });
     }

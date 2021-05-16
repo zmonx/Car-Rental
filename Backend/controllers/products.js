@@ -26,7 +26,7 @@ exports.getCarAll = (req, res) => {
 
 exports.postAddProduct = (req, res, next) => {
 
-    const { Brand, Modal, Price_day, Doors, Seats, Transmission, img } = req.body;
+    const { Brand, Modal, Price_day, Doors, Seats, Transmission, img } = req.params;
     console.log("🚀 ~ file: products.js ~ line 30 ~ Brand", Brand)
 
     const product = new Product(Brand, Modal, Price_day, Doors, Seats, Transmission, img);
@@ -34,7 +34,7 @@ exports.postAddProduct = (req, res, next) => {
         .save()
         .then(result => {
             console.log('Created Product');
-            res.json({ "msg": 'ok' });
+            res.json({ "msg": Brand });
         })
         .catch(err => {
             console.log(err);
@@ -42,6 +42,15 @@ exports.postAddProduct = (req, res, next) => {
 
 };
 
+exports.getDeleteProduct = (req, res, next) => {
+    const { car_id } = req.params;
+    console.log(car_id);
+    Product.deleteById(car_id)
+      .then(() => {
+        console.log("Delete Product");
+      })
+      .catch((err) => console.log(err));
+  };
 
 
 
