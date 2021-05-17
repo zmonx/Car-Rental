@@ -46,7 +46,7 @@ export default class Test extends Component {
                                             <input type="hidden" name="product_id" value="" />
 
                                             <label for="Brand">Brand</label>
-                                            <input type="text" class="form-control" name="Brand" value={carThis.Brand} />
+                                            <input type="text" class="form-control" name="Brand" value="" />
                                         </div>
                                         <div class="form-group">
                                             <label for="Model">Model</label>
