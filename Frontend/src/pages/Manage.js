@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { Component } from 'react'
-
+import { FaPencilAlt } from 'react-icons/fa';
+import { FaPlus } from 'react-icons/fa';
+import { FaSearch} from 'react-icons/fa';
 export default class Manage extends Component {
 
 
@@ -92,18 +94,18 @@ export default class Manage extends Component {
                         </div>
                     </div>
                 </div>
-                <div class="container mt-3">
+                <div className="container mt-3">
                     <br></br>  <br></br>  <br></br>
-                    <div class="row">
-                        <div class="col-md-10">
-                            <input class="form-control" id="myInput" type="text" placeholder="Search.." />
+                    <div className="row">
+                        <div className="col-md-10">
+                           <input className="form-control"  id="myInput" type="text"  placeholder="Search.." />
                         </div>
-                        <div class="col-md-2">
-                            <a href="/insert" class="btn btn-primary btn-block"><i class="fa fa-plus" aria-hidden="true"></i> New Product</a>
+                        <div className="col-md-2">
+                            <a href="/insert" className="btn btn-primary btn-block"><FaPlus/> New Product</a>
                         </div>
                     </div>
                     <br></br>  <br></br>
-                    <table class="table table-bordered text-center">
+                    <table className="table table-bordered text-center">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -116,7 +118,7 @@ export default class Manage extends Component {
                     {this.showProducts()}
                     </table>
                 </div>
-                <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>
+                {/* <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br> */}
             </div>
         )
     }

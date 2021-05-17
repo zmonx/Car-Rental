@@ -53,7 +53,7 @@ function Rent() {
             </div> */}
           </div>
           <div className="row">
-            <div className="col-lg-8 mb-5">
+            <div className="col-md-10">
               <div className="Book3ContentA-head-option">YOUR INFORMATION</div>
               <br></br>
               <form action="#" method="post">
