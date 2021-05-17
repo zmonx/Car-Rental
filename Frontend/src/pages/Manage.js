@@ -1,12 +1,10 @@
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import React, { Component } from 'react'
 import { FaPencilAlt } from 'react-icons/fa';
 import { FaPlus } from 'react-icons/fa';
 import { FaSearch} from 'react-icons/fa';
 export default class Manage extends Component {
-
-
-
 
 
 
@@ -54,7 +52,9 @@ export default class Manage extends Component {
                             <td>{cars.Modal}</td>
                             <td>{cars.Price_day}</td>
                             <td>
-                                <a href="" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                                {/* <a href="" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> */}
+                                {/* <Link class="btn btn-warning" to={{    pathname: "/cars",    state: cars._id   }}> Edit </Link> */}
+                                <Link class="btn btn-warning" to={{pathname: '/cars', state: { cars_id: cars }}}>Edit</Link>
                                 {/* <button class="btn btn-danger" onClick={() => this.delete(cars._id)}> Delete</button> */}
                                 <button class="btn btn-danger" onClick={(e) => { if (window.confirm('Are you sure you wish to delete this item?')) this.delete(cars._id) } }> Delete</button>
 

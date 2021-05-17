@@ -16,6 +16,7 @@ import Login from './pages/Login';
 import Rent from './pages/Rent';
 import Manage from './pages/Manage';
 import Edit from './pages/Edit';
+import Test from './pages/Test';
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
             <Route path='/login' component={Login}/>
             <Route path='/manage' component={Manage}/>
             <Route path='/edit' component={Edit}/>
+            <Route path='/test' component={Test}/>
+
 
 
           </Switch>
