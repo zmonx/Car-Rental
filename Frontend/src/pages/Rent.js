@@ -3,17 +3,17 @@ import "./contact.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { DateTimePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateMomentUtils from "@date-io/moment";
-
 function Rent() {
   const [selectedDate, handleDateChange] = useState(new Date());
-
   return (
     <div>
-      {/* <body
-          data-spy="scroll"
-          data-target=".site-navbar-target"
-          data-offset="300"
-        > */}
+      {/* 
+   <body
+      data-spy="scroll"
+      data-target=".site-navbar-target"
+      data-offset="300"
+      >
+      */}
       <div className="site-wrap" id="home-section">
         <div className="site-mobile-menu site-navbar-target">
           <div className="site-mobile-menu-header">
@@ -39,25 +39,23 @@ function Rent() {
           </div>
         </div>
       </div>
-
       <div className="site-section bg-light" id="contact-section">
         <div className="container">
           <div className="row justify-content-center text-center">
             {/* <div className="col-7 text-center mb-5">
-              <h2>Contact Us Or Use This Form To Rent A Car</h2>
-              <p>
-                Easy car rental, just fill out the details. Waiting for an email
-                reply You will be able to pick up the car at the time of
-                booking.
-              </p>
-            </div> */}
+<h2>Contact Us Or Use This Form To Rent A Car</h2>
+<p>
+Easy car rental, just fill out the details. Waiting for an email
+reply You will be able to pick up the car at the time of
+booking.
+</p>
+</div> */}
           </div>
           <div className="row">
             <div className="col-md-10">
               <div className="Book3ContentA-head-option">YOUR INFORMATION</div>
-              <br></br>
-              <form action="#" method="post">
-                <div className="form-group row">
+              <form action="#" method="post ">
+                <div className="form-group row mt-4">
                   <div className="col-md-6 mb-4 mb-lg-0">
                     <input
                       type="text"
@@ -89,7 +87,6 @@ function Rent() {
                     />
                   </div>
                 </div>
-
                 <div className="form-group row">
                   <div className="col-md-12">
                     <input
@@ -99,62 +96,104 @@ function Rent() {
                     />
                   </div>
                 </div>
-                <div className="Book3ContentA-head-option">
-                  TRIP INFORMATION
-                </div>
-                <br></br>
 
+
+              </form>
+              <div className="Book3ContentA-head-option">YOUR INFORMATION</div>
+              <form action="#" method="post ">
+                <div className="form-group row mt-4">
+                  <div className="col-md-6 mb-4 mb-lg-0">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="First name"
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Last name"
+                    />
+                  </div>
+                </div>
                 <div className="form-group row">
                   <div className="col-md-6 mb-4 mb-lg-0">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Phone Number"
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Driver License"
+                    />
+                  </div>
+                </div>
+                <div className="form-group row">
+                  <div className="col-md-12">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Email address"
+                    />
+                  </div>
+                </div>
+
+                <div className="Book3ContentA-head-option">TRIP INFORMATION</div>
+                <div className="form-group row">
+                  <div className="col-md-6 mb-4 mb-lg-0 mt-3">
                     <label>Where you form</label>
                     <select className="form-control">
                       <option value="Nakhon Si Thammarat Airport">
                         Nakhon Si Thammarat Airport
-                      </option>
+</option>
                       <option value="CentralPlaza Nakhon Si Thammarat">
                         Central Plaza Nakhon Si Thammarat
-                      </option>
+</option>
                       <option value="Nakhon Si Thammarat Bus Station">
                         Nakhon Si Thammarat Bus Station
-                      </option>
+</option>
                       <option
                         value="Hat Yai International Airport"
                       >
                         Hat Yai International Airport
-                      </option>
+</option>
                       <option
                         value="Surat Thani International Airport"
                       >
                         Surat Thani International Airport
-                      </option>
+</option>
                     </select>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 mt-3">
                     <label>Where you go</label>
                     <select className="form-control">
                       <option value="Nakhon Si Thammarat Airport">
                         Nakhon Si Thammarat Airport
-                      </option>
+</option>
                       <option value="CentralPlaza Nakhon Si Thammarat">
                         CentralPlaza Nakhon Si Thammarat
-                      </option>
+</option>
                       <option value="Nakhon Si Thammarat Bus Station">
                         Nakhon Si Thammarat Bus Station
-                      </option>
+</option>
                       <option
                         value="Hat Yai International Airport"
                       >
                         Hat Yai International Airport
-                      </option>
+</option>
                       <option
                         value="Surat Thani International Airport"
                       >
                         Surat Thani International Airport
-                      </option>
+</option>
                     </select>
                   </div>
                 </div>
-
                 <div className="form-group row">
                   <div className="col-md-6 mb-4 mb-lg-0">
                     <label>Journey date</label>
@@ -181,7 +220,6 @@ function Rent() {
                     </MuiPickersUtilsProvider>
                   </div>
                 </div>
-
                 <div className="form-group row">
                   <div className="col-md-6 mr-auto">
                     <input
@@ -201,7 +239,7 @@ function Rent() {
                     <span className="d-block text-black">Address:</span>
                     <span>
                       222 Thaiburi, Thasala, Nakhon Si Thammarat 80160
-                    </span>
+</span>
                   </li>
                   <li className="d-block mb-3">
                     <span className="d-block text-black">Phone:</span>
@@ -221,5 +259,4 @@ function Rent() {
     </div>
   );
 }
-
 export default Rent;

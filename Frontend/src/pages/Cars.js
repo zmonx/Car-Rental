@@ -100,7 +100,7 @@ export default class Cars extends Component {
                 <h3>
                   <Link to={{
                     pathname: '/detail',
-                    state: { cars_id: cars }
+                    state: { cars: cars }
                   }}>{cars.Brand} {cars.Modal}</Link>
                 </h3>
                 <div className="rating">

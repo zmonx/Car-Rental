@@ -4,7 +4,7 @@ class Detail extends Component {
 
     render() {
 
-        // const carThis = this.props.location.state.cars
+        const carThis = this.props.location.state.cars
 
 
         return (
@@ -25,12 +25,12 @@ class Detail extends Component {
                 <div className="ftco-blocks-cover-1 ">
                     <div
                         className="ftco-cover-1 overlay innerpage "
-                        style={{ backgroundImage: "url(images/hero_2.jpg"  }}
+                        style={{ backgroundImage: "url(images/hero_2.jpg" }}
                     >
                         <div className="container">
                             <div className="row align-items-center justify-content-center">
-                            {/* <h1 style={{color: "white"}} >CAR DETAILS</h1> */}
-                            <div className="col-lg-6 text-center">
+                                {/* <h1 style={{color: "white"}} >CAR DETAILS</h1> */}
+                                <div className="col-lg-6 text-center">
                                     <h1>CAR DETAILS</h1>
                                     <p>Look for a car, look for car rent.</p>
                                 </div>
@@ -57,29 +57,29 @@ class Detail extends Component {
                     <div className="col-md-12">
                         <section className="panel">
                             <div className="panel-body">
-                            <div className="row">
-                                <div className="col-md-3">
-                                    <div className="pro-img-details"> <br></br>
-                                        <img src="images\img_4.jpg" style={{width:"200%"}} alt="" />
+                                <div className="row">
+                                    <div className="col-md-3">
+                                        <div className="pro-img-details"> <br></br>
+                                            <img src={carThis.img} style={{ width: "200%" }} alt="" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="col-md-3"></div>
-                                <div className="col-md-6">
-                                    <br></br>
-                                    <h2 className="">
-                                    </h2>
-                                    <div className="product_meta">
-                                        <h4>Brand : </h4>
-                                        <h4>Modal : </h4>
-                                        <h4>Price / Day  : ฿</h4>
-                                        <h4>Doors : </h4>
-                                        <h4>Seats : </h4>
-                                        <h4>Transmission : </h4>
-                                        <h4>Description : Lorem ipsum dolor sit amet, os risus, et blandit ligula pellentesque non. Nam semper elementum auctor. Proin vestibulum nulla at ullamcorper porta. Suspendisse pellentesque lorem velit, in tempor urna feugiat eget. Maecenas fermentum iaculis orci, sit amet vehicula sapien vehicula eu. In hac habitasse platea dictumst. Nunc sed vehicula odio. </h4>
+                                    <div className="col-md-3"></div>
+                                    <div className="col-md-6">
+                                        <br></br>
+                                        <h2 className="">
+                                        </h2>
+                                        <div className="product_meta">
+                                            <h4>Brand : {carThis.Brand} </h4>
+                                            <h4>Modal : {carThis.Modal}</h4>
+                                            <h4>Price / Day  :{carThis.Price_Day} ฿</h4>
+                                            <h4>Doors : {carThis.Doors}</h4>
+                                            <h4>Seats : {carThis.Seats}</h4>
+                                            <h4>Transmission : {carThis.Transmission}</h4>
+                                            <h4>Description : Lorem ipsum dolor sit amet, os risus, et blandit ligula pellentesque non. Nam semper elementum auctor. Proin vestibulum nulla at ullamcorper porta. Suspendisse pellentesque lorem velit, in tempor urna feugiat eget. Maecenas fermentum iaculis orci, sit amet vehicula sapien vehicula eu. In hac habitasse platea dictumst. Nunc sed vehicula odio. </h4>
 
+                                        </div>
+                                        <br></br>
                                     </div>
-                                    <br></br>
-                                </div>
                                 </div>
                             </div>
                         </section>

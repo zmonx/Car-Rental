@@ -17,29 +17,31 @@ import Rent from './pages/Rent';
 import Manage from './pages/Manage';
 import Edit from './pages/Edit';
 import Test from './pages/Test';
+import Pdf from './pages/Pdf';
 
 function App() {
   return (
     <div>
       <Router>
         <Head />
-          <Switch>
-            <Route exact path='/' component={Home}/>
-            <Route path='/services' component={Services}/>
-            <Route path='/cars' component={Cars}/>
-            <Route path='/about' component={About}/>
-            <Route path='/blog' component={Blog}/>
-            <Route path='/rent' component={Rent}/>
-            <Route path='/single' component={Single}/>
-            <Route path='/detail' component={Detail}/>
-            <Route path='/login' component={Login}/>
-            <Route path='/manage' component={Manage}/>
-            <Route path='/edit' component={Edit}/>
-            <Route path='/test' component={Test}/>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/services' component={Services} />
+          <Route path='/cars' component={Cars} />
+          <Route path='/about' component={About} />
+          <Route path='/blog' component={Blog} />
+          <Route path='/rent' component={Rent} />
+          <Route path='/single' component={Single} />
+          <Route path='/detail' component={Detail} />
+          <Route path='/login' component={Login} />
+          <Route path='/manage' component={Manage} />
+          <Route path='/edit' component={Edit} />
+          <Route path='/test' component={Test} />
+          <Route path='/pdf' component={Pdf} />
 
 
 
-          </Switch>
+        </Switch>
         <Foot />
       </Router>
     </div>
