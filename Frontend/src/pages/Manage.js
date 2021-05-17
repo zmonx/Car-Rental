@@ -3,17 +3,15 @@ import axios from 'axios';
 import React, { Component } from 'react'
 import { FaPencilAlt } from 'react-icons/fa';
 import { FaPlus } from 'react-icons/fa';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch} from 'react-icons/fa';
 export default class Manage extends Component {
 
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            car: ""
 
-        }
+    state = {
+        car: ""
     }
+
 
     componentDidMount() {
         console.log("DidMount");
@@ -28,9 +26,9 @@ export default class Manage extends Component {
     }
 
 
-    delete(id) {
+    delete(id){
         console.log("DidMount");
-        axios.get("http://localhost:8000/delete/" + id)
+        axios.get("http://localhost:8000/delete/"+id)
             .then(response => {
                 console.log(response.data);
                 this.setState({ car: response.data });
@@ -39,35 +37,31 @@ export default class Manage extends Component {
                     console.log(error);
                 });
         window.location.reload(false);
-        console.log("test", id);
+        console.log("test",id);
     }
 
 
     showProducts() {
         return (
             this.state.car &&
-            this.state.car.map((cars, index) => (
+            this.state.car.map((cars, index)=> (
                 <tbody id="myTable">
-                    <tr>
-                        <td>{index + 1}</td>
-                        <td>{cars.Brand}</td>
-                        <td>{cars.Modal}</td>
-                        <td>{cars.Price_day}</td>
-                        <td>
-                            {/* <a href="" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> */}
-                            {/* <Link class="btn btn-warning" to={{    pathname: "/cars",    state: cars._id   }}> Edit </Link> */}
-                            <Link class="btn btn-warning"
-                                to={{
-                                    pathname: '/edit',
-                                    state: { cars: cars }
-                                }}>Edit</Link>
-                            {/* <button class="btn btn-danger" onClick={() => this.delete(cars._id)}> Delete</button> */}
-                            <button class="btn btn-danger" onClick={(e) => { if (window.confirm('Are you sure you wish to delete this item?')) this.delete(cars._id) }}> Delete</button>
+                        <tr>
+                            <td>{index+1}</td>
+                            <td>{cars.Brand}</td>
+                            <td>{cars.Modal}</td>
+                            <td>{cars.Price_day}</td>
+                            <td>
+                                {/* <a href="" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> */}
+                                {/* <Link class="btn btn-warning" to={{    pathname: "/cars",    state: cars._id   }}> Edit </Link> */}
+                                <Link class="btn btn-warning" to={{pathname: '/cars', state: { cars_id: cars }}}>Edit</Link>
+                                {/* <button class="btn btn-danger" onClick={() => this.delete(cars._id)}> Delete</button> */}
+                                <button class="btn btn-danger" onClick={(e) => { if (window.confirm('Are you sure you wish to delete this item?')) this.delete(cars._id) } }> Delete</button>
 
-                        </td>
-                    </tr>
-                </tbody>
-
+                            </td>
+                        </tr>
+                    </tbody>
+              
             ))
         );
     }
@@ -89,7 +83,7 @@ export default class Manage extends Component {
                 <div className="ftco-blocks-cover-1">
                     <div
                         className="ftco-cover-1 overlay innerpage"
-                        style={{ backgroundImage: "url(images/hero_2.jpg" }}
+                        style={{ backgroundImage: "url(images/img_9.jpg" }}
                     >
                         <div className="container">
                             <div className="row align-items-center justify-content-center">
@@ -100,29 +94,35 @@ export default class Manage extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="container mt-3">
+
+                <div
+                        // className="ftco-cover-1 overlay innerpage"
+                        style={{ backgroundImage: "url(images/wpp4.jpg" }}
+                    >
+                <div className="container">
                     <br></br>  <br></br>  <br></br>
                     <div className="row">
                         <div className="col-md-10">
-                            <input className="form-control" id="myInput" type="text" placeholder="Search.." />
+                           <input className="form-control"  id="myInput" type="text"  placeholder="Search.." />
                         </div>
                         <div className="col-md-2">
-                            <a href="/insert" className="btn btn-primary btn-block"><FaPlus /> New Product</a>
+                            <a href="/insert" className="btn btn-primary btn-block"><FaPlus/> New Product</a>
                         </div>
                     </div>
                     <br></br>  <br></br>
-                    <table className="table table-bordered text-center">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Brand</th>
-                                <th>Model</th>
-                                <th>Price/Day</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        {this.showProducts()}
+                    <table className="table table-bordered   text-center  table-hover table-light ">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>#</th>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Price/Day</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    {this.showProducts()}
                     </table>
+                </div>
                 </div>
                 {/* <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br> */}
             </div>
