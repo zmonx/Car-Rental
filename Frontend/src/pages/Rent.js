@@ -1,7 +1,7 @@
 import React, { useState, Component, forwardRef } from "react";
 import "./contact.css";
 import "react-datepicker/dist/react-datepicker.css";
-import  { Redirect } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 import { DateTimePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateMomentUtils from "@date-io/moment";
@@ -23,6 +23,7 @@ export class Rent extends Component {
   }
 
   handleInputChange(event) {
+
     const target = event.target;
     const value = target.value;
     const name = target.name;
@@ -31,11 +32,15 @@ export class Rent extends Component {
 
       [name]: value
     });
+    sessionStorage.setItem([name], value);
+    sessionStorage.getItem([name]);
+    console.log("🚀 ~ file: Rent.js ~ line 225 ~ Rent ~ handleInputChange ~ sessionStorage.getItem([name])", sessionStorage.getItem([name]))
+
   }
   handleSubmit(event) {
     // alert(this.state.Brand)
     const { Brand, Modal, Price_day, Doors, Seats, Transmission, img } = this.state;
-    <Redirect to='/pdf' />
+
 
   }
 
@@ -217,12 +222,12 @@ export class Rent extends Component {
                   </div>
                   <div className="form-group row">
                     <div className="col-md-6 mr-auto">
-                      {/* <input
-                        type="submit"
-                        className="btn btn-block btn-primary text-white py-3 px-5"
-
-                      /> */}
-                      <button type="submit" className="ml-auto btn btn-primary">submit</button>
+                      {/* 
+                      <button type="submit" className="ml-auto btn btn-primary">submit</button> */}
+                      <Link to={{
+                        pathname: '/pdf',
+                        state: { cars: carThis }
+                      }} className="btn btn-primary ml-auto col-4">Print</Link>
                     </div>
                   </div>
                 </form>

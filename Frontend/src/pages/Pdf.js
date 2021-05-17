@@ -1,33 +1,50 @@
 import React, { Component } from 'react'
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
 import ReactPDF from '@react-pdf/renderer';
 import ReactDOM from 'react-dom';
 import { PDFViewer } from '@react-pdf/renderer';
 export default class Pdf extends Component {
 
     render() {
+        const carThis = this.props.location.state.cars;
         const styles = StyleSheet.create({
             page: {
-                flexDirection: 'row',
                 backgroundColor: 'tomato'
             },
             section: {
-                margin: 10,
-                padding: 10,
-                flexGrow: 1,
+
+
+            },
+            header: {
+                fontSize: 40,
+                textAlign: 'center',
                 justifyContent: "center",
-                alignContent: "center",
-                color: 'white'
-            }
+                color: 'white',
+                alignContent: 'center'
+
+            },
+            image: {
+                marginVertical: 15,
+                marginHorizontal: 100,
+                width: 400,
+                height: 400
+            },
         });
 
         const MyDocument = () => (
             <Document>
                 <Page size="A4" >
-                    <View style={styles.section}>
-                        <Text>Lorem Ipsum คือ เนื้อหาจำลองแบบเรียบๆ ที่ใช้กันในธุรกิจงานพิมพ์หรืองานเรียงพิมพ์ มันได้กลายมาเป็นเนื้อหาจำลองมาตรฐานของธุรกิจดังกล่าวมาตั้งแต่ศตวรรษที่ 16 เมื่อเครื่องพิมพ์โนเนมเครื่องหนึ่งนำรางตัวพิมพ์มาสลับสับตำแหน่งตัวอักษรเพื่อทำหนังสือตัวอย่าง Lorem Ipsum อยู่ยงคงกระพันมาไม่ใช่แค่เพียงห้าศตวรรษ แต่อยู่มาจนถึงยุคที่พลิกโฉมเข้าสู่งานเรียงพิมพ์ด้วยวิธีทางอิเล็กทรอนิกส์ และยังคงสภาพเดิมไว้อย่างไม่มีการเปลี่ยนแปลง มันได้รับความนิยมมากขึ้นในยุค ค.ศ. 1960 เมื่อแผ่น Letraset วางจำหน่ายโดยมีข้อความบนนั้นเป็น Lorem Ipsum และล่าสุดกว่านั้น คือเมื่อซอฟท์แวร์การทำสื่อสิ่งพิมพ์ (Desktop Publishing) อย่าง Aldus PageMaker ได้รวมเอา Lorem Ipsum เวอร์ชั่นต่างๆ เข้าไว้ในซอฟท์แวร์ด้วย</Text>
-                    </View>
 
+                    <View style={styles.header}>
+                        <Text><h1 style={styles.header}>CREATE BY SWE & COE CAR RENTAL SYSTEM</h1></Text>
+                    </View>
+                    <Image
+                        style={styles.image}
+                        source={{ uri: carThis.img }}
+                    />
+                    <Text><h4>CAR INFORMATION</h4></Text>
+                    <Text>{carThis.Brand}</Text>
+                    <Text><h4>YOUR INFORMATION</h4></Text>
                 </Page>
             </Document>
         );
@@ -64,8 +81,8 @@ export default class Pdf extends Component {
                             <div className="col-2"></div>
                             <div className="col-8 " style={styles.page}>
                                 <MyDocument />
-                            </div>
 
+                            </div>
                             <div className="col-2"></div>
                         </div>
                     </div>
