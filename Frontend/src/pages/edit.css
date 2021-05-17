@@ -25,13 +25,15 @@
   
   /* Set a style for the submit button */
   .btn {
-    background-color: #f0ad4e;
+    /* background-color: #f0ad4e; */
     color: white;
-    padding: 15px 20px;
+    /* padding: 15px; */
+    margin: 2px;
+   
     border: none;
     cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
+    /* width: 100%; */
+    /* opacity: 0.9; */
   }
   
   .btn:hover {
