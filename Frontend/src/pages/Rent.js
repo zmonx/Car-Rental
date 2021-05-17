@@ -52,7 +52,7 @@ booking.
 </div> */}
           </div>
           <div className="row">
-            <div className="col-md-10">
+            <div className="col-md-8">
               <div className="Book3ContentA-head-option">YOUR INFORMATION</div>
               <form action="#" method="post ">
                 <div className="form-group row mt-4">
@@ -231,7 +231,7 @@ booking.
                 </div>
               </form>
             </div>
-            <div className="col-lg-4 ml-auto">
+            <div className="col-lg-4">
               <div className="bg-white p-3 p-md-5">
                 <h3 className="text-black mb-4">Contact Info</h3>
                 <ul className="list-unstyled footer-link">
