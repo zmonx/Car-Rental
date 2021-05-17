@@ -9,13 +9,58 @@ import Modal from '@material-ui/core/Modal';
 
 export default class Cars extends Component {
 
-  state = {
-    cars: ""
+  constructor(props) {
+    super(props)
+    this.state = {
+      cars: "",
+      Brand: "",
+      Modal: "",
+      Price_day: "",
+      Doors: "",
+      Seats: "",
+      Transmission: "",
+      img: "",
+      id_del: "",
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
+  }
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+
+      [name]: value
+    });
+
+  }
+  handleSubmit(event) {
+    // alert(this.state.Brand)
+    const { Brand, Modal, Price_day, Doors, Seats, Transmission, img } = this.state
+    axios.get("http://localhost:8000/insert/" + Brand + '/' + Modal + '/' + Price_day + '/' + Doors + '/' + Seats + '/' + Transmission + '/' + img)
+      .then(response => {
+        console.log(response);
+      },
+        function (error) {
+          console.log(error);
+        })
   }
 
+  del(id) {
+
+    axios.get("http://localhost:8000/delete/" + id)
+      .then(response => {
+        console.log(response);
+      },
+        function (error) {
+          console.log(error);
+        })
+  }
 
   componentDidMount() {
-    console.log("DidMount");
     axios.get("http://localhost:8000/car")
       .then(response => {
         console.log(response.data);
@@ -25,6 +70,9 @@ export default class Cars extends Component {
           console.log(error);
         })
   }
+  // componentDidUpdate() {
+  //   this.setState({ cars: this.state.cars });
+  // }
 
 
 
@@ -88,6 +136,7 @@ export default class Cars extends Component {
                 <Link to="/contact" className="btn btn-primary">
                   Rent Now
                   </Link>
+                <button className="btn btn-danger ml-1" value={cars._id} onClick={(e) => this.del(e.target.value)}>X</button>
               </div>
             </div>
           </div>
@@ -112,6 +161,7 @@ export default class Cars extends Component {
 
   render() {
     // let data = this.state.cars;
+
     const defaultOptions = {
       loop: true,
       autoplay: true,
@@ -121,39 +171,60 @@ export default class Cars extends Component {
       }
     };
 
+
     const body = (
+
+
       <div className="row align-items-center justify-content-center mt-5 p-3">
         <div className="col-6 feature-car-rent-box-1 ">
-          <h3>Range Rover S7</h3>
-          <ul className="list-unstyled">
-            <li>
-              <span>Doors</span>
-              <span className="spec">4</span>
-            </li>
-            <li>
-              <span>Seats</span>
-              <span className="spec">6</span>
-            </li>
-            <li>
-              <span>Lugage</span>
-              <span className="spec">2 Suitcase/2 Bags</span>
-            </li>
-            <li>
-              <span>Transmission</span>
-              <span className="spec">Automatic</span>
-            </li>
-            <li>
-              <span>Minium age</span>
-              <span className="spec">Automatic</span>
-            </li>
-          </ul>
-          <div className="d-flex align-items-center bg-light p-3">
-            <span>$150/day</span>
-            <Link to="/contact" className="ml-auto btn btn-primary">
-              Rent Now
-                      </Link>
-          </div>
-        </div></div>
+          <h3>Cars Insert</h3>
+          <form onSubmit={this.handleSubmit}>
+            <div className="from-group">
+              <label>
+                Brand:
+                <input name="Brand" type="text" value={this.state.Brand} onChange={this.handleInputChange} />
+              </label>
+            </div>
+            <div className="from-group">
+              <label>
+                Modal:
+              <input name="Modal" type="text" value={this.state.Modal} onChange={this.handleInputChange} />
+              </label>
+            </div>
+            <div className="from-group">
+              <label>
+                Price_day:
+              <input name="Price_day" type="number" value={this.state.Price_day} onChange={this.handleInputChange} />
+              </label>
+            </div>
+            <div className="from-group">
+              <label>
+                Doors:
+              <input name="Doors" type="number" value={this.state.Doors} onChange={this.handleInputChange} />
+              </label>
+            </div>
+            <div className="from-group">
+              <label>
+                Seats:
+              <input name="Seats" type="number" value={this.state.Seats} onChange={this.handleInputChange} />
+              </label>
+            </div>
+            <div className="from-group">
+              <label>
+                Transmission:
+              <input name="Transmission" type="text" value={this.state.Transmission} onChange={this.handleInputChange} />
+              </label></div>
+            <div className="from-group">
+              <label>
+                img:
+              <input name="img" type="text" value={this.state.img} onChange={this.handleInputChange} />
+              </label>
+            </div>
+            <button type="submit" className="ml-auto btn btn-primary">submit</button>
+          </form>
+        </div>
+      </div>
+
     );
 
 
