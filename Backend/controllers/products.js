@@ -52,6 +52,21 @@ exports.getDeleteProduct = (req, res, next) => {
       .catch((err) => console.log(err));
   };
 
+  
+exports.postUpdateProduct = (req, res, next) => {
+    console.log(req.body);
+    const {car_id ,Brand, Modal, Price_day, Doors, Seats, Transmission, img, } = req.body;
+
+
+    const product = new Product(car_id , Brand, Modal, Price_day, Doors, Seats, Transmission, img, new ObjectId(car_id));
+    product
+        .save()
+        .then(result => {
+            console.log('Update Product');
+            res.redirect('/product');
+        })
+        .catch(err => console.log(err));
+};
 
 
 

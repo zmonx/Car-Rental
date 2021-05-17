@@ -3,11 +3,23 @@ import "./contact.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { FaPencilAlt } from "react-icons/fa";
 import "./edit.css";
-
-
 import React, { Component } from 'react'
+import axios from "axios";
 
 export class Edit extends Component {
+  
+
+
+componentDidMount() {
+  axios.post("http://localhost:8000/update")
+    .then(response => {
+      console.log(response.data);
+      this.setState({ cars: response.data });
+    },
+      function (error) {
+        console.log(error);
+      })
+}
 
   render() {
     const carThis = this.props.location.state.cars
@@ -63,27 +75,27 @@ export class Edit extends Component {
                             </div>
                             <div class="form-group">
                               <label for="Model">Model</label>
-                              <input type="text" class="form-control" name="Model" />
+                              <input type="text" class="form-control" name="Modal" value={carThis.Modal} />
                             </div>
                             <div class="form-group">
                               <label for="price">Price / Day</label>
-                              <input type="number" class="form-control" name="price" value="" />
+                              <input type="number" class="form-control" name="Price" value={carThis.Price_day} />
                             </div>
                             <div class="form-group">
                               <label for="price">Doors</label>
-                              <input type="number" class="form-control" name="Doors" value="" />
+                              <input type="number" class="form-control" name="Doors" value={carThis.Doors}/>
                             </div>
                             <div class="form-group">
                               <label for="price">Seats</label>
-                              <input type="number" class="form-control" name="Seats" ></input>
+                              <input type="number" class="form-control" name="Doors" value={carThis.Seats} ></input>
                             </div>
                             <div class="form-group">
                               <label for="price">Transmission</label>
-                              <input type="text" class="form-control" name="Transmission" value="" />
+                              <input type="text" class="form-control" name="Transmission" value={carThis.Transmission} />
                             </div>
                             <div class="form-group">
                               <label for="price">Image Path</label>
-                              <input type="test" class="form-control" name="img_path" value="" />
+                              <input type="test" class="form-control" name="img" value={carThis.img} />
                             </div><br></br>
                             <a href="/manage" class="btn btn-secondary"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</a>
                             <button type="submit" class="btn btn-info"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>

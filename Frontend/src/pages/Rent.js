@@ -53,7 +53,52 @@ booking.
           </div>
           <div className="row">
             <div className="col-md-8">
-              
+            <div className="Book3ContentA-head-option">CAR INFORMATION</div>
+              <form action="#" method="post ">
+                <div className="form-group row mt-4">
+                  <div className="col-md-6 mb-4 mb-lg-0">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Brand"
+                      value=""
+                      readOnly
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Model"
+                      value=""
+                      readOnly
+                    />
+                  </div>
+                </div>
+                <div className="form-group row">
+                  <div className="col-md-6 mb-4 mb-lg-0">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Price / Day"
+                      value=""
+                      readOnly
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Transmission"
+                      value=""
+                      readOnly
+                    />
+                  </div>
+                </div>
+            
+
+
+              </form>
               <div className="Book3ContentA-head-option">YOUR INFORMATION</div>
               <form action="#" method="post ">
                 <div className="form-group row mt-4">

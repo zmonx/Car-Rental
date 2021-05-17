@@ -60,7 +60,7 @@ export default class Manage extends Component {
                         <td>
                             {/* <a href="" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> */}
                             {/* <Link class="btn btn-warning" to={{    pathname: "/cars",    state: cars._id   }}> Edit </Link> */}
-                            <Link class="btn btn-warning" to={{ pathname: '/cars', state: { cars: cars } }}>Edit</Link>
+                            <Link class="btn btn-warning" to={{ pathname: '/edit', state: { cars: cars } }}>Edit</Link>
                             {/* <button class="btn btn-danger" onClick={() => this.delete(cars._id)}> Delete</button> */}
                             <button class="btn btn-danger" onClick={(e) => { if (window.confirm('Are you sure you wish to delete this item?')) this.delete(cars._id) }}> Delete</button>
 

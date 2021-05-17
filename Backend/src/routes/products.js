@@ -15,7 +15,7 @@ router.get('/insert/:Brand/:Modal/:Price_day/:Doors/:Seats/:Transmission/:img', 
 
 router.get("/delete/:car_id", productsController.getDeleteProduct);
 
-
+router.post('/update', productsController.postUpdateProduct);
 
 
 exports.routes = router;
