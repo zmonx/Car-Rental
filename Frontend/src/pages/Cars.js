@@ -120,8 +120,8 @@ export default class Cars extends Component {
         preserveAspectRatio: 'xMidYMid slice'
       }
     };
-    const body = (
 
+    const body = (
       <div className="row align-items-center justify-content-center mt-5 p-3">
         <div className="col-6 feature-car-rent-box-1 ">
           <h3>Range Rover S7</h3>
@@ -154,8 +154,10 @@ export default class Cars extends Component {
                       </Link>
           </div>
         </div></div>
-
     );
+
+
+
     return (
       <div>
         <div className="site-wrap" id="home-section">
@@ -188,11 +190,7 @@ export default class Cars extends Component {
           <div className="site-section bg-light">
             <div className="container">
               <div className="row">
-
                 {/* //////////////////////////// */}
-
-
-
                 {/* //////////////////////////// */}
                 {this.showProducts()}
                 <div className="col-lg-4 col-md-6 mb-4">
@@ -207,15 +205,14 @@ export default class Cars extends Component {
                   </div>
                   <div>
                     <Modal
-                      open={true}
-                      onClose={false}
+                      open={false}
+                      onClose={true}
                       aria-labelledby="simple-modal-title"
                       aria-describedby="simple-modal-description"
                     >
                       {body}
                     </Modal>
                   </div>
-
                 </div>
                 <div className="col-12">
                   <span className="p-3">1</span>
@@ -232,7 +229,6 @@ export default class Cars extends Component {
               </div>
             </div>
           </div>
-
           <div className="container site-section mb-5">
             <div className="row justify-content-center text-center">
               <div className="col-7 text-center mb-5">

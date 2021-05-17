@@ -27,29 +27,25 @@ export default class Manage extends Component {
 
 
     delete(id){
-        // console.log("DidMount");
-        // axios.post("http://localhost:8000/delete/"+id)
-        //     .then(response => {
-        //         console.log(response.data);
-        //         this.setState({ car: response.data });
-        //     },
-        //         function (error) {
-        //             console.log(error);
-        //         })
+        console.log("DidMount");
+        axios.get("http://localhost:8000/delete/"+id)
+            .then(response => {
+                console.log(response.data);
+                this.setState({ car: response.data });
+            },
+                function (error) {
+                    console.log(error);
+                });
+        window.location.reload(false);
         console.log("test",id);
     }
-
-
-
 
 
     showProducts() {
         return (
             this.state.car &&
             this.state.car.map((cars, index)=> (
-                
-             
-                    <tbody id="myTable">
+                <tbody id="myTable">
                         <tr>
                             <td>{index+1}</td>
                             <td>{cars.Brand}</td>
@@ -57,7 +53,9 @@ export default class Manage extends Component {
                             <td>{cars.Price_day}</td>
                             <td>
                                 <a href="" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                                <button class="btn btn-danger" onClick={this.delete(cars.Modal)}> Delete</button>
+                                {/* <button class="btn btn-danger" onClick={() => this.delete(cars._id)}> Delete</button> */}
+                                <button class="btn btn-danger" onClick={(e) => { if (window.confirm('Are you sure you wish to delete this item?')) this.delete(cars._id) } }> Delete</button>
+
                             </td>
                         </tr>
                     </tbody>
@@ -65,8 +63,6 @@ export default class Manage extends Component {
             ))
         );
     }
-
-
 
 
     render() {
