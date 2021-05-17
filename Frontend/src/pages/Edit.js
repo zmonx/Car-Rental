@@ -7,19 +7,71 @@ import React, { Component } from 'react'
 import axios from "axios";
 
 export class Edit extends Component {
-  
 
 
-componentDidMount() {
-  axios.post("http://localhost:8000/update")
-    .then(response => {
-      console.log(response.data);
-      this.setState({ cars: response.data });
-    },
-      function (error) {
-        console.log(error);
-      })
-}
+ 
+  constructor(props) {
+    super(props)
+    this.state = {
+      car_id:"",
+      Brand:"", 
+      Modal:"", 
+      Price_day:"", 
+      Doors:"", 
+      Seats:"", 
+      Transmission:"", 
+      img:""
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+   
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+
+  }
+  handleSubmit(event) {
+    // alert(this.state.Brand)
+    const {car_id,Brand, Modal, Price_day, Doors, Seats, Transmission, img }  = this.state
+    axios.post("http://localhost:8000/update", {car_id, Brand, Modal, Price_day, Doors, Seats, Transmission, img })
+      .then(response => {
+        console.log(response);
+      },
+        function (error) {
+          console.log(error);
+        })
+  }
+
+  // submit = (e) =>{
+  //   e.preventDefault()
+  //   console.log(this.state)
+  // }
+
+
+
+
+
+  // handleSubmit(event) {
+  //   // alert(this.state.Brand)
+  //   const {car_id,Brand, Modal, Price_day, Doors, Seats, Transmission, img } = this.state;
+  //   axios.post("http://localhost:8000/update", {car_id, Brand, Modal, Price_day, Doors, Seats, Transmission, img })
+  //   .then(response => {
+  //     console.log(response.data)
+  //   }).catch((error) => {
+  //     console.log(error)
+  // });
+  // }
+
+
+
+
 
   render() {
     const carThis = this.props.location.state.cars
@@ -60,46 +112,44 @@ componentDidMount() {
                   Edit Car
                 </div>
                 <br></br>
-                <form action="#" method="post">
 
+                <form  onSubmit={this.submit}>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="card">
                         <div class="card-body">
-                          <form method="post" action="/update">
+              
                             <div class="form-group">
                               <input type="hidden" name="product_id" value="" />
-
                               <label for="Brand">Brand</label>
-                              <input type="text" class="form-control" name="Brand" value={carThis.Brand} />
+                              <input type="text" class="form-control" name="Brand" value={this.props.location.state.cars.Brand} onChange={this.handleInputChange}/>
                             </div>
                             <div class="form-group">
                               <label for="Model">Model</label>
-                              <input type="text" class="form-control" name="Modal" value={carThis.Modal} />
+                              <input type="text" class="form-control" name="Modal" value={this.props.location.state.cars.Modal} onChange={this.handleInputChange}/>
                             </div>
                             <div class="form-group">
                               <label for="price">Price / Day</label>
-                              <input type="number" class="form-control" name="Price" value={carThis.Price_day} />
+                              <input type="number" class="form-control" name="Price_day" value={this.props.location.state.cars.Price_day} onChange={this.handleInputChange} />
                             </div>
                             <div class="form-group">
                               <label for="price">Doors</label>
-                              <input type="number" class="form-control" name="Doors" value={carThis.Doors}/>
+                              <input type="number" class="form-control" name="Doors" value={this.props.location.state.cars.Doors} onChange={this.handleInputChange}/>
                             </div>
                             <div class="form-group">
                               <label for="price">Seats</label>
-                              <input type="number" class="form-control" name="Doors" value={carThis.Seats} ></input>
+                              <input type="number" class="form-control" name="Seats" value={this.props.location.state.cars.Seats} onChange={this.handleInputChange}></input>
                             </div>
                             <div class="form-group">
                               <label for="price">Transmission</label>
-                              <input type="text" class="form-control" name="Transmission" value={carThis.Transmission} />
+                              <input type="text" class="form-control" name="Transmission" value={this.props.location.state.cars.Transmission} onChange={this.handleInputChange}/>
                             </div>
                             <div class="form-group">
                               <label for="price">Image Path</label>
-                              <input type="test" class="form-control" name="img" value={carThis.img} />
+                              <input type="test" class="form-control" name="img" value={this.props.location.state.cars.img} onChange={this.handleInputChange}/>
                             </div><br></br>
-                            <a href="/manage" class="btn btn-secondary"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</a>
+                            <a href="/manage" class="btn btn-secondary"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back</a>
                             <button type="submit" class="btn btn-info"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
-                          </form>
                         </div>
                       </div>
                     </div>
