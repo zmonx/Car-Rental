@@ -13,7 +13,6 @@ export default class Manage extends Component {
 
         this.state = {
             car: ""
-
         }
     }
 

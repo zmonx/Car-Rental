@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
-
+import { Link } from "react-router-dom";
 class Detail extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            cars: ""
+
+        }
+    }
 
     render() {
 
-        const carThis = this.props.location.state.cars
-
+        const carThis = this.props.location.state.cars;
 
         return (
             <div>
@@ -71,12 +79,13 @@ class Detail extends Component {
                                         <div className="product_meta">
                                             <h4>Brand : {carThis.Brand} </h4>
                                             <h4>Modal : {carThis.Modal}</h4>
-                                            <h4>Price / Day  :{carThis.Price_Day} ฿</h4>
+                                            <h4>Price / Day  :{carThis.Price_day} ฿</h4>
                                             <h4>Doors : {carThis.Doors}</h4>
                                             <h4>Seats : {carThis.Seats}</h4>
                                             <h4>Transmission : {carThis.Transmission}</h4>
                                             <h4>Description : Lorem ipsum dolor sit amet, os risus, et blandit ligula pellentesque non. Nam semper elementum auctor. Proin vestibulum nulla at ullamcorper porta. Suspendisse pellentesque lorem velit, in tempor urna feugiat eget. Maecenas fermentum iaculis orci, sit amet vehicula sapien vehicula eu. In hac habitasse platea dictumst. Nunc sed vehicula odio. </h4>
 
+                                            <Link class="btn btn-primary" to={{ pathname: '/rent', state: { cars: carThis } }}>Rent Now</Link>
                                         </div>
                                         <br></br>
                                     </div>

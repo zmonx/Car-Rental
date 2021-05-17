@@ -9,29 +9,28 @@ import axios from "axios";
 export class Edit extends Component {
 
 
- 
+
   constructor(props) {
     super(props)
     this.state = {
-      car_id:"",
-      Brand:"", 
-      Modal:"", 
-      Price_day:"", 
-      Doors:"", 
-      Seats:"", 
-      Transmission:"", 
-      img:""
+      car_id: "",
+      Brand: this.props.location.state.cars.Brand,
+      Modal: this.props.location.state.cars.Modal,
+      Price_day: this.props.location.state.cars.Price_day,
+      Doors: this.props.location.state.cars.Doors,
+      Seats: this.props.location.state.cars.Seats,
+      Transmission: this.props.location.state.cars.Transmission,
+      img: this.props.location.state.cars.img
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-   
+
   }
 
   handleInputChange(event) {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-
     this.setState({
       [name]: value
     });
@@ -39,8 +38,8 @@ export class Edit extends Component {
   }
   handleSubmit(event) {
     // alert(this.state.Brand)
-    const {car_id,Brand, Modal, Price_day, Doors, Seats, Transmission, img }  = this.state
-    axios.post("http://localhost:8000/update", {car_id, Brand, Modal, Price_day, Doors, Seats, Transmission, img })
+    const { car_id, Brand, Modal, Price_day, Doors, Seats, Transmission, img } = this.state
+    axios.post("http://localhost:8000/update", { car_id, Brand, Modal, Price_day, Doors, Seats, Transmission, img })
       .then(response => {
         console.log(response);
       },
@@ -113,43 +112,43 @@ export class Edit extends Component {
                 </div>
                 <br></br>
 
-                <form  onSubmit={this.submit}>
+                <form onSubmit={this.handleSubmit}>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="card">
                         <div class="card-body">
-              
-                            <div class="form-group">
-                              <input type="hidden" name="product_id" value="" />
-                              <label for="Brand">Brand</label>
-                              <input type="text" class="form-control" name="Brand" value={this.props.location.state.cars.Brand} onChange={this.handleInputChange}/>
-                            </div>
-                            <div class="form-group">
-                              <label for="Model">Model</label>
-                              <input type="text" class="form-control" name="Modal" value={this.props.location.state.cars.Modal} onChange={this.handleInputChange}/>
-                            </div>
-                            <div class="form-group">
-                              <label for="price">Price / Day</label>
-                              <input type="number" class="form-control" name="Price_day" value={this.props.location.state.cars.Price_day} onChange={this.handleInputChange} />
-                            </div>
-                            <div class="form-group">
-                              <label for="price">Doors</label>
-                              <input type="number" class="form-control" name="Doors" value={this.props.location.state.cars.Doors} onChange={this.handleInputChange}/>
-                            </div>
-                            <div class="form-group">
-                              <label for="price">Seats</label>
-                              <input type="number" class="form-control" name="Seats" value={this.props.location.state.cars.Seats} onChange={this.handleInputChange}></input>
-                            </div>
-                            <div class="form-group">
-                              <label for="price">Transmission</label>
-                              <input type="text" class="form-control" name="Transmission" value={this.props.location.state.cars.Transmission} onChange={this.handleInputChange}/>
-                            </div>
-                            <div class="form-group">
-                              <label for="price">Image Path</label>
-                              <input type="test" class="form-control" name="img" value={this.props.location.state.cars.img} onChange={this.handleInputChange}/>
-                            </div><br></br>
-                            <a href="/manage" class="btn btn-secondary"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back</a>
-                            <button type="submit" class="btn btn-info"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+
+                          <div class="form-group">
+                            <input type="hidden" name="product_id" value="" />
+                            <label for="Brand">Brand</label>
+                            <input type="text" class="form-control" name="Brand" value={this.state.Brand} onChange={this.handleInputChange} />
+                          </div>
+                          <div class="form-group">
+                            <label for="Model">Model</label>
+                            <input type="text" class="form-control" name="Modal" value={this.state.Modal} onChange={this.handleInputChange} />
+                          </div>
+                          <div class="form-group">
+                            <label for="price">Price / Day</label>
+                            <input type="number" class="form-control" name="Price_day" value={this.state.Price_day} onChange={this.handleInputChange} />
+                          </div>
+                          <div class="form-group">
+                            <label for="price">Doors</label>
+                            <input type="number" class="form-control" name="Doors" value={this.state.Doors} onChange={this.handleInputChange} />
+                          </div>
+                          <div class="form-group">
+                            <label for="price">Seats</label>
+                            <input type="number" class="form-control" name="Seats" value={this.state.Seats} onChange={this.handleInputChange}></input>
+                          </div>
+                          <div class="form-group">
+                            <label for="price">Transmission</label>
+                            <input type="text" class="form-control" name="Transmission" value={this.state.Transmission} onChange={this.handleInputChange} />
+                          </div>
+                          <div class="form-group">
+                            <label for="price">Image Path</label>
+                            <input type="test" class="form-control" name="img" value={this.state.img} onChange={this.handleInputChange} />
+                          </div><br></br>
+                          <a href="/manage" class="btn btn-secondary"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back</a>
+                          <button type="submit" class="btn btn-info"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
                         </div>
                       </div>
                     </div>
