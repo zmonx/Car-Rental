@@ -23,7 +23,9 @@ export default class Manage extends Component {
             Transmission: "",
             img: "",
             id_del: "",
-            redirect: false
+            redirect: false,
+            setIsOpenConfirm: false
+
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -195,6 +197,12 @@ export default class Manage extends Component {
             }}
             />
         }
+        if (this.state.setIsOpenConfirm) {
+            return <Redirect to={{
+                pathname: "/confirm"
+            }}
+            />
+        }
         return (
             <div>
                 <div className="site-wrap" id="home-section">
@@ -229,14 +237,15 @@ export default class Manage extends Component {
                 <div className="container">
                     <br></br>  <br></br>  <br></br>
                     <div className="row">
-                        <div className="col-md-8">
-                            <input className="form-control" id="myInput" type="text" placeholder="Search.." />
+
+                        <div className="col-md-4">
+                            <button className="btn btn-warning btn-block" style={{ height: 55, margin: 2, padding: 5 }} onClick={() => { this.setState({ redirect: true }) }}>Rent Transection</button>
                         </div>
-                        <div className="col-md-2">
-                            <button className="btn btn-warning btn-block" style={{ height: 55, margin: 2, padding: 5 }} onClick={() => { this.setState({ redirect: true }) }}>Info</button>
+                        <div className="col-md-4">
+                            <button className="btn btn-primary btn-block" style={{ height: 55, margin: 2, padding: 5 }} onClick={() => { this.setState({ setIsOpen: true }) }}> Add New Product</button>
                         </div>
-                        <div className="col-md-2">
-                            <button className="btn btn-primary btn-block" style={{ height: 55, margin: 2, padding: 5 }} onClick={() => { this.setState({ setIsOpen: true }) }}><FaPlus /> New Product</button>
+                        <div className="col-md-4">
+                            <button className="btn btn-success btn-block" style={{ height: 55, margin: 2, padding: 5 }} onClick={() => { this.setState({ setIsOpenConfirm: true }) }}>Confirm Return</button>
                         </div>
                     </div>
                     <br></br>  <br></br>
