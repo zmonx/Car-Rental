@@ -4,6 +4,7 @@ const mongodb = require('mongodb');
 const Product = require('.././src/models/products');
 const Rent = require('.././src/models/rent');
 
+const User = require('.././src/models/user');
 
 const ObjectId = mongodb.ObjectId;
 
@@ -22,6 +23,16 @@ exports.getCarAll = (req, res) => {
             res.json(products)
         });
 }
+
+
+exports.getUser = (req, res) => {
+    User.fetchUser()
+        .then(products => {
+            res.json(products)
+        });
+}
+
+
 
 
 exports.postAddProduct = (req, res, next) => {

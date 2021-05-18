@@ -9,6 +9,7 @@ app.use(cors())
 
 router.get('/details/:product_id', productsController.getById);
 router.get('/car', productsController.getCarAll);
+router.get('/user', productsController.getUser);
 
 
 router.get('/insert/:Brand/:Modal/:Price_day/:Doors/:Seats/:Transmission/:img', productsController.postAddProduct);
