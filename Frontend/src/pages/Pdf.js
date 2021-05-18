@@ -5,11 +5,15 @@ import ReactDOM from 'react-dom';
 import { PDFViewer } from '@react-pdf/renderer';
 export default class Pdf extends Component {
 
+    printReceipt() {
+        window.print();
+      }
+    
     render() {
         const carThis = this.props.location.state.cars;
         const styles = StyleSheet.create({
             page: {
-                backgroundColor: 'tomato'
+                backgroundColor: 'white'
             },
             section: {
 
@@ -19,7 +23,7 @@ export default class Pdf extends Component {
                 fontSize: 40,
                 textAlign: 'center',
                 justifyContent: "center",
-                color: 'white',
+                color: 'black',
                 alignContent: 'center'
 
             },
@@ -36,17 +40,71 @@ export default class Pdf extends Component {
                 <Page size="A4" >
 
                     <View style={styles.header}>
-                        <Text><h1 style={styles.header}>CREATE BY SWE & COE CAR RENTAL SYSTEM</h1></Text>
+                        {/* <Text><h1 style={styles.header}> RECEIPT</h1></Text> */}
                     </View>
+
                     <Image
                         style={styles.image}
                         source={{ uri: carThis.img }}
                     />
-                    <Text><h4>CAR INFORMATION</h4></Text>
-                    <Text>{carThis.Brand}</Text>
-                    <Text><h4>YOUR INFORMATION</h4></Text>
+                    
+                    <Text><h4 className="RECEIPT1"><b>CAR INFORMATION</b></h4></Text>
+                    <hr></hr>
+                    <div className="row RECEIPT2">
+                        <div className="col-md-6">
+                            <div className="from-group ml-auto">
+                                <Text><h4>Brand : {carThis.Brand} </h4> </Text>
+                            </div>
+                            <div className="from-group">
+                                <Text><h4>Price/Day : {carThis.Price_day} ฿ </h4> </Text>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="from-group ml-auto">
+                                <Text><h4>Model : {carThis.Modal} </h4> </Text>
+                            </div>
+                            <div className="from-group">
+                                <Text><h4>Transmission : {carThis.Transmission} </h4> </Text>
+                            </div>
+                        </div>
+                    </div>
+                    <Text><hr></hr><h4 className="RECEIPT1"><b>YOUR INFORMATION</b></h4></Text>
+                    <hr></hr>
+                    <div className="row RECEIPT2">
+                        <div className="col-md-6">
+                            <div className="from-group ml-auto">
+                                <Text><h4>First name :  </h4> </Text>
+                            </div>
+                            <div className="from-group">
+                                <Text><h4>Phone :   </h4> </Text>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="from-group ml-auto">
+                                <Text><h4>Last name :  </h4> </Text>
+                            </div>
+                            <div className="from-group">
+                                <Text><h4>Driver License :  </h4> </Text>
+                            </div>
+                        </div>
+                        <div className="col-md-12">
+                            <div className="from-group ml-auto">
+                                <Text><h4>E-mail :  </h4> </Text>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="from-group ml-auto">
+                                <Text><h4>Journey date :  </h4> </Text>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="from-group ml-auto">
+                                <Text><h4>Return date :  </h4> </Text>
+                            </div>
+                        </div>
+                    </div>
                 </Page>
-            </Document>
+            </Document >
         );
 
         return (
@@ -75,17 +133,41 @@ export default class Pdf extends Component {
                             </div>
                         </div>
                     </div>
-
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-2"></div>
-                            <div className="col-8 " style={styles.page}>
-                                <MyDocument />
-
+                    <div className="site-section bg-light" id="contact-section">
+                        <div className="container">
+                            <div className="row justify-content-center text-center"></div>
+                            <div className="row">
+                                <div className="col-md-8">
+                                    <div className="Book3ContentA-head-option pos">RECEIPT</div>
+                                    <div className="pos"style={styles.page}>
+                                        <MyDocument />
+                                    <button className="btn btn-info" onClick={this.printReceipt}>Print</button>
+                                    </div>
+                                </div>
+                                <div className="col-lg-4 ml-auto">
+                                    <div className="bg-white p-3 p-md-5">
+                                        <h3 className="text-black mb-4">Contact Info</h3>
+                                        <ul className="list-unstyled footer-link">
+                                            <li className="d-block mb-3">
+                                                <span className="d-block text-black">Address:</span>
+                                                <span>222 Thaiburi, Thasala, Nakhon Si Thammarat 80160</span>
+                                            </li>
+                                            <li className="d-block mb-3">
+                                                <span className="d-block text-black">Phone:</span>
+                                                <span>012-3456-789</span>
+                                            </li>
+                                            <li className="d-block mb-3">
+                                                <span className="d-block text-black">Email:</span>
+                                                <span>Specialcarrent@gmail.com</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="col-2"></div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         )
