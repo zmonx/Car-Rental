@@ -99,6 +99,7 @@ export class Info extends Component {
             .catch(function (error) {
                 console.log(error);
             })
+        window.location.reload(false);
 
     }
 
@@ -149,6 +150,13 @@ export class Info extends Component {
         if (this.state.redirect) {
             return <Redirect to={{
                 pathname: "/info",
+            }}
+            />
+        }
+
+        if (this.state.setIsOpenConfirm) {
+            return <Redirect to={{
+                pathname: "/confirm"
             }}
             />
         }
@@ -224,7 +232,12 @@ export class Info extends Component {
                     <div classname="posc"></div>
 
                     <div class="container bcontent posc ">
-
+                    <div className="col-md-2 ss">
+                    <button className="btn btn-info btn-block" style={{ height: 55, margin: 3, padding: 5 }} onClick={() => { this.setState({ setIsOpenConfirm: true }) }}>Confirm Return</button>
+                          
+                            {/* <button className="btn btn-info btn-block" style={{ height: 55, margin: 3, padding: 5 }} onClick={() => { this.setState({ redirect: true }) }}>Rent Transection</button> */}
+                        </div>
+                      
                         <div className="Book3ContentA-head-option topp">RENT INFORMATION</div>
                         {/* <hr /><br/> */}
                         {/* <div class="card topp" >
