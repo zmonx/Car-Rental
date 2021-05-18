@@ -9,7 +9,7 @@ app.use(cors())
 
 router.get('/details/:product_id', productsController.getById);
 router.get('/car', productsController.getCarAll);
-router.get('/user', productsController.getUser);
+router.post('/user', productsController.getUser);
 
 router.get('/rent', productsController.getRent);
 

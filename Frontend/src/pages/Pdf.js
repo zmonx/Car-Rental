@@ -7,8 +7,8 @@ export default class Pdf extends Component {
 
     printReceipt() {
         window.print();
-      }
-    
+    }
+
     render() {
         const carThis = this.props.location.state.cars;
         const styles = StyleSheet.create({
@@ -47,7 +47,7 @@ export default class Pdf extends Component {
                         style={styles.image}
                         source={{ uri: carThis.img }}
                     />
-                    
+
                     <Text><h4 className="RECEIPT1"><b>CAR INFORMATION</b></h4></Text>
                     <hr></hr>
                     <div className="row RECEIPT2">
@@ -73,34 +73,38 @@ export default class Pdf extends Component {
                     <div className="row RECEIPT2">
                         <div className="col-md-6">
                             <div className="from-group ml-auto">
-                                <Text><h4>First name :  </h4> </Text>
+                                <Text><h4>First name :  {sessionStorage.getItem("First_name")}</h4> </Text>
                             </div>
                             <div className="from-group">
-                                <Text><h4>Phone :   </h4> </Text>
+                                <Text><h4>Phone :  {sessionStorage.getItem("Phone_Number")} </h4> </Text>
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className="from-group ml-auto">
-                                <Text><h4>Last name :  </h4> </Text>
+                                <Text><h4>Last name : {sessionStorage.getItem("Last_name")} </h4> </Text>
                             </div>
                             <div className="from-group">
-                                <Text><h4>Driver License :  </h4> </Text>
+                                <Text><h4>Driver License : {sessionStorage.getItem("Driver_License")}</h4> </Text>
                             </div>
                         </div>
                         <div className="col-md-12">
                             <div className="from-group ml-auto">
-                                <Text><h4>E-mail :  </h4> </Text>
+                                <Text><h4>E-mail :  {sessionStorage.getItem("Email_address")}</h4> </Text>
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className="from-group ml-auto">
-                                <Text><h4>Journey date :  </h4> </Text>
+                                <Text><h4>Journey date : {sessionStorage.getItem("Start")}</h4> </Text>
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className="from-group ml-auto">
-                                <Text><h4>Return date :  </h4> </Text>
+                                <Text><h4>Return date :  {sessionStorage.getItem("End")}</h4> </Text>
                             </div>
+
+                        </div>
+                        <div className="col-md-6 mt-5">
+                            <button className="btn btn-info" onClick={this.printReceipt}>Print</button>
                         </div>
                     </div>
                 </Page>
@@ -139,9 +143,9 @@ export default class Pdf extends Component {
                             <div className="row">
                                 <div className="col-md-8">
                                     <div className="Book3ContentA-head-option pos">RECEIPT</div>
-                                    <div className="pos"style={styles.page}>
+                                    <div className="pos" style={styles.page}>
                                         <MyDocument />
-                                    <button className="btn btn-info" onClick={this.printReceipt}>Print</button>
+
                                     </div>
                                 </div>
                                 <div className="col-lg-4 ml-auto">

@@ -16,7 +16,10 @@ export class Rent extends Component {
       Phone_Number: "",
       Driver_License: "",
       Email_address: "",
-      cars: ""
+      cars: "",
+      StartSelectedDate: new Date(),
+      EndSelectedDate: new Date(),
+
 
     }
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -33,10 +36,6 @@ export class Rent extends Component {
 
       [name]: value
     });
-    sessionStorage.setItem([name], value);
-    sessionStorage.getItem([name]);
-    console.log("🚀 ~ file: Rent.js ~ line 225 ~ Rent ~ handleInputChange ~ sessionStorage.getItem([name])", sessionStorage.getItem([name]))
-
   }
   handleSubmit(event) {
     // alert(this.state.Brand)
@@ -48,9 +47,8 @@ export class Rent extends Component {
 
 
 
-
   render() {
-    // const { selectedDate, handleDateChange } = useState(new Date());
+
 
     const carThis = this.props.location.state.cars;
 
@@ -102,7 +100,7 @@ export class Rent extends Component {
                       />
                     </div>
                     <div className="col-md-6">
-                    <label>Model </label>
+                      <label>Model </label>
 
                       <input
                         type="text"
@@ -115,18 +113,18 @@ export class Rent extends Component {
                   </div>
                   <div className="form-group row">
                     <div className="col-md-6 mb-4 mb-lg-0">
-                    <label>Price/day </label>
+                      <label>Price/day </label>
 
                       <input
                         type="text"
                         className="form-control"
                         placeholder="Price / Day"
-                        value={carThis.Price_day+" ฿"}
+                        value={carThis.Price_day + " ฿"}
                         readOnly
                       />
                     </div>
                     <div className="col-md-6">
-                    <label>Transmission </label>
+                      <label>Transmission </label>
 
                       <input
                         type="text"
@@ -141,7 +139,7 @@ export class Rent extends Component {
                   <div className="Book3ContentA-head-option">YOUR INFORMATION</div>
                   <div className="form-group row mt-4">
                     <div className="col-md-6 mb-4 mb-lg-0">
-                    <label>First name </label>
+                      <label>First name </label>
 
                       <input
                         type="text"
@@ -153,7 +151,7 @@ export class Rent extends Component {
                       />
                     </div>
                     <div className="col-md-6">
-                    <label>Last name </label>
+                      <label>Last name </label>
 
                       <input
                         type="text"
@@ -167,7 +165,7 @@ export class Rent extends Component {
                   </div>
                   <div className="form-group row">
                     <div className="col-md-6 mb-4 mb-lg-0">
-                    <label>Phone </label>
+                      <label>Phone </label>
 
                       <input
                         type="text"
@@ -179,7 +177,7 @@ export class Rent extends Component {
                       />
                     </div>
                     <div className="col-md-6">
-                    <label>Driver License </label>
+                      <label>Driver License </label>
 
                       <input
                         type="text"
@@ -193,7 +191,7 @@ export class Rent extends Component {
                   </div>
                   <div className="form-group row">
                     <div className="col-md-12">
-                    <label>E-mail </label>
+                      <label>E-mail </label>
 
                       <input
                         type="text"
@@ -217,10 +215,11 @@ export class Rent extends Component {
                       <MuiPickersUtilsProvider utils={DateMomentUtils}>
                         <DateTimePicker
                           inputVariant="outlined"
-                          // value={selectedDate}
-                          // onChange={handleDateChange}
-                          format="dd/MM/yyyy HH:mm"
+                          value={this.state.StartSelectedDate}
+                          onChange={(value) => this.setState({ StartSelectedDate: value }, sessionStorage.setItem("Start", value))}
+                          format="dd/MM/yyyy"
                           className="form-control"
+                          name="Start"
                         />
                       </MuiPickersUtilsProvider>
                     </div>
@@ -229,10 +228,11 @@ export class Rent extends Component {
                       <MuiPickersUtilsProvider utils={DateMomentUtils}>
                         <DateTimePicker
                           inputVariant="outlined"
-                          // value={selectedDate}
-                          // onChange={handleDateChange}
-                          format="dd/MM/yyyy HH:mm"
+                          value={this.state.EndSelectedDate}
+                          onChange={(value) => this.setState({ EndSelectedDate: value }, sessionStorage.setItem("End", value))}
+                          format="dd/MM/yyyy"
                           className="form-control"
+                          name="End"
                         />
                       </MuiPickersUtilsProvider>
                     </div>

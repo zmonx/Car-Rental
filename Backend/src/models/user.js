@@ -27,22 +27,28 @@ class User {
     //         });
     // }
 
-    static fetchUser() {
+    static fetchUser(username) {
         const db = getDb();
         return db
             .collection('User')
-            .find()
+            .find({ username: username })
             .toArray()
             .then(products => {
-                // console.log(products);
-                return products;
+                console.log("🚀 ~ file: user.js ~ line 37 ~ User ~ fetchUser ~ products", products)
+                if (products.username == username) {
+                    console.log("test");
+                    console.log("🚀 ~ file: user.js ~ line 37 ~ User ~ fetchUser ~ products", products)
+                    return products;
+                } else {
+                    return "xxxxxx";
+                }
             })
             .catch(err => {
                 console.log(err);
             });
     }
 
-   
+
     save() {
         const db = getDb();
         let dbOp;
@@ -63,7 +69,7 @@ class User {
                 console.log(err);
             });
     }
-    
+
 }
 
 module.exports = User;

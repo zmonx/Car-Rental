@@ -26,9 +26,11 @@ exports.getCarAll = (req, res) => {
 
 
 exports.getUser = (req, res) => {
-    User.fetchUser()
+    const { username } = req.body;
+    console.log("🚀 ~ file: products.js ~ line 30 ~ username", username);
+    User.fetchUser(username)
         .then(products => {
-            res.json(products)
+            res.json({ "msg": products })
         });
 }
 
@@ -42,10 +44,8 @@ exports.getRent = (req, res) => {
 
 
 exports.postAddProduct = (req, res, next) => {
-
     const { Brand, Modal, Price_day, Doors, Seats, Transmission, img } = req.params;
     console.log("🚀 ~ file: products.js ~ line 30 ~ Brand", Brand)
-
     const product = new Product(Brand, Modal, Price_day, Doors, Seats, Transmission, img);
     product
         .save()
@@ -63,28 +63,28 @@ exports.getDeleteProduct = (req, res, next) => {
     const { car_id } = req.params;
     console.log(car_id);
     Product.deleteById(car_id)
-      .then(() => {
-        console.log("Delete Product");
-      })
-      .catch((err) => console.log(err));
-  };
+        .then(() => {
+            console.log("Delete Product");
+        })
+        .catch((err) => console.log(err));
+};
 
-  
+
 exports.postUpdateProduct = (req, res, next) => {
     console.log(req.body);
-    const {car_id ,Brand, Modal, Price_day, Doors, Seats, Transmission, img } = req.body;
-    res.json({"car_id":car_id,"Brand":Brand});
+    const { car_id, Brand, Modal, Price_day, Doors, Seats, Transmission, img } = req.body;
+    res.json({ "car_id": car_id, "Brand": Brand });
     const product = new Product(Brand, Modal, Price_day, Doors, Seats, Transmission, img, new ObjectId(car_id));
     product
         .save()
         .then(result => {
             console.log('Update Product');
-            res.json({"message":"success"});
-    //         // res.redirect('/product');
+            res.json({ "message": "success" });
+            //         // res.redirect('/product');
         })
         .catch(err => {
             console.log(err)
-            res.json({"message":"fail"});
+            res.json({ "message": "fail" });
         });
 };
 
