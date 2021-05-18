@@ -1619,3 +1619,15 @@ h1, h2, h3, h4, h5,
     -ms-flex: 0 0 50px;
     flex: 0 0 50px;
     border-radius: 50%; }
+
+
+    .topp{
+      margin-bottom: 25px;
+    }
+
+    .posc{
+      margin-top: 100px;
+    }
+    .ss{
+      float: right;
+    }

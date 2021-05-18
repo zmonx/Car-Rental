@@ -32,6 +32,12 @@ exports.getUser = (req, res) => {
         });
 }
 
+exports.getRent = (req, res) => {
+    Rent.fetchRent()
+        .then(products => {
+            res.json(products)
+        });
+}
 
 
 

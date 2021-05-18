@@ -1,7 +1,68 @@
+import axios from 'axios';
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 export class Info extends Component {
+
+
+    constructor(props) {
+        super(props)
+        this.state = {
+          info: "",
+    
+        }}    
+
+
+
+    componentDidMount() {
+        axios.get("http://localhost:8000/rent")
+          .then(response => {
+            console.log(response.data);
+            this.setState({ info: response.data });
+          },
+            function (error) {
+              console.log(error);
+            })
+      }
+
+      showProducts() {
+        return (
+          this.state.info &&
+          this.state.info.map(info => (
+            <div class="card topp" >
+            <div class="row no-gutters">
+                <div class="col-sm-5">
+                    <img class="card-img" src="https://cdn2.rcstatic.com/images/car_images/web/toyota/c-hr_lrg.jpg" alt="Suresh Dasari Card"/>
+                </div>
+                <div class="col-sm-7">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Brand :</b> {info.FirstName}    </h5>
+                        <h5  class="card-text"><b>Name : </b>{info.FirstName} {info.LastName}. </h5 >
+                        <h5  class="card-text"><b>Driver_License : </b>{info.Id_License} </h5 >
+                        <h5  class="card-text"><b>Transmission : </b>{info.FirstName} </h5 >
+                        <h5  class="card-text"><b>Driver_License : </b>{info.Id_License} </h5 >
+                        <h5  class="card-text"><b>Date : </b>{info.Journey_date} <b> to </b> {info.Return_date}</h5>
+
+                        <button  class="btn btn-primary ss">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+          ))
+        );
+      }
+
+
+
+
+
+
+
+
+
+
+
     render() {
         return (
             <div>
@@ -72,39 +133,48 @@ export class Info extends Component {
                         </div>
                     </div> */}
 
-            <div class="flex items-center justify-center min-h-screen">
-                    <div class="max-w-md md:max-w-2xl px-2">
-                        <div class="bg-white shadow-xl rounded-lg overflow-hidden md:flex">
-                            <div class="bg-cover bg-bottom h-56 md:h-auto md:w-56" >
-                            </div>
-                            <div>
-                                <div class="p-4 md:p-5">
-                                    <p class="font-bold text-xl md:text-2xl">Amsterdam Walking Tour</p>
-                                    <p class="text-gray-700 md:text-lg">Explore popular tourist destinations as well as hidden local favourites.</p>
-                                </div>
-                                <div class="p-4 md:p-5 bg-gray-100">
-                                    <div class="sm:flex sm:justify-between sm:items-center">
-                                        <div>
-                                            <div class="text-lg text-gray-700"><span class="text-gray-900 font-bold">17</span> per person*</div>
-                                            <div class="flex items-center">
-                                                <div class="flex inline-flex -mx-px">
-                                                
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                        <button class="mt-3 sm:mt-0 py-2 px-5 md:py-3 md:px-6 bg-indigo-700 hover:bg-indigo-600 font-bold text-white md:text-lg rounded-lg shadow-md">Book now</button>
-                                    </div>
-                                    <div class="mt-3 text-gray-600 text-sm md:text-base"> date.</div>
-                                </div>
-                            </div>
-                        </div>
+<div classname="posc"></div>
+
+<div class="container bcontent posc ">
+  
+        <div className="Book3ContentA-head-option topp">RENT INFORMATION</div>
+        {/* <hr /><br/> */}
+        {/* <div class="card topp" >
+            <div class="row no-gutters">
+                <div class="col-sm-5">
+                    <img class="card-img" src="https://cdn2.rcstatic.com/images/car_images/web/toyota/c-hr_lrg.jpg" alt="Suresh Dasari Card"/>
+                </div>
+                <div class="col-sm-7">
+                    <div class="card-body">
+                        <h5 class="card-title">Suresh Dasari</h5>
+                        <p class="card-text">Suresh Dasari is a founder and technical lead developer in tutlane.</p>
+                        <a href="#" class="btn btn-primary">View Profile</a>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="card topp" >
+            <div class="row no-gutters">
+                <div class="col-sm-5">
+                    <img class="card-img" src="https://cdn2.rcstatic.com/images/car_images/web/toyota/c-hr_lrg.jpg" alt="Suresh Dasari Card"/>
+                </div>
+                <div class="col-sm-7">
+                    <div class="card-body">
+                        <h5 class="card-title">Suresh Dasari</h5>
+                        <p class="card-text">Suresh Dasari is a founder and technical lead developer in tutlane.</p>
+                        <a href="#" class="btn btn-primary">View Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div> */}
+      {this.showProducts()}
+
+    </div>
 
 
 
                 </div>
+                
             </div >
         )
     }

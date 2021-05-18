@@ -17,7 +17,21 @@ class Rent {
             this.Status = Status,
             this._id = id
     }
-
+    
+    static fetchRent() {
+        const db = getDb();
+        return db
+            .collection('Rent')
+            .find()
+            .toArray()
+            .then(products => {
+                // console.log(products);
+                return products;
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
 
     save() {
         const db = getDb();
