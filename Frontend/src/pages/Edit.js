@@ -37,21 +37,8 @@ export class Edit extends Component {
     });
 
   }
-  // handleSubmit(event) {
-  //   // alert(this.state.Brand)
-  //   event.preventDefault();
-  //   const { car_id, Brand, Modal, Price_day, Doors, Seats, Transmission, img } = this.state
-  //   axios.get("http://localhost:8000/update/"+ car_id + '/' + Brand + '/' + Modal + '/' + Price_day + '/' + Doors + '/' + Seats + '/' + Transmission + '/' + img)
-  //     .then(response => {
-  //       console.log(response);
-  //     },
-  //       function (error) {
-  //         console.log(error);
-  //       })
-  // }
-  async handleSubmit(event) {
-    // alert(this.state.Brand)
 
+  async handleSubmit(event) {
     event.preventDefault();
     let data = {
       car_id: this.state.car_id,

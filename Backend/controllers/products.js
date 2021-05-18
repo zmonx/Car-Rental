@@ -32,6 +32,16 @@ exports.getUser = (req, res) => {
         });
 }
 
+
+exports.getConfirm = (req, res) => {
+    Rent.Confirm()
+        .then(products => {
+            res.json(products)
+        });
+}
+
+
+
 exports.getRent = (req, res) => {
     Rent.fetchRent()
         .then(products => {
@@ -83,12 +93,46 @@ exports.getDeleteProduct = (req, res, next) => {
 };
 
 
+
+
+exports.getDeleteRent = (req, res, next) => {
+    const { license } = req.params;
+    console.log(license);
+    Rent.deleteById(license)
+        .then(() => {
+            console.log("Delete Product");
+        })
+        .catch((err) => console.log(err));
+};
+
+
+
+
+
 exports.postUpdateProduct = (req, res, next) => {
     console.log(req.body);
     const { car_id, Brand, Modal, Price_day, Doors, Seats, Transmission, img } = req.body;
     res.json({ "car_id": car_id, "Brand": Brand });
     const product = new Product(Brand, Modal, Price_day, Doors, Seats, Transmission, img, new ObjectId(car_id));
     product
+        .save()
+        .then(result => {
+            console.log('Update Product');
+            res.json({ "message": "success" });
+            //         // res.redirect('/product');
+        })
+        .catch(err => {
+            console.log(err)
+            res.json({ "message": "fail" });
+        });
+};
+
+exports.postUpdateStatus = (req, res, next) => {
+    console.log(req.body);
+    const { FirstName,LastName,Email,Id_License,Tel,Journey_date,Return_date,Status,Brand,Modal,img,Total_price,id} = req.body;
+    res.json(req.body);
+    const rent = new Rent(FirstName,LastName,Email,Id_License,Tel,Journey_date,Return_date,Status,Brand,Modal,img,Total_price, new ObjectId(id));
+    rent
         .save()
         .then(result => {
             console.log('Update Product');

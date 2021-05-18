@@ -8,50 +8,133 @@ export class Info extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          info: "",
-    
-        }}    
+            info: "",
+            FirstName: "",
+            LastName: "",
+            Email: "",
+            Id_License: "",
+            Tel: "",
+            Journey_date: "",
+            Return_date: "",
+            Status: "",
+            Brand: "",
+            Modal: "",
+            img: "",
+            _id: "",
+        }
+        // this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+
 
 
 
     componentDidMount() {
         axios.get("http://localhost:8000/rent")
-          .then(response => {
-            console.log(response.data);
-            this.setState({ info: response.data });
-          },
-            function (error) {
-              console.log(error);
+            .then(response => {
+                console.log(response.data);
+                this.setState({ info: response.data });
+            },
+                function (error) {
+                    console.log(error);
+                })
+    }
+
+
+
+    handleSubmit(event) {
+        event.preventDefault();
+        let data = {
+            FirstName: this.state.FirstName,
+            LastName: this.state.LastName,
+            Email: this.state.Email,
+            Id_License: this.state.Id_License,
+            Tel: this.state.Tel,
+            Journey_date: this.state.Journey_date,
+            Return_date: this.state.Return_date,
+            Status: "1",
+            Brand: this.state.Brand,
+            Modal: this.state.Modal,
+            img : this.state.img,
+            _id : this.state._id,
+
+
+        }
+        console.log("ssssss", data);
+        // await axios.post("http://127.0.0.1:8000/update", data)
+        //     .then(response => {
+        //         console.log(response);
+        //     })
+        //     .catch(function (error) {
+        //         console.log(error);
+        //     })
+        // this.setState({ redirect: "/manage" });
+    }
+
+    async update(FirstName,LastName,Email,Id_License,Tel,Journey_date,Return_date,Status,Brand,Modal,img,Total_price,_id) {
+        console.log("DidMount");
+        // console.log(FirstName,LastName,Email,Id_License,Tel,Journey_date,Return_date,Status,Brand,Modal,img,Total_price,_id);
+        let data = {
+            FirstName:FirstName,
+            LastName:LastName,
+            Email:Email,
+            Id_License:Id_License,
+            Tel:Tel,
+            Journey_date:Journey_date,
+            Return_date:Return_date,
+            Status:"1",
+            Brand:Brand,
+            Modal:Modal,
+            img:img,
+            Total_price:Total_price,
+            _id:_id
+        }
+        console.log("vbvb",data)
+        await axios.post("http://127.0.0.1:8000/status",data )
+            .then(response => {
+                console.log(response);
             })
-      }
+            .catch(function (error) {
+                console.log(error);
+            })
+        // this.setState({ redirect: "/manage" });
+        window.location.reload(false);
 
-      showProducts() {
+    }
+
+
+    showProducts() {
         return (
-          this.state.info &&
-          this.state.info.map(info => (
-            <div class="card topp" >
-            <div class="row no-gutters">
-                <div class="col-sm-5">
-                    <img class="card-img" src={info.img} alt="Suresh Dasari Card"/>
-                </div>
-                <div class="col-sm-7">
-                    <div class="card-body">
-                        <h5 class="card-title"><b>Brand :</b> {info.Brand} {info.Modal}    </h5>
-                        <h5  class="card-text"><b>Name : </b>{info.FirstName} {info.LastName}. </h5 >
-                        <h5  class="card-text"><b>Driver_License : </b>{info.Id_License} </h5 >
-                        <h5  class="card-text"><b>Total Price : </b>{info.Total_price} ฿ </h5 >
-                        {/* <h5  class="card-text"><b>Driver_License : </b>{info.Id_License} </h5 > */}
-                        <h5  class="card-text"><b>Date : </b>{info.Journey_date} <b> to </b> {info.Return_date}</h5>
+            this.state.info &&
+            this.state.info.map(info => (
+                // <form method="post" onSubmit={this.handleSubmit}>
 
-                        <button  class="btn btn-primary ss">Confirm</button>
+                    <div class="card topp" >
+                        <div class="row no-gutters">
+
+                            <div class="col-sm-5">
+
+                                <img class="card-img" src={info.img} alt="Suresh Dasari Card" />
+                            </div>
+                            <div class="col-sm-7">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>Brand :</b> {info.Brand} {info.Modal}    </h5>
+                                    
+                                    <h5 class="card-text"><b>Name : </b>{info.FirstName} {info.LastName}. </h5 >
+                                    <h5 class="card-text"><b>Driver_License : </b>{info.Id_License} </h5 >
+                                    <h5 class="card-text"><b>Total Price : </b>{info.Total_price} ฿ </h5 >
+                                    <h5 class="card-text"><b>Date : </b>{info.Journey_date} <b> to </b> {info.Return_date}</h5>
+                                    <button onClick={(e) => {this.update(info.FirstName,info.LastName,info.Email,info.Id_License,info.Tel,info.Journey_date,info.Return_date,info.Status,info.Brand,info.Modal,info.img,info.Total_price,info._id) }} class="btn btn-primary ss">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    
-          ))
+                // </form>
+
+            ))
         );
-      }
+    }
 
 
 
@@ -133,13 +216,13 @@ export class Info extends Component {
                         </div>
                     </div> */}
 
-<div classname="posc"></div>
+                    <div classname="posc"></div>
 
-<div class="container bcontent posc ">
-  
-        <div className="Book3ContentA-head-option topp">RENT INFORMATION</div>
-        {/* <hr /><br/> */}
-        {/* <div class="card topp" >
+                    <div class="container bcontent posc ">
+
+                        <div className="Book3ContentA-head-option topp">RENT INFORMATION</div>
+                        {/* <hr /><br/> */}
+                        {/* <div class="card topp" >
             <div class="row no-gutters">
                 <div class="col-sm-5">
                     <img class="card-img" src="https://cdn2.rcstatic.com/images/car_images/web/toyota/c-hr_lrg.jpg" alt="Suresh Dasari Card"/>
@@ -167,14 +250,14 @@ export class Info extends Component {
                 </div>
             </div>
         </div> */}
-      {this.showProducts()}
+                        {this.showProducts()}
 
-    </div>
+                    </div>
 
 
 
                 </div>
-                
+
             </div >
         )
     }

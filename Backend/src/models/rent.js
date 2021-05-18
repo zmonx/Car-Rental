@@ -3,27 +3,27 @@ const getDb = require('../../util/database').getDb;
 
 class Rent {
 
-    constructor(Brand, Modal, Price_day , FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Total_price, img,id) {
-            this.Brand = Brand,
-            this.Modal = Modal,
-            this.Price_day = Price_day,
-            this.FirstName = FirstName,
-            this.LastName = LastName,
-            this.Email = Email,
-            this.Id_License = Id_License,
-            this.Tel = Tel,
-            this.Journey_date = Journey_date,
-            this.Return_date = Return_date,
-            this.Total_price = Total_price,
-            this.img = img,
-            this._id = id
+    constructor(FirstName,LastName,Email,Id_License,Tel,Journey_date,Return_date,Status,Brand,Modal,img,Total_price,id) {
+        this.FirstName = FirstName,
+        this.LastName = LastName,
+        this.Email = Email,
+        this.Id_License = Id_License,
+        this.Tel = Tel,
+        this.Journey_date = Journey_date,
+        this.Return_date = Return_date,
+        this.Status = Status,
+        this.Brand = Brand,
+        this.Modal = Modal,
+        this.img = img,
+        this.Total_price = Total_price,
+        this._id = id
     }
 
     static fetchRent() {
         const db = getDb();
         return db
             .collection('Rent')
-            .find()
+            .find({Status:"0"})
             .toArray()
             .then(products => {
                 // console.log(products);
@@ -34,9 +34,34 @@ class Rent {
             });
     }
 
+    static deleteById(license) {
+        const db = getDb();
+        return db
+            .collection("Rent")
+            .deleteOne({Id_License: license })
+            .then((result) => {
+                console.log("Deleted");
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
 
 
-
+    static Confirm() {
+        const db = getDb();
+        return db
+            .collection('Rent')
+            .find({Status:"1"})
+            .toArray()
+            .then(products => {
+                // console.log(products);
+                return products;
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
 
     save() {
         const db = getDb();

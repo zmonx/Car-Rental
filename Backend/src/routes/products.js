@@ -21,9 +21,14 @@ router.get('/insert/rent/:Brand/:Modal/:Price_day/:FirstName/:LastName/:Email/:I
 
 
 router.get("/delete/:car_id", productsController.getDeleteProduct);
+router.get("/delrent/:license", productsController.getDeleteRent);
+
 
 // router.get('/update/:car_id/:Brand/:Modal/:Price_day/:Doors/:Seats/:Transmission/:img', productsController.postUpdateProduct);
 router.post('/update', productsController.postUpdateProduct);
+router.post('/status', productsController.postUpdateStatus);
+
+router.get('/confirm', productsController.getConfirm);
 
 
 exports.routes = router;

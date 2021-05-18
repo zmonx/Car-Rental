@@ -16,9 +16,11 @@ import Login from './pages/Login';
 import Rent from './pages/Rent';
 import Manage from './pages/Manage';
 import Edit from './pages/Edit';
-import Test from './pages/Test';
+
 import Pdf from './pages/Pdf';
 import Info from './pages/Info';
+import Confirm from './pages/Confirm';
+
 
 function App() {
   return (
@@ -37,9 +39,10 @@ function App() {
           <Route path='/login' component={Login} />
           <Route path='/manage' component={Manage} />
           <Route path='/edit' component={Edit} />
-          <Route path='/test' component={Test} />
           <Route path='/pdf' component={Pdf} />
           <Route path='/info' component={Info} />
+          <Route path='/confirm' component={Confirm} />
+
 
 
 
