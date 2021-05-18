@@ -16,6 +16,7 @@ export class Rent extends Component {
       Phone_Number: "",
       Driver_License: "",
       Email_address: "",
+      cars: ""
 
     }
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -47,9 +48,12 @@ export class Rent extends Component {
 
 
 
+
   render() {
     // const { selectedDate, handleDateChange } = useState(new Date());
+
     const carThis = this.props.location.state.cars;
+
     return (
       <div>
         <div className="site-wrap" id="home-section">

@@ -21,6 +21,7 @@ export default class Cars extends Component {
       Transmission: "",
       img: "",
       id_del: "",
+
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,7 +38,7 @@ export default class Cars extends Component {
     });
 
   }
-  handleSubmit(event) {
+  handleSubmit() {
     // alert(this.state.Brand)
     const { Brand, Modal, Price_day, Doors, Seats, Transmission, img } = this.state
     axios.get("http://localhost:8000/insert/" + Brand + '/' + Modal + '/' + Price_day + '/' + Doors + '/' + Seats + '/' + Transmission + '/' + img)
@@ -47,8 +48,8 @@ export default class Cars extends Component {
         function (error) {
           console.log(error);
         })
-        // history.push("/manage") 
-        window.location.href = "/manage";
+    // history.push("/manage") 
+    window.location.href = "/manage";
   }
 
   del(id) {
@@ -61,6 +62,7 @@ export default class Cars extends Component {
           console.log(error);
         })
   }
+
 
   componentDidMount() {
     axios.get("http://localhost:8000/car")
@@ -135,10 +137,7 @@ export default class Cars extends Component {
                 </li>
               </ul>
               <div className="d-flex action">
-                <Link to="/contact" className="btn btn-primary">
-                  Rent Now
-                  </Link>
-                <button className="btn btn-danger ml-1" value={cars._id} onClick={(e) => this.del(e.target.value)}>X</button>
+                <Link class="btn btn-primary" to={{ pathname: '/rent', state: { cars: cars } }}>Rent Now</Link>
               </div>
             </div>
           </div>
@@ -172,64 +171,6 @@ export default class Cars extends Component {
         preserveAspectRatio: 'xMidYMid slice'
       }
     };
-
-
-    const body = (
-
-
-      <div className="row align-items-center justify-content-center mt-5 p-3">
-        <div className="col-6 feature-car-rent-box-1 ">
-          <h3>Cars Insert</h3>
-          <form onSubmit={this.handleSubmit}>
-            <div className="from-group">
-              <label>
-                Brand:
-                <input name="Brand" type="text" value={this.state.Brand} onChange={this.handleInputChange} />
-              </label>
-            </div>
-            <div className="from-group">
-              <label>
-                Modal:
-              <input name="Modal" type="text" value={this.state.Modal} onChange={this.handleInputChange} />
-              </label>
-            </div>
-            <div className="from-group">
-              <label>
-                Price_day:
-              <input name="Price_day" type="number" value={this.state.Price_day} onChange={this.handleInputChange} />
-              </label>
-            </div>
-            <div className="from-group">
-              <label>
-                Doors:
-              <input name="Doors" type="number" value={this.state.Doors} onChange={this.handleInputChange} />
-              </label>
-            </div>
-            <div className="from-group">
-              <label>
-                Seats:
-              <input name="Seats" type="number" value={this.state.Seats} onChange={this.handleInputChange} />
-              </label>
-            </div>
-            <div className="from-group">
-              <label>
-                Transmission:
-              <input name="Transmission" type="text" value={this.state.Transmission} onChange={this.handleInputChange} />
-              </label></div>
-            <div className="from-group">
-              <label>
-                img:
-              <input name="img" type="text" value={this.state.img} onChange={this.handleInputChange} />
-              </label>
-            </div>
-            <button type="submit" className="ml-auto btn btn-primary">submit</button>
-          </form>
-        </div>
-      </div>
-
-    );
-
-
 
     return (
       <div>
@@ -266,27 +207,7 @@ export default class Cars extends Component {
                 {/* //////////////////////////// */}
                 {/* //////////////////////////// */}
                 {this.showProducts()}
-                <div className="col-lg-4 col-md-6 mb-4">
-                  <div className="item-1">
-                    <div className="item-1-contents">
-                      <Lottie options={defaultOptions}
-                        height={300}
-                        width={300}
-                        isStopped={false}
-                        isPaused={false} />
-                    </div>
-                  </div>
-                  <div>
-                    <Modal
-                      open={false}
-                      onClose={true}
-                      aria-labelledby="simple-modal-title"
-                      aria-describedby="simple-modal-description"
-                    >
-                      {body}
-                    </Modal>
-                  </div>
-                </div>
+
                 <div className="col-12">
                   <span className="p-3">1</span>
                   <Link to="/#" className="p-3">

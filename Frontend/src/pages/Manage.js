@@ -38,18 +38,23 @@ export default class Manage extends Component {
         });
 
     }
-    handleSubmit(event) {
-        // alert(this.state.Brand)
+    async handleSubmit(event) {
+        event.preventDefault();
+        alert(this.state.Brand)
         const { Brand, Modal, Price_day, Doors, Seats, Transmission, img } = this.state
-        axios.get("http://localhost:8000/insert/" + Brand + '/' + Modal + '/' + Price_day + '/' + Doors + '/' + Seats + '/' + Transmission + '/' + img)
+        await axios.get("http://localhost:8000/insert/" + Brand + '/' + Modal + '/' + Price_day + '/' + Doors + '/' + Seats + '/' + Transmission + '/' + img)
             .then(response => {
-                console.log(response);
+                console.log(response.msg);
             },
                 function (error) {
                     console.log(error);
                 })
+        // history.push("/manage") 
+        window.location.href = "/manage";
     }
-
+    // setIsOpen() {
+    //     this.setState({ setIsOpen: true })
+    // }
 
     componentDidMount() {
         console.log("DidMount");
@@ -106,17 +111,90 @@ export default class Manage extends Component {
 
 
     render() {
-        
+
         // const [lgShow, setLgShow] = useState(false);
 
-      
 
 
 
 
+        const body = (
+            <div className="row align-items-center justify-content-center mt-5 p-3">
+                <div className="col-6 feature-car-rent-box-1 ">
+                    <h3>Cars Insert</h3>
+                    <form onSubmit={this.handleSubmit}>
+                        <div className="row">
+                            <div className="col-6">
+                                <div className="from-group ml-auto">
+                                    <label>
+                                        Brand:
+                                    <input name="Brand" type="text" value={this.state.Brand} onChange={this.handleInputChange} />
+                                    </label>
+                                </div>
+                                <div className="from-group">
+                                    <label>
+                                        Modal:
+                                    <input name="Modal" type="text" value={this.state.Modal} onChange={this.handleInputChange} />
+                                    </label>
+                                </div>
+                            </div>
+                            <div className="col-6">
+                                <div className="from-group">
+                                    <label>
+                                        Price:
+                            <input name="Price_day" type="number" value={this.state.Price_day} onChange={this.handleInputChange} />
+                                    </label>
+                                </div>
+                                <div className="from-group">
+                                    <label>
+                                        Doors:
+                                        <input name="Doors" type="number" value={this.state.Doors} onChange={this.handleInputChange} />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-6">
+                                <div className="from-group">
+                                    <label>
+                                        Seats:
+                                <input name="Seats" type="number" value={this.state.Seats} onChange={this.handleInputChange} />
+                                    </label>
+                                </div>
+                                <div className="from-group">
+                                    <label>
+                                        Transmission:
+                                <input name="Transmission" type="text" value={this.state.Transmission} onChange={this.handleInputChange} />
+                                    </label></div>
+                            </div>
+                            <div className="col-6">
+                                <div className="from-group">
+                                    <label>
+                                        img:
+                                        <input name="img" type="text" value={this.state.img} onChange={this.handleInputChange} />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-6">
+                                <button type="submit" className="ml-auto btn btn-primary">submit</button>
+                                <button className="btn btn-danger" onClick={() => this.setState({ setIsOpen: false })}>close</button>
+                            </div>
+
+                        </div>
 
 
 
+
+                    </form>
+                </div>
+            </div>
+
+        );
+
+
+        const { setIsOpen } = this.state
         return (
             <div>
                 <div className="site-wrap" id="home-section">
@@ -155,14 +233,22 @@ export default class Manage extends Component {
                                 <input className="form-control" id="myInput" type="text" placeholder="Search.." />
                             </div>
                             <div className="col-md-2">
-                                <button className="btn btn-primary btn-block"  ><FaPlus /> New Product</button>
-   
+                                <button className="btn btn-primary btn-block" style={{ height: 55, margin: 2, padding: 5 }} onClick={() => { this.setState({ setIsOpen: true }) }}><FaPlus /> New Product</button>
+
 
                             </div>
                         </div>
                         <br></br>  <br></br>
                         <table className="table table-bordered   text-center  table-hover table-light ">
                             <thead class="thead-light">
+                                <Modal
+                                    open={setIsOpen}
+                                    onClose={false}
+                                    aria-labelledby="simple-modal-title"
+                                    aria-describedby="simple-modal-description"
+                                >
+                                    {body}
+                                </Modal>
                                 <tr>
                                     <th>#</th>
                                     <th>Brand</th>

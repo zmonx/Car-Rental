@@ -26,9 +26,9 @@ export default class header extends Component {
                 <div className="col-3 ">
                   <div className="site-logo">
                     <Link to="/">
-                    CarRent
+                      CarRent
                     </Link>
-                    
+
                   </div>
                 </div>
                 <div className="col-9  text-right">
@@ -46,7 +46,7 @@ export default class header extends Component {
                     <ul className="site-menu main-menu js-clone-nav ml-auto ">
                       <li className="active">
                         <Link to="/" className="nav-Link" >
-                        Home
+                          Home
                         </Link>
                       </li>
                       {/* <li>
@@ -56,12 +56,12 @@ export default class header extends Component {
                       </li> */}
                       <li>
                         <Link to="/cars" className="nav-Link">
-                        Cars
+                          Cars
                         </Link>
                       </li>
                       <li>
                         <Link to="/login" className="nav-Link">
-                        Admin
+                          Login
                         </Link>
                       </li>
                       {/* <li>
@@ -69,11 +69,11 @@ export default class header extends Component {
                         Blog
                         </Link>
                       </li> */}
-                      <li>
+                      {/* <li>
                         <Link to="/rent" className="nav-Link">
                         Rent
                         </Link>
-                      </li>
+                      </li> */}
                     </ul>
                   </nav>
                 </div>
