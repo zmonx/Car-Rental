@@ -3,11 +3,8 @@ const mongodb = require('mongodb');
 // const Product = require('../models/products');
 const Product = require('.././src/models/products');
 const Rent = require('.././src/models/rent');
-
 const User = require('.././src/models/user');
-
 const ObjectId = mongodb.ObjectId;
-
 
 exports.getById = (req, res) => {
     const { product_id } = req.params;
@@ -25,12 +22,13 @@ exports.getCarAll = (req, res) => {
 }
 
 
+
+
+
 exports.getUser = (req, res) => {
-    const { username } = req.body;
-    console.log("🚀 ~ file: products.js ~ line 30 ~ username", username);
-    User.fetchUser(username)
+    User.fetchUser()
         .then(products => {
-            res.json({ "msg": products })
+            res.json(products)
         });
 }
 
@@ -41,6 +39,21 @@ exports.getRent = (req, res) => {
         });
 }
 
+exports.postAddRent = (req, res, next) => {
+    const { Brand, Modal, Price_day , FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Total_price ,img} = req.params;
+    console.log("🚀 ~ file: products.js ~ line 30 ~ Brand", Brand)
+    const rent = new Rent(Brand, Modal, Price_day , FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Total_price ,img);
+    rent
+        .save()
+        .then(result => {
+            console.log('Created Product');
+            res.json({ "msg": Brand });
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
+};
 
 
 exports.postAddProduct = (req, res, next) => {
@@ -89,7 +102,14 @@ exports.postUpdateProduct = (req, res, next) => {
 };
 
 
-
+// exports.getUser = (req, res) => {
+//     const { username } = req.body;
+//     console.log("🚀 ~ file: products.js ~ line 30 ~ username", username);
+//     User.fetchUser(username)
+//         .then(products => {
+//             res.json({ "msg": products })
+//         });
+// }
 
 
 

@@ -3,8 +3,10 @@ const getDb = require('../../util/database').getDb;
 
 class Rent {
 
-    constructor(Id_car, FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Total_price, Description, Status, id) {
-        this.Id_car = Id_car,
+    constructor(Brand, Modal, Price_day , FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Total_price, img,id) {
+            this.Brand = Brand,
+            this.Modal = Modal,
+            this.Price_day = Price_day,
             this.FirstName = FirstName,
             this.LastName = LastName,
             this.Email = Email,
@@ -13,11 +15,10 @@ class Rent {
             this.Journey_date = Journey_date,
             this.Return_date = Return_date,
             this.Total_price = Total_price,
-            this.Description = Description,
-            this.Status = Status,
+            this.img = img,
             this._id = id
     }
-    
+
     static fetchRent() {
         const db = getDb();
         return db
@@ -32,6 +33,10 @@ class Rent {
                 console.log(err);
             });
     }
+
+
+
+
 
     save() {
         const db = getDb();

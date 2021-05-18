@@ -9,11 +9,13 @@ app.use(cors())
 
 router.get('/details/:product_id', productsController.getById);
 router.get('/car', productsController.getCarAll);
-router.post('/user', productsController.getUser);
+router.get('/user', productsController.getUser);
 
 router.get('/rent', productsController.getRent);
 
 router.get('/insert/:Brand/:Modal/:Price_day/:Doors/:Seats/:Transmission/:img', productsController.postAddProduct);
+router.get('/insert/rent/:Brand/: Modal/: Price_day /: FirstName/: LastName/: Email/: Id_License/: Tel/: Journey_date/: Return_date/: Total_price /:img', productsController.postAddProduct);
+
 
 router.get("/delete/:car_id", productsController.getDeleteProduct);
 

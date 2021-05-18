@@ -27,21 +27,37 @@ class User {
     //         });
     // }
 
-    static fetchUser(username) {
+    // static fetchUser(username) {
+    //     const db = getDb();
+    //     return db
+    //         .collection('User')
+    //         .find({ username: username })
+    //         .toArray()
+    //         .then(products => {
+    //             console.log("🚀 ~ file: user.js ~ line 37 ~ User ~ fetchUser ~ products", products)
+    //             if (products.username == username) {
+    //                 console.log("test");
+    //                 console.log("🚀 ~ file: user.js ~ line 37 ~ User ~ fetchUser ~ products", products)
+    //                 return products;
+    //             } else {
+    //                 return "xxxxxx";
+    //             }
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         });
+    // }
+
+    static fetchUser() {
         const db = getDb();
         return db
             .collection('User')
-            .find({ username: username })
+            .find()
             .toArray()
             .then(products => {
-                console.log("🚀 ~ file: user.js ~ line 37 ~ User ~ fetchUser ~ products", products)
-                if (products.username == username) {
-                    console.log("test");
-                    console.log("🚀 ~ file: user.js ~ line 37 ~ User ~ fetchUser ~ products", products)
-                    return products;
-                } else {
-                    return "xxxxxx";
-                }
+                console.log(products);
+                return products;
+
             })
             .catch(err => {
                 console.log(err);
@@ -49,6 +65,20 @@ class User {
     }
 
 
+    static xxxx() {
+        const db = getDb();
+        return db
+            .collection('User')
+            .find()
+            .toArray()
+            .then(products => {
+                // console.log(products);
+                return products;
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
     save() {
         const db = getDb();
         let dbOp;
