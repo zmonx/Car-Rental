@@ -134,8 +134,10 @@ exports.postUpdateStatus = (req, res, next) => {
     rent
         .save()
         .then(result => {
-            console.log("🚀 ~ file: products.js ~ line 137 ~ result", result)
+            // console.log("🚀 ~ file: products.js ~ line 137 ~ result", result)
             console.log('Update Product');
+            res.json({ "message": "success" });
+
 
             //         // res.redirect('/product');
         })
