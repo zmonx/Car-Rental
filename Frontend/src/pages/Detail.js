@@ -47,7 +47,7 @@ class Detail extends Component {
                     </div>
                 </div>
 
-                <br></br><br></br>
+                <br></br>
                 {/* <div class="product-big-title-area">
                     <div class="container">
                         <div class="row">
@@ -60,11 +60,16 @@ class Detail extends Component {
                         </div>
                     </div>
                 </div> */}
-                <br></br><br></br>
+                <br></br>
                 <div className="container bootdey">
                     <div className="col-md-12">
+                <h3 className="text-center"> INFORMATION</h3>
+                <br></br>
+                <hr></hr>
+
                         <section className="panel">
                             <div className="panel-body">
+                                
                                 <div className="row">
                                     <div className="col-md-3">
                                         <div className="pro-img-details"> <br></br>
@@ -83,7 +88,7 @@ class Detail extends Component {
                                             <h4>Doors : {carThis.Doors}</h4>
                                             <h4>Seats : {carThis.Seats}</h4>
                                             <h4>Transmission : {carThis.Transmission}</h4>
-                                            <h4>Description : Lorem ipsum dolor sit amet, os risus, et blandit ligula pellentesque non. Nam semper elementum auctor. Proin vestibulum nulla at ullamcorper porta. Suspendisse pellentesque lorem velit, in tempor urna feugiat eget. Maecenas fermentum iaculis orci, sit amet vehicula sapien vehicula eu. In hac habitasse platea dictumst. Nunc sed vehicula odio. </h4>
+                                            <h4>Description : Lorem ipsum dolor sit amet, os risus, et blandit ligula pellentesque non.  </h4><br></br>
 
                                             <Link class="btn btn-primary" to={{ pathname: '/rent', state: { cars: carThis } }}>Rent Now</Link>
                                         </div>
