@@ -4,18 +4,51 @@ import React, { Component } from 'react'
 import { FaPencilAlt } from 'react-icons/fa';
 import { FaPlus } from 'react-icons/fa';
 import { FaSearch } from 'react-icons/fa';
+import Modal from '@material-ui/core/Modal';
 export default class Manage extends Component {
 
 
 
     constructor(props) {
         super(props)
-
         this.state = {
-            car: ""
-        }
-    }
+            car: "",
+            cars: "",
+            Brand: "",
+            Modal: "",
+            Price_day: "",
+            Doors: "",
+            Seats: "",
+            Transmission: "",
+            img: "",
+            id_del: "",
+        };
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
+    }
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+
+        this.setState({
+
+            [name]: value
+        });
+
+    }
+    handleSubmit(event) {
+        // alert(this.state.Brand)
+        const { Brand, Modal, Price_day, Doors, Seats, Transmission, img } = this.state
+        axios.get("http://localhost:8000/insert/" + Brand + '/' + Modal + '/' + Price_day + '/' + Doors + '/' + Seats + '/' + Transmission + '/' + img)
+            .then(response => {
+                console.log(response);
+            },
+                function (error) {
+                    console.log(error);
+                })
+    }
 
 
     componentDidMount() {
@@ -73,6 +106,17 @@ export default class Manage extends Component {
 
 
     render() {
+        
+        // const [lgShow, setLgShow] = useState(false);
+
+      
+
+
+
+
+
+
+
         return (
             <div>
                 <div className="site-wrap" id="home-section">
@@ -111,7 +155,9 @@ export default class Manage extends Component {
                                 <input className="form-control" id="myInput" type="text" placeholder="Search.." />
                             </div>
                             <div className="col-md-2">
-                                <a href="/insert" className="btn btn-primary btn-block"><FaPlus /> New Product</a>
+                                <button className="btn btn-primary btn-block"  ><FaPlus /> New Product</button>
+   
+
                             </div>
                         </div>
                         <br></br>  <br></br>

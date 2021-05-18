@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from 'axios';
 import Lottie from 'react-lottie';
 import animationData from '../lotties/25300-plus-button';
@@ -47,6 +47,8 @@ export default class Cars extends Component {
         function (error) {
           console.log(error);
         })
+        // history.push("/manage") 
+        window.location.href = "/manage";
   }
 
   del(id) {

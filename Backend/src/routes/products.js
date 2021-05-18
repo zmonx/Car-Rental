@@ -15,6 +15,7 @@ router.get('/insert/:Brand/:Modal/:Price_day/:Doors/:Seats/:Transmission/:img', 
 
 router.get("/delete/:car_id", productsController.getDeleteProduct);
 
+// router.get('/update/:car_id/:Brand/:Modal/:Price_day/:Doors/:Seats/:Transmission/:img', productsController.postUpdateProduct);
 router.post('/update', productsController.postUpdateProduct);
 
 

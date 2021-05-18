@@ -13,6 +13,7 @@ app.use(cors())
 const productData = require('./src/routes/products');
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/", productData.routes);

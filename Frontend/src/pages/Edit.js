@@ -5,7 +5,7 @@ import { FaPencilAlt } from "react-icons/fa";
 import "./edit.css";
 import React, { Component } from 'react'
 import axios from "axios";
-
+import { Redirect } from "react-router-dom"
 export class Edit extends Component {
 
 
@@ -13,14 +13,15 @@ export class Edit extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      car_id: "",
+      car_id: this.props.location.state.cars._id,
       Brand: this.props.location.state.cars.Brand,
       Modal: this.props.location.state.cars.Modal,
       Price_day: this.props.location.state.cars.Price_day,
       Doors: this.props.location.state.cars.Doors,
       Seats: this.props.location.state.cars.Seats,
       Transmission: this.props.location.state.cars.Transmission,
-      img: this.props.location.state.cars.img
+      img: this.props.location.state.cars.img,
+      redirect: null
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,44 +37,56 @@ export class Edit extends Component {
     });
 
   }
-  handleSubmit(event) {
-    // alert(this.state.Brand)
-    const { car_id, Brand, Modal, Price_day, Doors, Seats, Transmission, img } = this.state
-    axios.post("http://localhost:8000/update", { car_id, Brand, Modal, Price_day, Doors, Seats, Transmission, img })
-      .then(response => {
-        console.log(response);
-      },
-        function (error) {
-          console.log(error);
-        })
-  }
-
-  // submit = (e) =>{
-  //   e.preventDefault()
-  //   console.log(this.state)
-  // }
-
-
-
-
-
   // handleSubmit(event) {
   //   // alert(this.state.Brand)
-  //   const {car_id,Brand, Modal, Price_day, Doors, Seats, Transmission, img } = this.state;
-  //   axios.post("http://localhost:8000/update", {car_id, Brand, Modal, Price_day, Doors, Seats, Transmission, img })
-  //   .then(response => {
-  //     console.log(response.data)
-  //   }).catch((error) => {
-  //     console.log(error)
-  // });
+  //   event.preventDefault();
+  //   const { car_id, Brand, Modal, Price_day, Doors, Seats, Transmission, img } = this.state
+  //   axios.get("http://localhost:8000/update/"+ car_id + '/' + Brand + '/' + Modal + '/' + Price_day + '/' + Doors + '/' + Seats + '/' + Transmission + '/' + img)
+  //     .then(response => {
+  //       console.log(response);
+  //     },
+  //       function (error) {
+  //         console.log(error);
+  //       })
   // }
+  async handleSubmit(event) {
+    // alert(this.state.Brand)
 
-
-
+    event.preventDefault();
+    let data = {
+      car_id: this.state.car_id,
+      Brand: this.state.Brand,
+      Modal: this.state.Modal,
+      Price_day: this.state.Price_day,
+      Doors: this.state.Doors,
+      Seats: this.state.Seats,
+      Transmission: this.state.Transmission,
+      img: this.state.img
+    }
+    console.log(data);
+    await axios.post("http://127.0.0.1:8000/update", data)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+    this.setState({ redirect: "/manage" });
+  }
 
 
   render() {
     const carThis = this.props.location.state.cars
+
+    if (this.state.redirect) {
+      return <Redirect to={{
+        pathname: "/manage"
+
+      }}
+      />
+    }
+
+
     return (
       <div>
         <div className="site-wrap" id="home-section">
@@ -112,14 +125,14 @@ export class Edit extends Component {
                 </div>
                 <br></br>
 
-                <form onSubmit={this.handleSubmit}>
+                <form method="post" onSubmit={this.handleSubmit}>
                   <div class="row">
                     <div class="col-md-12">
                       <div class="card">
                         <div class="card-body">
 
                           <div class="form-group">
-                            <input type="hidden" name="product_id" value="" />
+                            <input type="hidden" name="car_id" value={this.state._id} />
                             <label for="Brand">Brand</label>
                             <input type="text" class="form-control" name="Brand" value={this.state.Brand} onChange={this.handleInputChange} />
                           </div>
@@ -148,7 +161,7 @@ export class Edit extends Component {
                             <input type="test" class="form-control" name="img" value={this.state.img} onChange={this.handleInputChange} />
                           </div><br></br>
                           <a href="/manage" class="btn btn-secondary"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back</a>
-                          <button type="submit" class="btn btn-info"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Save</button>
+                          <button type="submit" class="btn btn-info"> <i class="fa fa-floppy-o" aria-hidden="true"></i> save</button>
                         </div>
                       </div>
                     </div>

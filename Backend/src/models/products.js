@@ -77,6 +77,7 @@ class Products {
                 console.log(err);
             });
     }
+    
 }
 
 module.exports = Products;
