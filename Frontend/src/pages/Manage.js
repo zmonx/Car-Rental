@@ -27,17 +27,7 @@ export default class Manage extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
 
     }
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-
-        this.setState({
-
-            [name]: value
-        });
-
-    }
+    1
     async handleSubmit(event) {
         event.preventDefault();
         alert(this.state.Brand)

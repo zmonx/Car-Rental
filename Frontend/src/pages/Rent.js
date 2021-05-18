@@ -2,10 +2,10 @@ import React, { useState, Component, forwardRef } from "react";
 import "./contact.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router-dom";
-
+import { Redirect } from "react-router-dom"
 import { DateTimePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateMomentUtils from "@date-io/moment";
-
+import axios from 'axios';
 export class Rent extends Component {
   constructor(props) {
     super(props)
@@ -19,6 +19,7 @@ export class Rent extends Component {
       cars: "",
       StartSelectedDate: new Date(),
       EndSelectedDate: new Date(),
+      redirect: false
 
 
     }
@@ -37,9 +38,20 @@ export class Rent extends Component {
       [name]: value
     });
   }
-  handleSubmit(event) {
-    // alert(this.state.Brand)
-    const { Brand, Modal, Price_day, Doors, Seats, Transmission, img } = this.state;
+  async handleSubmit(event) {
+    this.setState({ cars: this.props.location.state.cars })
+    event.preventDefault();
+    const { cars } = this.state
+    await axios.get("http://localhost:8000/insert/rent/" + cars.Brand + '/' + cars.Modal + '/' + cars.Price_day + '/' + sessionStorage.getItem("First_Name") + '/' + sessionStorage.getItem("Last_Name") + '/' + sessionStorage.getItem("Driver_License") + '/' + sessionStorage.getItem("Email_address") + '/' + sessionStorage.getItem('Start') + '/' + sessionStorage.getItem("End") + '/' + 1000 + '/' + cars.img)
+      .then(response => {
+        console.log(response);
+        
+      },
+        function (error) {
+          console.log(error);
+        })
+    
+        this.setState({ redirect: true })
 
 
   }
@@ -51,7 +63,15 @@ export class Rent extends Component {
 
 
     const carThis = this.props.location.state.cars;
+    
+    if (this.state.redirect) {
+      return <Redirect to={{
+        pathname: "/pdf",
+        state: { cars: carThis }
 
+      }}
+      />
+    }
     return (
       <div>
         <div className="site-wrap" id="home-section">
@@ -101,7 +121,6 @@ export class Rent extends Component {
                     </div>
                     <div className="col-md-6">
                       <label>Model </label>
-
                       <input
                         type="text"
                         className="form-control"
@@ -140,7 +159,6 @@ export class Rent extends Component {
                   <div className="form-group row mt-4">
                     <div className="col-md-6 mb-4 mb-lg-0">
                       <label>First name </label>
-
                       <input
                         type="text"
                         className="form-control"
@@ -239,12 +257,12 @@ export class Rent extends Component {
                   </div>
                   <div className="form-group row">
                     <div className="col-md-6 mr-auto">
-                      {/* 
-                      <button type="submit" className="ml-auto btn btn-primary">submit</button> */}
-                      <Link to={{
+
+                      <button type="submit" className="ml-auto btn btn-primary">Print</button>
+                      {/* <Link to={{
                         pathname: '/pdf',
                         state: { cars: carThis }
-                      }} className="btn btn-primary ml-auto col-4">Print</Link>
+                      }} className="btn btn-primary ml-auto col-4">Print</Link> */}
                     </div>
                   </div>
                 </form>

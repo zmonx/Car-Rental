@@ -1,7 +1,50 @@
 import React, { Component } from 'react';
-
+import { Redirect } from "react-router-dom"
 class Login extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            username: "",
+            password: "",
+            redirect: false
+        }
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+
+        this.setState({
+
+            [name]: value
+        });
+
+    }
+    handleSubmit() {
+        const { username, password } = this.state
+        if (username == 'admin' && password == "admin") {
+            this.setState({ redirect: true })
+
+
+        }
+        else {
+            alert("login or pass incorret")
+        }
+
+
+    }
+
     render() {
+        if (this.state.redirect) {
+            return <Redirect to={{
+                pathname: "/manage"
+
+            }}
+            />
+        }
         return (
             <div>
 
@@ -33,16 +76,16 @@ class Login extends Component {
                                 <br></br>
                                 <div className="card col-lg-6">
                                     <div className="col-lg-8 mx-auto">
-                                        <form>
+                                        <form onSubmit={this.handleSubmit}>
                                             <br></br>
                                             <h3 className="text-center">Sign In</h3>
                                             <div className="form-group">
                                                 <label>Email address</label>
-                                                <input type="email" className="form-control" placeholder="Enter email" name="username" />
+                                                <input type="text" className="form-control" placeholder="Enter email" name="username" value={this.state.username} onChange={this.handleInputChange} />
                                             </div>
                                             <div className="form-group">
                                                 <label>Password</label>
-                                                <input type="password" className="form-control" placeholder="Enter password" name="password" />
+                                                <input type="password" className="form-control" placeholder="Enter password" name="password" value={this.state.password} onChange={this.handleInputChange} />
                                             </div>
                                             <div className="form-group">
                                                 <div className="custom-control custom-checkbox">
