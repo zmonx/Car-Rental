@@ -130,18 +130,18 @@ exports.postUpdateProduct = (req, res, next) => {
 exports.postUpdateStatus = (req, res, next) => {
     console.log(req.body);
     const { FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Status, Brand, Modal, img, Total_price, id } = req.body;
-    res.json(req.body);
-    const rent = new Rent(FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Status, Brand, Modal, img, Total_price, new ObjectId(id));
+    const rent = new Rent(FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Status, Brand, Modal, img, Total_price,  new ObjectId(id));
     rent
         .save()
         .then(result => {
+            console.log("🚀 ~ file: products.js ~ line 137 ~ result", result)
             console.log('Update Product');
-            res.json({ "message": "success" });
+
             //         // res.redirect('/product');
         })
         .catch(err => {
             console.log(err)
-            res.json({ "message": "fail" });
+
         });
 };
 
