@@ -20,7 +20,7 @@ export default class header extends Component {
             </div>
             <div className="site-mobile-menu-body" />
           </div>
-          <header className="site-navbar site-navbar-target" role="banner">
+          <header className="site-navbar site-navbar-target me" role="banner">
             <div className="container">
               <div className="row align-items-center position-relative">
                 <div className="col-3 ">
@@ -43,10 +43,10 @@ export default class header extends Component {
                     className="site-navigation text-right ml-auto d-none d-lg-block"
                     role="navigation"
                   >
-                    <ul className="site-menu main-menu js-clone-nav ml-auto ">
-                      <li className="active">
+                    <ul className="site-menu main-menu js-clone-nav ml-auto me">
+                      <li >
                         <Link to="/" className="nav-Link" >
-                          Home
+                          <h5 style={{color:"white"}}> <b>Home</b></h5>
                         </Link>
                       </li>
                       {/* <li>
@@ -56,12 +56,13 @@ export default class header extends Component {
                       </li> */}
                       <li>
                         <Link to="/cars" className="nav-Link">
-                          Cars
+                          <h5 style={{color:"white"}}> <b>Cars</b></h5>
+                          
                         </Link>
                       </li>
                       <li>
                         <Link to="/login" className="nav-Link">
-                          Login
+                        <h5 style={{color:"white"}}> <b>Login</b></h5>                         
                         </Link>
                       </li>
                       {/* <li>

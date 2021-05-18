@@ -17,16 +17,19 @@ html {
 .c {
   float: right
 }
+.aa{
+  margin-top: -180px;
+}
 .pos{
   margin-top: 15px;
   padding-top: 10px;
   padding-bottom: 30px
 }
 .ei{
-  /* margin-right: -20px;
-  float: right;
-  margin-top: -20px; */
-
+  width: 20px;
+}
+.me{
+  margin-top: -10px;
 }
 .RECEIPT1{
   margin: 20px;

@@ -18,6 +18,7 @@ import Manage from './pages/Manage';
 import Edit from './pages/Edit';
 import Test from './pages/Test';
 import Pdf from './pages/Pdf';
+import Info from './pages/Info';
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
           <Route path='/edit' component={Edit} />
           <Route path='/test' component={Test} />
           <Route path='/pdf' component={Pdf} />
+          <Route path='/info' component={Info} />
+
 
 
 
