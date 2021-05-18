@@ -2,7 +2,7 @@ import React, { useState, Component, forwardRef } from "react";
 import "./contact.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router-dom";
-import { Redirect } from "react-router-dom"
+import { Redirect } from "react-router-dom";
 import { DateTimePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import DateMomentUtils from "@date-io/moment";
 import axios from 'axios';

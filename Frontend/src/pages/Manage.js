@@ -5,6 +5,7 @@ import { FaAlignJustify, FaPencilAlt } from 'react-icons/fa';
 import { FaPlus } from 'react-icons/fa';
 import { FaSearch } from 'react-icons/fa';
 import Modal from '@material-ui/core/Modal';
+import { Redirect } from "react-router-dom";
 export default class Manage extends Component {
 
 
@@ -21,7 +22,8 @@ export default class Manage extends Component {
             Seats: "",
             Transmission: "",
             img: "",
-            id_del: ""
+            id_del: "",
+            redirect: false
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -185,7 +187,14 @@ export default class Manage extends Component {
         );
 
 
-        const { setIsOpen } = this.state
+        const { setIsOpen, } = this.state
+        if (this.state.redirect) {
+            return <Redirect to={{
+                pathname: "/info"
+
+            }}
+            />
+        }
         return (
             <div>
                 <div className="site-wrap" id="home-section">
@@ -220,13 +229,14 @@ export default class Manage extends Component {
                 <div className="container">
                     <br></br>  <br></br>  <br></br>
                     <div className="row">
-                        <div className="col-md-10">
+                        <div className="col-md-8">
                             <input className="form-control" id="myInput" type="text" placeholder="Search.." />
                         </div>
                         <div className="col-md-2">
+                            <button className="btn btn-warning btn-block" style={{ height: 55, margin: 2, padding: 5 }} onClick={() => { this.setState({ redirect: true }) }}>Info</button>
+                        </div>
+                        <div className="col-md-2">
                             <button className="btn btn-primary btn-block" style={{ height: 55, margin: 2, padding: 5 }} onClick={() => { this.setState({ setIsOpen: true }) }}><FaPlus /> New Product</button>
-
-
                         </div>
                     </div>
                     <br></br>  <br></br>
