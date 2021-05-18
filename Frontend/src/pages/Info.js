@@ -32,15 +32,15 @@ export class Info extends Component {
             <div class="card topp" >
             <div class="row no-gutters">
                 <div class="col-sm-5">
-                    <img class="card-img" src="https://cdn2.rcstatic.com/images/car_images/web/toyota/c-hr_lrg.jpg" alt="Suresh Dasari Card"/>
+                    <img class="card-img" src={info.img} alt="Suresh Dasari Card"/>
                 </div>
                 <div class="col-sm-7">
                     <div class="card-body">
-                        <h5 class="card-title"><b>Brand :</b> {info.FirstName}    </h5>
+                        <h5 class="card-title"><b>Brand :</b> {info.Brand} {info.Modal}    </h5>
                         <h5  class="card-text"><b>Name : </b>{info.FirstName} {info.LastName}. </h5 >
                         <h5  class="card-text"><b>Driver_License : </b>{info.Id_License} </h5 >
-                        <h5  class="card-text"><b>Transmission : </b>{info.FirstName} </h5 >
-                        <h5  class="card-text"><b>Driver_License : </b>{info.Id_License} </h5 >
+                        <h5  class="card-text"><b>Total Price : </b>{info.Total_price} ฿ </h5 >
+                        {/* <h5  class="card-text"><b>Driver_License : </b>{info.Id_License} </h5 > */}
                         <h5  class="card-text"><b>Date : </b>{info.Journey_date} <b> to </b> {info.Return_date}</h5>
 
                         <button  class="btn btn-primary ss">Confirm</button>
