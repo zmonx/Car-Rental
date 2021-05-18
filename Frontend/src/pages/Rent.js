@@ -57,7 +57,7 @@ export class Rent extends Component {
       Return_date: sessionStorage.getItem("End"),
       Total_price: 1000,
       img: carThis.img,
-      status: 0
+      Status: "0"
     })
       .then(response => {
         console.log(response);
@@ -67,7 +67,7 @@ export class Rent extends Component {
           console.log(error);
         })
 
-    // this.setState({ redirect: true })
+    this.setState({ redirect: true })
 
 
   }
@@ -274,7 +274,7 @@ export class Rent extends Component {
                   <div className="form-group row">
                     <div className="col-md-6 mr-auto">
 
-                      <button type="submit" className="ml-auto btn btn-primary">Print</button>
+                      <button type="submit" className="ml-auto btn btn-primary">Submit</button>
                       {/* <Link to={{
                         pathname: '/pdf',
                         state: { cars: carThis }

@@ -132,7 +132,7 @@ export default class Pdf extends Component {
                         <div className="container">
                             <div className="row align-items-center justify-content-center">
                                 <div className="col-lg-6 text-center">
-                                    <h1>Management System</h1>
+                                    <h1>RECEIPT</h1>
                                 </div>
                             </div>
                         </div>
