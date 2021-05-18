@@ -15,7 +15,7 @@ router.get('/rent', productsController.getRent);
 
 router.get('/insert/:Brand/:Modal/:Price_day/:Doors/:Seats/:Transmission/:img', productsController.postAddProduct);
 
-router.get('/insert/rent/:Brand/:Modal/:Price_day/:FirstName/:LastName/:Email/:Id_License/:Tel/:Journey_date/:Return_date/:Total_price/:img', productsController.postAddRent);
+router.post('/insert/rent/', productsController.postAddRent);
 
 
 

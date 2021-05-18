@@ -50,9 +50,9 @@ exports.getRent = (req, res) => {
 }
 
 exports.postAddRent = (req, res, next) => {
-    const { Brand, Modal, Price_day , FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Total_price ,img} = req.params;
+    const { Brand, Modal, Price_day, FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Status, Total_price, img } = req.body;
     console.log("🚀 ~ file: products.js ~ line 30 ~ Brand", Brand)
-    const rent = new Rent(Brand, Modal, Price_day , FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Total_price ,img);
+    const rent = new Rent(FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Status, Brand, Modal, img, Total_price);
     rent
         .save()
         .then(result => {
@@ -129,9 +129,9 @@ exports.postUpdateProduct = (req, res, next) => {
 
 exports.postUpdateStatus = (req, res, next) => {
     console.log(req.body);
-    const { FirstName,LastName,Email,Id_License,Tel,Journey_date,Return_date,Status,Brand,Modal,img,Total_price,id} = req.body;
+    const { FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Status, Brand, Modal, img, Total_price, id } = req.body;
     res.json(req.body);
-    const rent = new Rent(FirstName,LastName,Email,Id_License,Tel,Journey_date,Return_date,Status,Brand,Modal,img,Total_price, new ObjectId(id));
+    const rent = new Rent(FirstName, LastName, Email, Id_License, Tel, Journey_date, Return_date, Status, Brand, Modal, img, Total_price, new ObjectId(id));
     rent
         .save()
         .then(result => {

@@ -21,13 +21,12 @@ export default class Manage extends Component {
             Seats: "",
             Transmission: "",
             img: "",
-            id_del: "",
+            id_del: ""
         };
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 
     }
-    1
     async handleSubmit(event) {
         event.preventDefault();
         alert(this.state.Brand)
@@ -73,7 +72,17 @@ export default class Manage extends Component {
         console.log("test", id);
     }
 
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
 
+        this.setState({
+
+            [name]: value
+        });
+
+    }
     showProducts() {
         return (
             this.state.car &&

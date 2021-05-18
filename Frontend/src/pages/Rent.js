@@ -37,21 +37,37 @@ export class Rent extends Component {
 
       [name]: value
     });
+    sessionStorage.setItem([name], value);
   }
-  async handleSubmit(event) {
-    this.setState({ cars: this.props.location.state.cars })
+  handleSubmit(event) {
+
     event.preventDefault();
-    const { cars } = this.state
-    await axios.get("http://localhost:8000/insert/rent/" + cars.Brand + '/' + cars.Modal + '/' + cars.Price_day + '/' + sessionStorage.getItem("First_Name") + '/' + sessionStorage.getItem("Last_Name") + '/' + sessionStorage.getItem("Driver_License") + '/' + sessionStorage.getItem("Email_address") + '/' + sessionStorage.getItem('Start') + '/' + sessionStorage.getItem("End") + '/' + 1000 + '/' + cars.img)
+    const carThis = this.props.location.state.cars;
+    console.log("🚀 ~ file: Rent.js ~ line 46 ~ Rent ~ handleSubmit ~ cars", carThis.Brand)
+    axios.post("http://localhost:8000/insert/rent/", {
+      Brand: carThis.Brand,
+      Modal: carThis.Modal,
+      Price_day: carThis.Price_day,
+      FirstName: sessionStorage.getItem("First_name"),
+      LastName: sessionStorage.getItem("Last_name"),
+      Email: sessionStorage.getItem("Email_address"),
+      Id_License: sessionStorage.getItem("Driver_License"),
+      Tel: sessionStorage.getItem("Phone_Number"),
+      Journey_date: sessionStorage.getItem("Start"),
+      Return_date: sessionStorage.getItem("End"),
+      Total_price: 1000,
+      img: carThis.img,
+      status: 0
+    })
       .then(response => {
         console.log(response);
-        
+
       },
         function (error) {
           console.log(error);
         })
-    
-        this.setState({ redirect: true })
+
+    // this.setState({ redirect: true })
 
 
   }
@@ -63,7 +79,7 @@ export class Rent extends Component {
 
 
     const carThis = this.props.location.state.cars;
-    
+
     if (this.state.redirect) {
       return <Redirect to={{
         pathname: "/pdf",
@@ -107,7 +123,7 @@ export class Rent extends Component {
             <div className="row">
               <div className="col-md-8">
                 <div className="Book3ContentA-head-option">CAR INFORMATION</div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} method="POST">
                   <div className="form-group row mt-4">
                     <div className="col-md-6 mb-4 mb-lg-0">
                       <label>Brand </label>
