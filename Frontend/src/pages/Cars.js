@@ -53,7 +53,6 @@ export default class Cars extends Component {
   }
 
   del(id) {
-
     axios.get("http://localhost:8000/delete/" + id)
       .then(response => {
         console.log(response);
@@ -74,6 +73,9 @@ export default class Cars extends Component {
           console.log(error);
         })
   }
+
+
+  
   // componentDidUpdate() {
   //   this.setState({ cars: this.state.cars });
   // }
