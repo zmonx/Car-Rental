@@ -92,6 +92,7 @@ export class Rent extends Component {
                 <form onSubmit={this.handleSubmit}>
                   <div className="form-group row mt-4">
                     <div className="col-md-6 mb-4 mb-lg-0">
+                      <label>Brand </label>
                       <input
                         type="text"
                         className="form-control"
@@ -101,6 +102,8 @@ export class Rent extends Component {
                       />
                     </div>
                     <div className="col-md-6">
+                    <label>Model </label>
+
                       <input
                         type="text"
                         className="form-control"
@@ -112,15 +115,19 @@ export class Rent extends Component {
                   </div>
                   <div className="form-group row">
                     <div className="col-md-6 mb-4 mb-lg-0">
+                    <label>Price/day </label>
+
                       <input
                         type="text"
                         className="form-control"
                         placeholder="Price / Day"
-                        value={carThis.Price_day}
+                        value={carThis.Price_day+" ฿"}
                         readOnly
                       />
                     </div>
                     <div className="col-md-6">
+                    <label>Transmission </label>
+
                       <input
                         type="text"
                         className="form-control"
@@ -131,13 +138,11 @@ export class Rent extends Component {
                     </div>
                   </div>
 
-
-
-
                   <div className="Book3ContentA-head-option">YOUR INFORMATION</div>
-
                   <div className="form-group row mt-4">
                     <div className="col-md-6 mb-4 mb-lg-0">
+                    <label>First name </label>
+
                       <input
                         type="text"
                         className="form-control"
@@ -148,6 +153,8 @@ export class Rent extends Component {
                       />
                     </div>
                     <div className="col-md-6">
+                    <label>Last name </label>
+
                       <input
                         type="text"
                         className="form-control"
@@ -160,6 +167,8 @@ export class Rent extends Component {
                   </div>
                   <div className="form-group row">
                     <div className="col-md-6 mb-4 mb-lg-0">
+                    <label>Phone </label>
+
                       <input
                         type="text"
                         className="form-control"
@@ -170,6 +179,8 @@ export class Rent extends Component {
                       />
                     </div>
                     <div className="col-md-6">
+                    <label>Driver License </label>
+
                       <input
                         type="text"
                         className="form-control"
@@ -182,6 +193,8 @@ export class Rent extends Component {
                   </div>
                   <div className="form-group row">
                     <div className="col-md-12">
+                    <label>E-mail </label>
+
                       <input
                         type="text"
                         className="form-control"

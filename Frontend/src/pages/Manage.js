@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import React, { Component } from 'react'
-import { FaPencilAlt } from 'react-icons/fa';
+import { FaAlignJustify, FaPencilAlt } from 'react-icons/fa';
 import { FaPlus } from 'react-icons/fa';
 import { FaSearch } from 'react-icons/fa';
 import Modal from '@material-ui/core/Modal';
@@ -91,16 +91,15 @@ export default class Manage extends Component {
                 <tbody id="myTable">
                     <tr>
                         <td>{index + 1}</td>
-                        <td>{cars.Brand}</td>
-                        <td>{cars.Modal}</td>
-                        <td>{cars.Price_day}</td>
+                        <td><b>{cars.Brand}</b></td>
+                        <td><b>{cars.Modal}</b></td>
+                        <td><b>{cars.Price_day}</b></td>
                         <td>
                             {/* <a href="" class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a> */}
                             {/* <Link class="btn btn-warning" to={{    pathname: "/cars",    state: cars._id   }}> Edit </Link> */}
                             <Link class="btn btn-warning" to={{ pathname: '/edit', state: { cars: cars } }}>Edit</Link>
                             {/* <button class="btn btn-danger" onClick={() => this.delete(cars._id)}> Delete</button> */}
                             <button class="btn btn-danger" onClick={(e) => { if (window.confirm('Are you sure you wish to delete this item?')) this.delete(cars._id) }}> Delete</button>
-
                         </td>
                     </tr>
                 </tbody>
@@ -113,28 +112,26 @@ export default class Manage extends Component {
     render() {
 
         // const [lgShow, setLgShow] = useState(false);
-
-
-
-
-
         const body = (
             <div className="row align-items-center justify-content-center mt-5 p-3">
                 <div className="col-6 feature-car-rent-box-1 ">
-                    <h3>Cars Insert</h3>
+                    <div className="Book3ContentA-head-option mm ">
+                        Cars Insert
+                </div>
                     <form onSubmit={this.handleSubmit}>
                         <div className="row">
-                            <div className="col-6">
+
+                            <div className="col-md-6">
                                 <div className="from-group ml-auto">
                                     <label>
-                                        Brand:
-                                    <input name="Brand" type="text" value={this.state.Brand} onChange={this.handleInputChange} />
+                                        Brand
+                                    <input class="form-control ww" name="Brand" type="text" value={this.state.Brand} onChange={this.handleInputChange} />
                                     </label>
                                 </div>
                                 <div className="from-group">
                                     <label>
                                         Modal:
-                                    <input name="Modal" type="text" value={this.state.Modal} onChange={this.handleInputChange} />
+                                    <input class="form-control ww" name="Modal" type="text" value={this.state.Modal} onChange={this.handleInputChange} />
                                     </label>
                                 </div>
                             </div>
@@ -142,13 +139,13 @@ export default class Manage extends Component {
                                 <div className="from-group">
                                     <label>
                                         Price:
-                            <input name="Price_day" type="number" value={this.state.Price_day} onChange={this.handleInputChange} />
+                            <input class="form-control ww" name="Price_day" type="number" value={this.state.Price_day} onChange={this.handleInputChange} />
                                     </label>
                                 </div>
                                 <div className="from-group">
                                     <label>
                                         Doors:
-                                        <input name="Doors" type="number" value={this.state.Doors} onChange={this.handleInputChange} />
+                                        <input class="form-control ww" name="Doors" type="number" value={this.state.Doors} onChange={this.handleInputChange} />
                                     </label>
                                 </div>
                             </div>
@@ -158,35 +155,30 @@ export default class Manage extends Component {
                                 <div className="from-group">
                                     <label>
                                         Seats:
-                                <input name="Seats" type="number" value={this.state.Seats} onChange={this.handleInputChange} />
+                                <input class="form-control ww" name="Seats" type="number" value={this.state.Seats} onChange={this.handleInputChange} />
                                     </label>
                                 </div>
                                 <div className="from-group">
                                     <label>
                                         Transmission:
-                                <input name="Transmission" type="text" value={this.state.Transmission} onChange={this.handleInputChange} />
+                                <input class="form-control ww" name="Transmission" type="text" value={this.state.Transmission} onChange={this.handleInputChange} />
                                     </label></div>
                             </div>
                             <div className="col-6">
                                 <div className="from-group">
                                     <label>
                                         img:
-                                        <input name="img" type="text" value={this.state.img} onChange={this.handleInputChange} />
+                                        <input class="form-control ww" name="img" type="text" value={this.state.img} onChange={this.handleInputChange} />
                                     </label>
                                 </div>
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="col-6">
+                        <div className="row c" >
+                            <div className="col-md-12 q">
                                 <button type="submit" className="ml-auto btn btn-primary">submit</button>
                                 <button className="btn btn-danger" onClick={() => this.setState({ setIsOpen: false })}>close</button>
                             </div>
-
                         </div>
-
-
-
-
                     </form>
                 </div>
             </div>
@@ -210,7 +202,7 @@ export default class Manage extends Component {
                 <div className="ftco-blocks-cover-1">
                     <div
                         className="ftco-cover-1 overlay innerpage"
-                        style={{ backgroundImage: "url(images/img_9.jpg" }}
+                        style={{ backgroundImage: "url(images/post_6.jpg" }}
                     >
                         <div className="container">
                             <div className="row align-items-center justify-content-center">
@@ -222,46 +214,86 @@ export default class Manage extends Component {
                     </div>
                 </div>
 
-                <div
+                {/* <div
                     // className="ftco-cover-1 overlay innerpage"
                     style={{ backgroundImage: "url(images/wpp4.jpg" }}
-                >
-                    <div className="container">
-                        <br></br>  <br></br>  <br></br>
-                        <div className="row">
-                            <div className="col-md-10">
-                                <input className="form-control" id="myInput" type="text" placeholder="Search.." />
-                            </div>
-                            <div className="col-md-2">
-                                <button className="btn btn-primary btn-block" style={{ height: 55, margin: 2, padding: 5 }} onClick={() => { this.setState({ setIsOpen: true }) }}><FaPlus /> New Product</button>
-
-
-                            </div>
+                > */}
+                <div className="container">
+                    <br></br>  <br></br>  <br></br>
+                    <div className="row">
+                        <div className="col-md-10">
+                            <input className="form-control" id="myInput" type="text" placeholder="Search.." />
                         </div>
-                        <br></br>  <br></br>
-                        <table className="table table-bordered   text-center  table-hover table-light ">
-                            <thead class="thead-light">
-                                <Modal
-                                    open={setIsOpen}
-                                    onClose={false}
-                                    aria-labelledby="simple-modal-title"
-                                    aria-describedby="simple-modal-description"
-                                >
-                                    {body}
-                                </Modal>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Brand</th>
-                                    <th>Model</th>
-                                    <th>Price/Day</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            {this.showProducts()}
-                        </table>
+                        <div className="col-md-2">
+                            <button className="btn btn-primary btn-block" style={{ height: 55, margin: 2, padding: 5 }} onClick={() => { this.setState({ setIsOpen: true }) }}><FaPlus /> New Product</button>
+
+
+                        </div>
                     </div>
+                    <br></br>  <br></br>
+                    <table className="table table-bordered table-striped .thead-dark text-center ">
+                        <thead class="thead-light">
+                            <Modal
+                                open={setIsOpen}
+                                onClose={false}
+                                aria-labelledby="simple-modal-title"
+                                aria-describedby="simple-modal-description"
+                            >
+                                {body}
+                            </Modal>
+                            <tr>
+                                <th>#</th>
+                                <th>Brand</th>
+                                <th>Model</th>
+                                <th>Price/Day</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        {this.showProducts()}
+                    </table>
                 </div>
+                {/* </div> */}
                 {/* <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br>  <br></br> */}
+                {/* <div className="container site-section mb-5">
+                    <div className="row justify-content-center text-center">
+                        <div className="col-7 text-center mb-5">
+                        <hr></hr><br></br>
+                            <h2>How it works</h2>
+                        </div>
+                    </div>
+                    <div className="how-it-works d-flex">
+                        <div className="step">
+                            <span className="number">
+                                <span>01</span>
+                            </span>
+                            <span className="caption">Time &amp; Place</span>
+                        </div>
+                        <div className="step">
+                            <span className="number">
+                                <span>02</span>
+                            </span>
+                            <span className="caption">Car</span>
+                        </div>
+                        <div className="step">
+                            <span className="number">
+                                <span>03</span>
+                            </span>
+                            <span className="caption">Details</span>
+                        </div>
+                        <div className="step">
+                            <span className="number">
+                                <span>04</span>
+                            </span>
+                            <span className="caption">Checkout</span>
+                        </div>
+                        <div className="step">
+                            <span className="number">
+                                <span>05</span>
+                            </span>
+                            <span className="caption">Done</span>
+                        </div>
+                    </div>
+                </div> */}
             </div>
         )
     }
