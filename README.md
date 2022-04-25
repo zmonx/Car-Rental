@@ -1,2 +1,1 @@
-# Car-Rental
-test git on mac 
+# Car-Rental 
